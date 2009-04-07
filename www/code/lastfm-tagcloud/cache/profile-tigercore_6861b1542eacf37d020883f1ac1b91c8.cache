@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="3441475" cluster="2" username="tigercore">
+    <url>http://www.last.fm/user/tigercore/</url>
+     
+        <realname>Ryan Kelly</realname>
+                <mbox_sha1sum>beca7bf48ccfe4b5a1d0dcbf99a268ca0c00055f</mbox_sha1sum>
+                <registered unixtime="1142191311">Mar 12, 2006</registered>
+                <age>23</age>
+                <gender>m</gender>
+                    <country>United Kingdom</country>
+            <playcount>8967</playcount>
+                <avatar>http://panther1.last.fm/avatar/89a57f6c635d905e2c9b1b740976385c.jpg</avatar>
+    </profile>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="5758052" cluster="5" username="thespectrum">
+    <url>http://www.last.fm/user/thespectrum/</url>
+     
+        <realname>Dr. Sprock</realname>
+                <mbox_sha1sum>38463fa29325583f3bfddd0787a9a267c95bc142</mbox_sha1sum>
+                <registered unixtime="1172348830">Feb 24, 2007</registered>
+                    <gender>m</gender>
+                    <country>United States</country>
+            <playcount>5227</playcount>
+                <avatar>http://cdn.last.fm/avatar/89c7c7035d0a08bdf9ddac1763c856f9.jpg</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

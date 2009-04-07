@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="3688172" cluster="5" username="smooth_operator">
+    <url>http://www.last.fm/user/smooth_operator/</url>
+     
+        <realname>Can</realname>
+                <mbox_sha1sum>c8b41ae6a79ab2c7fee489bfef21aa675721081b</mbox_sha1sum>
+                <registered unixtime="1146558898">May 2, 2006</registered>
+                <age>19</age>
+                <gender>m</gender>
+                    <country>Turkey</country>
+            <playcount>33575</playcount>
+                <avatar>http://cdn.last.fm/avatar/98ef417e81d58d05d3e5f3d5e050008e.jpg</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

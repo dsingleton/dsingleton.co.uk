@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="3598764" cluster="5" username="joshmiester">
+    <url>http://www.last.fm/user/joshmiester/</url>
+     
+        <realname>Josh graham</realname>
+                <mbox_sha1sum>3f03634586dcc1d55584e5bada663ea7aa0b9da6</mbox_sha1sum>
+                <registered unixtime="1145105892">Apr 15, 2006</registered>
+                <age>16</age>
+                <gender>m</gender>
+                    <country>United Kingdom</country>
+            <playcount>9125</playcount>
+                <avatar>http://panther1.last.fm/avatar/d154175c025fe495fd0842451632a7a2.jpg</avatar>
+    </profile>

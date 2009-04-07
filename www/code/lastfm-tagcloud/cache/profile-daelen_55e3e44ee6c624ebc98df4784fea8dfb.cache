@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="3815578" cluster="5" username="daelen">
+    <url>http://www.last.fm/user/daelen/</url>
+     
+        <realname>Kriss Watt</realname>
+                <mbox_sha1sum>1c5301ebc108af41f13d0eee7dfce7f00ade8d72</mbox_sha1sum>
+                <registered unixtime="1148471448">May 24, 2006</registered>
+                <age>23</age>
+                <gender>m</gender>
+                    <country>United Kingdom</country>
+            <playcount>45938</playcount>
+                <avatar>http://userserve-ak.last.fm/serve/160/2634517.jpg</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_subscriber.gif</icon>
+    </profile>

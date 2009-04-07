@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="3244357" cluster="4" username="aliekens">
+    <url>http://www.last.fm/user/aliekens/</url>
+     
+        <realname>Anthony Liekens</realname>
+                <mbox_sha1sum>d9168ea8ae7be079827c3af0655690c5674b2369</mbox_sha1sum>
+                <registered unixtime="1138550380">Jan 29, 2006</registered>
+                <age>31</age>
+                <gender>m</gender>
+                    <country>Belgium</country>
+            <playcount>14023</playcount>
+                <avatar>http://panther1.last.fm/avatar/f02fd00a27590136ae1a7e154808be7f.png</avatar>
+    </profile>

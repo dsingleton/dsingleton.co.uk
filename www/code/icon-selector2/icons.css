@@ -1,0 +1,114 @@
+
+/** Page */		
+body {
+	position: relative;
+	width: auto;
+	padding: 1em 2em;
+}
+
+div.container {
+	position: relative;
+	width: 100%;
+	float: left;
+	margin-bottom: 30px;
+}
+
+h1 {
+	margin: 0 .2em;
+}
+
+p.tagline { 
+	float: left;
+	position: relative;
+	left: 120px;
+	top: -14px;
+	font-size: 90%;
+	color: #888;
+}
+
+p.tagline a { 
+	color: #3168a8;
+}
+
+div.primary {
+	width: auto;
+}
+
+/** Filter */
+.filter {
+	position: absolute;
+	top: 2.5em;
+	left: 30%;
+	width: 32%;
+	margin: 0;
+	text-align: right;
+}
+
+.filter h2 {
+	display: inline;
+	margin-right: .5em;
+}
+
+.filter input {
+	position: relative;
+	top: -4px;
+}
+
+/** Preview */
+.preview {
+	position: absolute;
+	top: .91em;
+	left: 80%;
+	width: 20%;
+}
+
+.preview h2 {
+	float: left;
+	margin-right: .8em;
+}
+.preview #preview {
+	float: left;
+	height: 64px;
+	width: 64px;
+	padding: 4px;
+	border: 1px solid #ddd;
+	text-align: center;
+	vertical-align: bottom;
+	color: #555;
+}
+
+/** Icons */
+ol {
+	margin: 2.5em 0 2em;
+	padding: 20px 0 0;
+}
+ol li {
+	list-style: none;	
+	display: inline;
+	float: left;
+	margin: 0;
+	padding: 0 3px 0 0;
+}
+
+ol li img {
+	border: 1px solid #eee;
+	padding: 2px;
+	width: 16px;
+	height: 16px;
+}
+
+.less {
+	filter:alpha(opacity=10);   
+	-moz-opacity: 0.1;   
+	opacity: 0.1; 
+}
+
+/** Widgets */
+
+a#morelink {
+	position: relative;
+	bottom: 5px;
+	right: 0;
+	float: right;
+	
+}

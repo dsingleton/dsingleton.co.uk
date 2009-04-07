@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="5185823" cluster="5" username="todaysart">
+    <url>http://www.last.fm/user/todaysart/</url>
+     
+        <realname>TodaysArt Festival</realname>
+                <mbox_sha1sum>2c04830757db974d071d86cbcc4ff11c39b87fe4</mbox_sha1sum>
+                <registered unixtime="1165675779">Dec 9, 2006</registered>
+            <statsreset unixtime="1165752075">Dec 10, 2006</statsreset>
+                <age>5</age>
+                <gender>m</gender>
+                    <country>Netherlands</country>
+            <playcount>5860</playcount>
+                <avatar>http://panther1.last.fm/avatar/2df5cf2b1331415e61bab98fd8c4cde6.jpg</avatar>
+                    <icon>http://panther1.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

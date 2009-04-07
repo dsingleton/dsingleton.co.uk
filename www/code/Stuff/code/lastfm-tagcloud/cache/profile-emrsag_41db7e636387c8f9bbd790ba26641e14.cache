@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="3925912" cluster="5" username="emrsag">
+    <url>http://www.last.fm/user/emrsag/</url>
+     
+        <realname>emrsag</realname>
+                <mbox_sha1sum>a4fbb36e6fb863e4a03555f33bfbc5ecf7643f3b</mbox_sha1sum>
+                <registered unixtime="1149594534">Jun 6, 2006</registered>
+                <age>20</age>
+                <gender>m</gender>
+                    <country>Turkey</country>
+            <playcount>11610</playcount>
+                <avatar>http://userserve-ak.last.fm/serve/160/3162268.jpg</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

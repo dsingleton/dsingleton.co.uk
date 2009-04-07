@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="2294900" cluster="1" username="pablo32">
+    <url>http://www.last.fm/user/pablo32/</url>
+     
+        <realname>Paul</realname>
+                <mbox_sha1sum>3f1075a8330cb5cdb21686d377933da1c924be98</mbox_sha1sum>
+                <registered unixtime="1108589131">Feb 16, 2005</registered>
+                <age>19</age>
+                <gender>m</gender>
+                    <country>United Kingdom</country>
+            <playcount>21000</playcount>
+                <avatar>http://cdn.last.fm/avatar/f44b46ec72ff5dae5a7850d652341a14.jpg</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

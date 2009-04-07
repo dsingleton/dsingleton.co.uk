@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="1078100" cluster="2" username="UndeadBob">
+    <url>http://www.last.fm/user/UndeadBob/</url>
+     
+        <realname>Matt</realname>
+                <mbox_sha1sum>a8763f4f413dd914193754fdd6e4e9f06e88b53f</mbox_sha1sum>
+                <registered unixtime="1086827048">Jun 10, 2004</registered>
+                <age>22</age>
+                <gender>n</gender>
+                    <country>United Kingdom</country>
+            <playcount>23849</playcount>
+                <avatar>http://panther1.last.fm/avatar/1ddb8f1fa7c1126c1bcf2d31a5ac262a.jpg</avatar>
+    </profile>

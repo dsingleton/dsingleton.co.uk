@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="1064792" cluster="2" username="chickenmcnoodle">
+    <url>http://www.last.fm/user/chickenmcnoodle/</url>
+     
+        <realname>Chet Gray</realname>
+                <mbox_sha1sum>12ff15a237ddc68ace98291d597e0010f4156add</mbox_sha1sum>
+                <registered unixtime="1083382174">May 1, 2004</registered>
+                <age>20</age>
+                <gender>m</gender>
+                    <country>United States</country>
+            <playcount>35101</playcount>
+                <avatar>http://cdn.last.fm/avatar/62ca53aa1cebb34159d597fedc049bed.png</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

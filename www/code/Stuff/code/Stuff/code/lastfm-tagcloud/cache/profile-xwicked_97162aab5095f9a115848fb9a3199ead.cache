@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="3520223" cluster="2" username="xwicked">
+    <url>http://www.last.fm/user/xwicked/</url>
+     
+        <realname>wicked</realname>
+                <mbox_sha1sum>1106d1a900736fc94aeacbf1352801eb2cdbb858</mbox_sha1sum>
+                <registered unixtime="1143656424">Mar 29, 2006</registered>
+            <statsreset unixtime="1173217267">Mar 6, 2007</statsreset>
+                    <gender>m</gender>
+                    <country>United States</country>
+            <playcount>10621</playcount>
+                <avatar>http://panther1.last.fm/avatar/fbf358b608f1af6ea7208eda601d660f.jpg</avatar>
+    </profile>

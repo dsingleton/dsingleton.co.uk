@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="5266141" cluster="5" username="Strasak">
+    <url>http://www.last.fm/user/Strasak/</url>
+     
+        <realname>Tomáš Maštalíř</realname>
+                <mbox_sha1sum>920f47c31f0ef9025cbaf91b0552a1f0e85407f2</mbox_sha1sum>
+                <registered unixtime="1166731064">Dec 21, 2006</registered>
+                <age>19</age>
+                <gender>m</gender>
+                    <country>Czech Republic</country>
+            <playcount>6528</playcount>
+                <avatar>http://userserve-ak.last.fm/serve/160/1119478.jpg</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

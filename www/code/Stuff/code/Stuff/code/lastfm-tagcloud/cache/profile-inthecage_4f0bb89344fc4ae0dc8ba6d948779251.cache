@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="3738327" cluster="5" username="inthecage">
+    <url>http://www.last.fm/user/inthecage/</url>
+     
+        <realname>hüsrev</realname>
+                <mbox_sha1sum>4a7df9f5f58cd3d1aeff5d699dc57f32e3e1d171</mbox_sha1sum>
+                <registered unixtime="1147479297">May 13, 2006</registered>
+                <age>20</age>
+                <gender>m</gender>
+                    <country>Turkey</country>
+            <playcount>30524</playcount>
+                <avatar>http://cdn.last.fm/avatar/ab1a7f9e56fba92e4f2c0e7da41b5a18.jpg</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

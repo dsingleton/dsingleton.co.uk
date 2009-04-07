@@ -1,0 +1,46 @@
+
+#fade_controls {
+    float: left;
+    width: 200px;
+    position: relative;
+    margin: 0;
+    padding: 1em 0 1em 2em ;
+    border-right: 1px solid #aab;
+    font-size: .9em;
+}
+
+    #fade_controls ol {
+        margin: 0;
+        padding: 0;
+    }
+
+    #fade_controls li {
+        margin: 0 0 .4em 0;
+    }
+
+    #fade_controls form {
+        margin: 1em 0;
+    }
+
+    #fade_controls input.text {
+        border: 1px solid #445;
+    }
+
+#new_content {
+    margin-left: 280px;
+
+    padding: 0 25px 20px;
+    width: 350px;
+    background: url(bottom-round-400.gif) bottom left no-repeat #eee;
+    font-size: .8em
+}
+
+#new_content h3 {
+    margin: 0 -25px .8em;
+    padding: 1em 25px 0;
+    color: #000;
+    background: url(top-round-400.gif) top left no-repeat;
+}
+
+
+

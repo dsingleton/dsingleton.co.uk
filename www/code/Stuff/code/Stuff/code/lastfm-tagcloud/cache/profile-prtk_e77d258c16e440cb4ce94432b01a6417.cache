@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="6747809" cluster="5" username="prtk">
+    <url>http://www.last.fm/user/prtk/</url>
+     
+        <realname>Prateek Saxena</realname>
+                <mbox_sha1sum>2f89399d1b7ff18ad01c5f95a264da58d9530ead</mbox_sha1sum>
+                <registered unixtime="1181315626">Jun 8, 2007</registered>
+                <age>15</age>
+                <gender>m</gender>
+                    <country>India</country>
+            <playcount>739</playcount>
+                <avatar>http://cdn.last.fm/avatar/4ef883623f5295ca2cb446013dada53f.jpg</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="1043397" cluster="2" username="thegarner">
+    <url>http://www.last.fm/user/thegarner/</url>
+     
+        <realname>Adam</realname>
+                <mbox_sha1sum>e0ab264f69cff9e829849685f6e69becec533efa</mbox_sha1sum>
+                <registered unixtime="1080306492">Mar 26, 2004</registered>
+            <statsreset unixtime="1122469289">Jul 27, 2005</statsreset>
+                <age>28</age>
+                <gender>m</gender>
+                    <country>United Kingdom</country>
+            <playcount>45719</playcount>
+                <avatar>http://userserve-ak.last.fm/serve/160/679103.jpg</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_subscriber.gif</icon>
+    </profile>

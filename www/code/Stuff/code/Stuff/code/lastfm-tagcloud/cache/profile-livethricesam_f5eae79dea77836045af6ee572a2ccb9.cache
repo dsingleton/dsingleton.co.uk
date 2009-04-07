@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="2853419" cluster="3" username="liveTHRICEsam">
+    <url>http://www.last.fm/user/liveTHRICEsam/</url>
+     
+        <realname>Sam Baldwin</realname>
+                <mbox_sha1sum>1ceb4f58dcffdd09581e85fa47a91a438f8ca6fd</mbox_sha1sum>
+                <registered unixtime="1130093075">Oct 23, 2005</registered>
+            <statsreset unixtime="1134921517">Dec 18, 2005</statsreset>
+                <age>17</age>
+                <gender>m</gender>
+                    <country>United Kingdom</country>
+            <playcount>39428</playcount>
+                <avatar>http://userserve-ak.last.fm/serve/160/630217.jpg</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

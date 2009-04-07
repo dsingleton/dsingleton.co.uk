@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="6797" cluster="2" username="Aquarion">
+    <url>http://www.last.fm/user/Aquarion/</url>
+     
+        <realname>Aquarion</realname>
+                <mbox_sha1sum>7894902513c9ddce0e322419809f0e47ec0fde51</mbox_sha1sum>
+                <registered unixtime="1057536000">Jul 7, 2003</registered>
+                <age>26</age>
+                <gender>m</gender>
+                    <country>United Kingdom</country>
+            <playcount>34068</playcount>
+                <avatar>http://userserve-ak.last.fm/serve/160/619090.jpg</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

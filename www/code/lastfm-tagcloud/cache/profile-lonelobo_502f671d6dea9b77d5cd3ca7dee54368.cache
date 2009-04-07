@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="2054364" cluster="3" username="LoneLobo">
+    <url>http://www.last.fm/user/LoneLobo/</url>
+     
+        <realname>Paul</realname>
+                    <registered unixtime="1096826818">Oct 3, 2004</registered>
+            <statsreset unixtime="1179787397">May 21, 2007</statsreset>
+                <age>17</age>
+                <gender>m</gender>
+                    <country>Netherlands</country>
+            <playcount>6734</playcount>
+                <avatar>http://cdn.last.fm/avatar/e5e955caa15fa28cd2466a28a8d4d057.jpg</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

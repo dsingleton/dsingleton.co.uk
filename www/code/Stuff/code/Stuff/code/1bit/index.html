@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>1Bit Audio Player</title>
+	
+	<link rel="stylesheet" type="text/css" href="/code/_static/css/structure.css" />
+	<link rel="stylesheet" type="text/css" href="/code/_static/css/text.css" />
+	<link rel="stylesheet" type="text/css" href="1bit.css" />
+	
+	<script type="text/javascript" src="js/swfobject.js"></script>
+	<script type="text/javascript" src="js/1bit.js"></script>
+	<script type="text/javascript">
+	
+		oneBit = new OneBit('flash/1bit.swf');
+		
+		oneBit.ready(function() {
+			oneBit.apply('ol.simon a.tea', '#3DB213');
+			oneBit.apply('a', '#263B83');
+		});
+	
+	</script>
+
+  </head>
+  <body class="l-2col">
+	
+	<h1>1Bit Audio Player</h1>
+	
+	<div class="primary content">
+		<h2>What's that then?</h2>
+		<blockquote>1 Bit Audio Player is a very simple and lightweight Adobe Flash MP3 player with automatic JavaScript insertion. It's main purpose is to act as a quick in-page preview for audio files you link to from your website or blog.</blockquote>
+		
+		<p>The current version can be found at <a href="http://1bit.markwheeler.net/">1bit.markwheeler.net</a>, while this is the development page.</p>
+		
+		<h3>Development</h3>
+		
+		<p>I've been re-writing the the Javascript to make 1Bit unobtrusive and generally improve it. The first version used <a href="jquery.com">jQuery</a>, but has since ben re-written to make it smaller and more portable.</p>
+		
+		<p>There's still some work to do, but the aim is to continue making 1bit easier to use; to play nice with other scripts and have smarter defaults so it needs less configuration.</p>
+		
+		<h3>Documentation</h3>
+		<p><em>This is a little sparse at the moment, sorry.</em></p>
+		
+		<p>There are 4 options, only the first is required and the other 3 are optional. Though it is recomended setting a value for 'color' as it defaults to #111111</p>
+		
+			<code class="js">oneBit.apply(selector, color[, background[, size])</code>
+			
+		<ul>
+			<li>'<em>selector</em>' is a CSS selector string to select the links you want to have a player. This supports <a href="http://www.openjs.com/scripts/dom/css_selector">most CSS2 and some CSS3 selectors</a>.</li>
+			<li>'c<em>olor</em>' is the color the player icons will be. Specified as a full hex color code, including the #.</li>
+			<li>'<em>background</em>' is background color of the player. this defaults to transparent. Specified as a full hex color code, including the #.</li>
+			<li>'<em>size</em>' is the dimensions of of the player in pixels, by default 1bit will estimate the correct size. It's recommended you don't change this unless you encounter problems. There is only one value as height and width are the same.</li>
+		</ul>
+		
+		<p>The HTML it generates, and thus the elements/classes you have to play:</p>
+		
+		<code>
+&lt;span class=&quot;onebit_mp3&quot;&gt;
+	&lt;a href=&quot;file.mp3&quot;&gt;example&lt;/a&gt;
+	&lt;span class=&quot;onebit_player&quot; id=&quot;oneBitInsert_1&quot;&gt;
+		[Flash goes here]
+	&lt;/span&gt;
+&lt;/span&gt;
+		</code>
+		
+		<h3>Notes</h3>
+		<ul>
+			<li>Re-write documentation</li>
+			<li>Have colour default to the link colour using <a href="http://www.quirksmode.org/dom/getstyles.html">getStyle()</a> and converting the result to hex</li>
+			<li><em>OneBit.apply()</em> should hide the differences of the DOM being loaded or not and remove the need for <em>OneBit.read()</em> entirely. This requires knowing if the DOM has loaded yet</li>
+			<li>Dean Edward's <a href="http://dean.edwards.name/packer/">Packer</a> is handy for compression.</li>
+			<li>Modal on the OneBit object to limit the script to mp3s on the local server only, to enforce politeness?</li>
+		</ul>
+		
+	</div>
+	
+	<div class="secondary content">
+		
+		<h2 id="examples">Demo</h2>
+		<p>Here's an example mp3, the <a class="mp3" href="./mp3s/Emerald%20Get.mp3">Sonic Emerald</a> jingle. (<em>Short and quick loading for easy testing</em>).</p>
+		
+		<h3>More</h3>
+		<p>A couple of songs from my good friend <a href="http://simoncoltman.net">Simon Coltman</a>.</p>
+		<ol class="simon">
+			<li><a href="http://www.simoncoltman.net/files/simoncoltman-preamble/1%20-%20Two%20Cups%20of%20Tea.mp3" class="tea">Two Cups of Tea</a></li>
+			<li><a href="http://www.simoncoltman.net/files/simoncoltman-preamble/3%20-%20Riverside.mp3" class="riverside">Riverside</a></li>
+		</ol>
+		
+		<h2>Usage</h2>
+		<p class="callout code">
+			<a href="js/1bit.js">Download 1bit.js</a>
+			
+		</p>
+		<p>You'll need <a href="js/1bit.js">1bit javascript</a> and <a href="flash/1bit.swf">1bit flash</a> files, as well as the <a href="js/swfobject.js">swfobject javascript</a>, which 1Bit requires.</p>
+		<p>Then use like so (full documentation to come).</p>
+		<code>
+oneBit = new OneBit('flash/1bit.swf');
+
+oneBit.ready(function() {
+  oneBit.apply('.content a', '#263B83');
+});
+		</code>
+		
+	</div>
+	
+	<a href="/code" id="morelink">More Code</a>
+	
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+	<script type="text/javascript">_uacct = "UA-609105-1"; urchinTracker();</script>  
+	
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="3214942" cluster="4" username="kasiks">
+    <url>http://www.last.fm/user/kasiks/</url>
+     
+        <realname>Jess</realname>
+                <mbox_sha1sum>c38dcd48c76b8c438bd3a5a26aae9306b6371ca1</mbox_sha1sum>
+                <registered unixtime="1138060744">Jan 23, 2006</registered>
+            <statsreset unixtime="1170260857">Jan 31, 2007</statsreset>
+                <age>23</age>
+                <gender>f</gender>
+                    <country>Belgium</country>
+            <playcount>3808</playcount>
+                <avatar>http://cdn.last.fm/avatar/951f5278dbcc010a8a1e970ab0c985d3.jpg</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

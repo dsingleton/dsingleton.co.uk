@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="1070340" cluster="2" username="DuFF">
+    <url>http://www.last.fm/user/DuFF/</url>
+     
+        <realname>Will Duff</realname>
+                <mbox_sha1sum>49d4fe1043b5f774fa412622edced807ae5d6ca2</mbox_sha1sum>
+                <registered unixtime="1084906409">May 18, 2004</registered>
+                <age>19</age>
+                <gender>m</gender>
+                    <country>United States</country>
+            <playcount>12992</playcount>
+                <avatar>http://panther1.last.fm/avatar/780ee107c427a75af9e3b972f1ae606e.gif</avatar>
+                    <icon>http://panther1.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

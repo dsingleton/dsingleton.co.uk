@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="2312830" cluster="1" username="mokele">
+    <url>http://www.last.fm/user/mokele/</url>
+     
+        <realname>Steven Gravell</realname>
+                <mbox_sha1sum>73f4264beff65397286d06b0a004d220669af5b4</mbox_sha1sum>
+                <registered unixtime="1109263079">Feb 24, 2005</registered>
+                <age>24</age>
+                <gender>m</gender>
+                    <country>United Kingdom</country>
+            <playcount>43088</playcount>
+                <avatar>http://userserve-ak.last.fm/serve/160/2961907.jpg</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_staff.gif</icon>
+    </profile>

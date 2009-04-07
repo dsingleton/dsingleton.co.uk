@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="2014450" cluster="3" username="maaark">
+    <url>http://www.last.fm/user/maaark/</url>
+     
+        <realname>Mark IJzerman</realname>
+                <mbox_sha1sum>8ddeb9a065857cb29c1f0f720ae7156377e03488</mbox_sha1sum>
+                <registered unixtime="1092344320">Aug 12, 2004</registered>
+                <age>19</age>
+                <gender>m</gender>
+                    <country>Netherlands</country>
+            <playcount>35380</playcount>
+                <avatar>http://userserve-ak.last.fm/serve/160/662570.jpg</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="4975325" cluster="5" username="MyShangrila">
+    <url>http://www.last.fm/user/MyShangrila/</url>
+     
+        <realname>Ana</realname>
+                <mbox_sha1sum>f048d5da53169069a51c4561cf1a6b4d32f16d5c</mbox_sha1sum>
+                <registered unixtime="1162736412">Nov 5, 2006</registered>
+                <age>18</age>
+                <gender>f</gender>
+                    <country>Croatia</country>
+            <playcount>17436</playcount>
+                <avatar>http://cdn.last.fm/avatar/0e5f04d564c2710a8ca088744ad6476c.jpg</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

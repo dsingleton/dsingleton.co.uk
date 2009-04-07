@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="5616747" cluster="5" username="acedrums">
+    <url>http://www.last.fm/user/acedrums/</url>
+     
+        <realname>Oscar </realname>
+                <mbox_sha1sum>cc0b0c7b3398064e64670a04a70103ffeb0d1274</mbox_sha1sum>
+                <registered unixtime="1170880305">Feb 7, 2007</registered>
+                <age>16</age>
+                <gender>m</gender>
+                    <country>United Kingdom</country>
+            <playcount>5170</playcount>
+                <avatar>http://panther1.last.fm/avatar/e37a3eb0c074c0445d0b16224c52e2de.jpg</avatar>
+                    <icon>http://panther1.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

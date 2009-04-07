@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="5040055" cluster="5" username="Lonneman">
+    <url>http://www.last.fm/user/Lonneman/</url>
+     
+        <realname>Leon</realname>
+                <mbox_sha1sum>1035df4f6e365092b8a1391d02645e71239b7689</mbox_sha1sum>
+                <registered unixtime="1163629498">Nov 15, 2006</registered>
+                <age>24</age>
+                <gender>m</gender>
+                    <country>Netherlands</country>
+            <playcount>9494</playcount>
+                <avatar>http://userserve-ak.last.fm/serve/160/2518161.jpg</avatar>
+                    <icon>http://cdn.last.fm/depth/global/icon_user.gif</icon>
+    </profile>

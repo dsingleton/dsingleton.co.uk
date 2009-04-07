@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="4962011" cluster="5" username="markwheeler">
+    <url>http://www.last.fm/user/markwheeler/</url>
+     
+        <realname>Mark Wheeler</realname>
+                <mbox_sha1sum>19959c54278fa24127e167ba80c02614fe423e37</mbox_sha1sum>
+                <registered unixtime="1162552014">Nov 3, 2006</registered>
+            <statsreset unixtime="1178374071">May 5, 2007</statsreset>
+                <age>23</age>
+                <gender>m</gender>
+                    <country>United Kingdom</country>
+            <playcount>332</playcount>
+                <avatar>http://panther1.last.fm/avatar/f4c1b287db65c3e6055bd54c815508ac.jpg</avatar>
+    </profile>

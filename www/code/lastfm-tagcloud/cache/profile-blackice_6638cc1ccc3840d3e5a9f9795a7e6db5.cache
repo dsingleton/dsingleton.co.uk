@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="1006831" cluster="2" username="blackice">
+    <url>http://www.last.fm/user/blackice/</url>
+     
+        <realname>Mark Turner</realname>
+                <mbox_sha1sum>d378c7b6bb99e9f17055645c0b6b490b70d9f371</mbox_sha1sum>
+                <registered unixtime="1053466105">May 20, 2003</registered>
+            <statsreset unixtime="1094407449">Sep 5, 2004</statsreset>
+                <age>22</age>
+                <gender>m</gender>
+                    <country>United Kingdom</country>
+            <playcount>55172</playcount>
+                <avatar>http://panther1.last.fm/avatar/d3c283d0ba854d596c6e8289a437ce4b.png</avatar>
+    </profile>

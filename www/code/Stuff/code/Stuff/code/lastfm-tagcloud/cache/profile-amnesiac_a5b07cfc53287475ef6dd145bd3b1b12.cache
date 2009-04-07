@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile id="5617347" cluster="5" username="_amnesiac">
+    <url>http://www.last.fm/user/_amnesiac/</url>
+     
+        <realname>Luke</realname>
+                <mbox_sha1sum>966253309af6f5d8909c874aa81aa4065d99a3e0</mbox_sha1sum>
+                <registered unixtime="1170884616">Feb 7, 2007</registered>
+                <age>22</age>
+                <gender>m</gender>
+                    <country>Poland</country>
+            <playcount>15412</playcount>
+                <avatar>http://panther1.last.fm/avatar/b6280d394efb038573d2dcee194b7098.jpg</avatar>
+                    <icon>http://panther1.last.fm/depth/global/icon_user.gif</icon>
+    </profile>
