@@ -53,8 +53,8 @@
             <li class="flickr"><a href="http://flickr.com/photos/davidsingleton/" rel="me">Photos</a></li>
             <li class="lastfm"><a href="http://last.fm/user/underpangs/" rel="me">Music</a></li>
             <li class="upcoming"><a href="http://upcoming.yahoo.com/user/30794/" rel="me">Events</a></li>
-
-            <li class="twitter"><a href="http://twitter.com/dsingleton/" rel="me">Nonsense</a></li>
+	    <li class="twitter"><a href="http://twitter.com/dsingleton/" rel="me">Nonsense</a></li>
+	    <li class="github"><a href="http://github.com/dsingleton" rel="me">Code</a></li> 
         </ul>
     </div>
 
