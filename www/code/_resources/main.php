@@ -6,7 +6,7 @@ $dir = dirname(__FILE__) . '/';
 require_once $dir . 'misc.php';
 
 // Load Config
-require_once $dir . 'config/db.php';
+//require_once $dir . 'config/db.php';
 
 // Add pear paths
 add_include_path($dir . 'pear/');
