@@ -14,7 +14,10 @@
  <link rel="openid.delegate" href="http://dsingleton.myopenid.com/" />
  
  <meta http-equiv="X-XRDS-Location" content="http://dsingleton.myopenid.com/xrds" />
- <link rel="stylesheet" href="quick.css" type="text/css" charset="utf-8" />
+ 
+ <link rel="stylesheet" href="/static/css/harmonise.css" type="text/css" charset="utf-8" />
+ <link rel="stylesheet" href="/static/css/default.css" type="text/css" charset="utf-8" />
+ 
  <!-- <link href="/feed/" rel="alternate" type="application/rss+xml" title="David Singleton - Blog" /> -->
  
 </head>
@@ -25,38 +28,43 @@
 
      <div id="header">
 
-      <h1>
-          <a href="/">
-              <span class="firstname">David</span> <span class="lastname">Singleton</span>
-          </a>
-      </h1>
+         <p>
+              <a href="/" >
+                  <span class="firstname">David</span> <span class="lastname">Singleton</span>
+              </a>, 
+                  a <a href="http://delicious.com/dsingleton/web+development"><span class="title">Web Developer</span></a> working at <a href="http://last.fm">Last.fm</a>,
+                  living in <span class="adr"><span class="locality"><a href="http://delicious.com/dsingleton/london">London</a></span>.
+              </span>
+          </p>
     </div>
 
     <div class="content">
 
-        <p class="vcard">This is the website of <span class="fn">David Singleton</span>, a <span class="title">Web Developer</span>, living and working  in <span class="adr"><span class="locality"><a href="http://www.flickr.com/photos/davidsingleton/tags/london/">London</a></span>, <span class="country-name">UK</span></span>.</p>
-        <p>I'm happily working for <a href="http://last.fm">Last.fm</a>, but I do have a <a href="/cv/">CV</a>.</p>
+        <h3>About me</h3>
+        <p>I'm happily working for Last.fm, but I do have an <a href="/about/cv/">out of date CV</a>, if you're curious.</p>
+        <p>I have a few projects of my own hosted here, such as; 
+            a selector for <a href="/code/icon-selector">Famfamfam silk icons</a>,
+            a JS/Flash MP3 player called <a href="/code/1bit">1Bit</a>,
+            and some prototype hacking on <a href="/code/lifestream">activity/life streaming</a> (powered by <a href="http://delicious.com/dsingleton/microformats">microformats</a> and Google <a href="http://delicious.com/dsingleton/socialgraph">Social Graph</a>).
+        </p>
 
-        <p>There are also some <a href="http://www.google.com/search?q=david%20singleton%20-dsingleton.co.uk">other</a> David Singletons. You might be looking for one of them instead.</p>
-    </div>
-    
-    <div class="secondary content">
-        <h2>Games</h2>
-        <p>I have a Wii (6869-2201-4810-9213) and I sometimes play Mario Kart (0688-5433-7191)</p>
+
+        <p>Contact me via <em>[my first name]</em>@<em>[this domain]</em>. No spam please.</p>
+
+        <h3>Elsewhere online</h3>
+        <p>
+            I collect <a href="http://del.icio.us/dsingleton/" rel="me">links</a>, 
+            take <a href="http://flickr.com/photos/davidsingleton/" rel="me">photos</a>,
+            listen to <a href="http://last.fm/user/underpangs/" rel="me">music</a>,
+            attend <a href="http://upcoming.yahoo.com/user/30794/" rel="me">events</a>,
+            write <a href="http://github.com/dsingleton" rel="me">code</a>
+            and talk <a href="http://twitter.com/dsingleton/" rel="me">nonsense</a>.
+        </p>
+
+        <p>There are also some other David Singletons. You might be looking for <a href="http://www.google.com/search?q=david%20singleton%20-dsingleton.co.uk">one of them</a> instead.</p>
+
     </div>
 
-    
-    <div class="tertiary content">
-        <h2>Elsewhere</h2>
-        <ul class="otherPlaces">
-            <li class="delicious"><a href="http://del.icio.us/dsingleton/" rel="me">Bookmarks</a></li>              
-            <li class="flickr"><a href="http://flickr.com/photos/davidsingleton/" rel="me">Photos</a></li>
-            <li class="lastfm"><a href="http://last.fm/user/underpangs/" rel="me">Music</a></li>
-            <li class="upcoming"><a href="http://upcoming.yahoo.com/user/30794/" rel="me">Events</a></li>
-	    <li class="twitter"><a href="http://twitter.com/dsingleton/" rel="me">Nonsense</a></li>
-	    <li class="github"><a href="http://github.com/dsingleton" rel="me">Code</a></li> 
-        </ul>
-    </div>
 
  </div>
 
