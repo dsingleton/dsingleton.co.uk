@@ -13,7 +13,7 @@ charset="utf-8"
     <style type="text/css">
         
         #testsuite h3 {
-            padding: 5px 0 10px 38px;
+            padding: 5px 0 6px 37px;
             border-bottom: 1px solid #ccc;
         }
         
@@ -52,20 +52,17 @@ charset="utf-8"
         <p>A Test Suite of scripts to detect Firefox "blocker"
 extensions</p>
     </div>
-    
-    <p id="description">
-        A set of tests to try an identify if a user is running a particular Firefox plugin, specifically those relating to blocking script execution, flash and adverts
-    </p>
-    
     <div id="content">
+
         
         <h2>Tests</h2>
-        
-        
+        <p>A set of tests to try an identify if a user is running a particular Firefox plugin, specifically those relating to blocking script execution, flash and adverts</p>
+
         <div id="testsuite">
             <div id="noscript">
-                <h3><a href="https://addons.mozilla.org/en-US/firefox/addon/722">No Script</a></h3>
+                <h3>No Script</h3>
                 <p>Gives per-site and temporary/permanent configurability of Javascript on/off. Seems to work exactly the same as turning JS off wholesale.</p>
+                <p>https://addons.mozilla.org/en-US/firefox/addon/722</p>
                 <p class="test">
                     Enabled?
                     <strong class="answer">
@@ -136,6 +133,8 @@ extensions</p>
                     </script>
                     
                     <strong class="answer"></strong>
+                    
+                    <small>This is a heuristic test, it's not possible to direct '</small>
                 </p>
             </div>
             
