@@ -40,8 +40,11 @@
 
     <div class="content">
 
-        <h3>About me</h3>
-        <p>I'm happily working for Last.fm, but I do have an <a href="/about/cv/">out of date CV</a>, if you're curious.</p>
+        <h3>About</h3>
+        <p>
+            Check out my <a href="/about/cv/">CV</a> (recently updated) for more about my skills and work history. Working on something interesting? Let me know. Or take a look at my "elsewhere" links to learn a bit more about me personally.
+        </p>
+        
         <p>I have a few projects of my own hosted here, such as; 
             a selector for <a href="/code/icon-selector">Famfamfam silk icons</a>,
             a JS/Flash MP3 player called <a href="/code/1bit">1Bit</a>,
