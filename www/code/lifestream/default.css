@@ -1,0 +1,83 @@
+abbr {
+	text-decoration: none;
+	border: none;
+	display: block;
+}
+
+table {
+	font-size: .9em;
+	border: none;
+}
+
+tr.day th {
+	padding: 1.6em 0 .3em 5.3em;
+	text-align: left;
+	border-bottom: 2px solid #ccc;
+	font-size: 1em;
+}
+
+table tr:hover td,
+table tr:hover th.time {
+}
+
+table tr td a {
+	text-decoration: none;
+	line-height: 1.3;
+}
+
+table tr td a:hover {
+	text-decoration: underline;
+}
+
+table tr td.item {
+	padding-left: 0em;
+	padding-right: 1em;
+}
+
+tbody:hover {
+}
+
+tbody td,
+tbody th.time {
+	text-align: left;
+	border: none;
+	margin: 0;
+	padding: .4em 0 .3em;
+	vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+
+tbody th.time { 
+	border-bottom: none;
+	text-align: right;
+	padding-right: 1em;
+}
+
+ul.noFeeds {
+	margin: 1em 0;
+	padding: 0 0 0 10px;
+	list-style: none;
+}
+
+ul.noFeeds li {
+	margin: 0;
+	padding: .25em 0;
+}
+
+ul.noFeeds li img {
+	position: relative;
+	top: 3px;
+	margin-right: 5px;
+}
+
+div.vcard {
+	padding: .5em;
+	border: 1px solid #666;
+	background: #eee;
+}
+
+div.vcard img.logo {
+	float: right;
+	border: 1px solid #666;
+	
+}
