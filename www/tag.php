@@ -24,7 +24,7 @@ function parse_rss($url) {
 
     $list = array();
     
-    if (!$xml = @file_get_contents_cached($url)) {
+    if (!$xml = @file_get_contents($url)) {
         return $list;
     }
     
