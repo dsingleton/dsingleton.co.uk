@@ -15,10 +15,10 @@ if ($post) {
 }
 else {
     $action = 'list';
-    $aPosts = TumblrPost::getRecent(10);
+    $title = "Blog";
+    $aPosts = TumblrPost::getRecent(50);
 }
 
-$title = "Blog";
 $feed = array('url' => '/feed/blog.rss');
 
 ?>

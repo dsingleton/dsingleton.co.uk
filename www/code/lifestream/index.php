@@ -139,7 +139,7 @@ function feedsToList($feeds) {
 ?>
 
 
-<?php include 'header.php'; ?>
+<?php include '../../_inc/header.inc.php'; ?>
 
 
         <h1>Activity derived from XFN</h1>
@@ -256,7 +256,7 @@ function feedsToList($feeds) {
                     <td>
                         <?php printf('<img class="icon" src="/code/grabicon/?url=%s" alt="%s" title="%s" width="16" />', $item['name'], $item['name'], $item['name']); ?>
                         
-                    </td>
+                    </td>   
                 </tr>
 
         <?php } ?>
@@ -270,4 +270,4 @@ function feedsToList($feeds) {
             <li><a href="<?php h($sgURL)?>"><?php h($sgURL) ?></a></li>
         </div>
         
-<?php include 'footer.php'; ?>
+<?php include '../../_inc/footer.inc.php'; ?>

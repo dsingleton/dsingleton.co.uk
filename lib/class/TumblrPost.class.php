@@ -1,6 +1,6 @@
 <?php
 
-class TumblrPost
+class TumblrPost implements iWebItem
 {
     const TUMBLR_API = 'http://dsingleton.tumblr.com/api/read/json/';
     
@@ -22,11 +22,15 @@ class TumblrPost
         }
         
         $oPosts = self::callAPI(array('search' => $slug));
-        
-        if ($oPosts && isset($oPosts->posts[0])) {
-            $oPost = new TumblrPost($oPosts->posts[0]);
-            if ($oPost->getSlug() == $slug) {
-                return $oPost;
+
+        if ($oPosts && isset($oPosts->posts)) {
+            foreach($oPosts->posts as $aPost) {
+
+                $oPost = new TumblrPost($aPost);
+
+                if ($oPost->getSlug() == $slug) {
+                    return $oPost;
+                }
             }
         }
         return false;
@@ -46,6 +50,8 @@ class TumblrPost
     public static function slugToId($slug)
     {
         $aMap = array(
+            'sxsw-day-two' => 144913919,
+            '' => 0,
             'open-tech-2009' => 140265426
         );
         return isset($aMap[$slug]) ? $aMap[$slug] : false;
