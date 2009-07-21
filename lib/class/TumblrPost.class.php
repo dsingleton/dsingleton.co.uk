@@ -60,7 +60,7 @@ class TumblrPost implements iWebItem
     protected static function callAPI($aParams)
     {
         $aParams = http_build_query(array_map('urlencode', $aParams));
-        $url = self::TUMBLR_API . '?' . $aParams;
+        $url = self::TUMBLR_API . '?' . $aParams . '&cache_bust=' . md5(time());
         $json = file_get_contents($url);
         return self::parseJSON($json);
     }
