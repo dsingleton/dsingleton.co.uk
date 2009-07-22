@@ -24,9 +24,9 @@ $feed = array('url' => '/feed/blog.rss');
 ?>
 <?php require_once './_inc/header.inc.php'; ?>
 
-<p style="padding: 10px 0 0;">See also, other recent <a href="/blog">blog posts</a>.</p>
-
 <?php if ($action == 'view') { ?>
+
+        <p style="padding: 10px 0 0;">See also, other recent <a href="/blog">blog posts</a>.</p>
 
         <h3><?php h($oPost->getTitle()); ?></h3>
         <?php echo $oPost->getBody(); ?>
