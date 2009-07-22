@@ -11,9 +11,7 @@
  <meta name="author" content="David Singleton" />
 
  <link rel="openid.server" href="http://www.myopenid.com/server" />
-
  <link rel="openid.delegate" href="http://dsingleton.myopenid.com/" />
- 
  <meta http-equiv="X-XRDS-Location" content="http://dsingleton.myopenid.com/xrds" />
  
  <link rel="stylesheet" href="/static/css/harmonise.css" type="text/css" charset="utf-8" />
@@ -21,6 +19,8 @@
  <?php if (isset($feed)) { ?>
  <link href="<?php h($feed['url']); ?>" rel="alternate" type="application/rss+xml" title="<? h($title); ?>" />
  <?php } ?>
+ 
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6/prototype.js"></script>
  
 </head>
 
