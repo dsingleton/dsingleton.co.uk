@@ -1,17 +1,29 @@
 <?php
 
-function h($h)
+/** Utility */
+
+function html_escape($html)
 {
-    if ($args = func_get_args()) {
-        $h = vsprintf(array_shift($args), $args);
-    }
-    echo htmlentities($h, ENT_COMPAT, 'UTF-8');
+    return htmlentities($html, ENT_COMPAT, 'UTF-8');
 }
 
-function send404($message = null)
+function html_array2attr(array $aParams)
 {
-     header("HTTP/1.0 404 Not Found");
-     die($message);
+    $params = '';
+    foreach($aParams as $attr => $val) {
+        $params .= sprintf(' %s="%s"', $attr, html_escape($val));
+    }
+    return $params;
+}
+
+/** Template functions */
+
+function h($html)
+{
+    if ($args = func_get_args()) {
+        $html = vsprintf(array_shift($args), $args);
+    }
+    echo html_escape($html);
 }
 
 function d($date, $format = 'l F j, Y')
@@ -23,4 +35,15 @@ function d($date, $format = 'l F j, Y')
         $timestamp = strtotime($date);
     }
     echo h(date($format, $timestamp));
+}
+
+function l($url, $name = array(), $aParams = array())
+{
+    if ($url instanceof iLinkable) {
+        $oLinkable = $url;
+        list($url, $name, $aParams) = array($oLinkable->getURL(), $oLinkable->getTitle(), $name);
+    }
+    
+    $params = html_array2attr($aParams);
+    printf('<a href="%s"%s>%s</a>', html_escape($url), $params, html_escape($name));
 }
