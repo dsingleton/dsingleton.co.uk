@@ -1,7 +1,7 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/code/_resources/main.php' ?>
+<?php require_once '../../../init.php'; ?>
 <?php 
 $icons = glob('icons/*.png');
-// $icons = array_slice($icons, 0, 100);
+$icons = array_slice($icons, 0, 100);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
