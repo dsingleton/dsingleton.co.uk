@@ -1,7 +1,7 @@
 <?php require_once '../init.php'; ?>
 <?php
 
-header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
+http_404();
 
 @list(, $controller, $slug) = explode('/', urldecode($_SERVER['REQUEST_URI']));
 

@@ -15,11 +15,13 @@ else {
 }
 
 if (!in_array($page, $aSupportedPages)) {
-    send404('Invalid feed');
+    http_404();
+    die('Invalid feed');
 }
 
 if (!in_array($format, $aSupportedFormats)) {
-    send404('Invalid feed format');
+    http_404();
+    die('Invalid feed format');
 }
 
 $pageURL = 'http://' . $_SERVER['HTTP_HOST'] . '/' . $page;
