@@ -1,0 +1,65 @@
+/** 1 Col */
+
+div.l-1col div.primary {
+    width: auto;
+}
+	
+
+/** 2 Col */
+
+div.l-2col {
+    float: left;
+    width: 100%;
+    clear: both;
+}
+
+div.l-2col div.primary {
+    float: left;
+    width: 47%;
+}
+
+div.l-2col div.secondary {
+    float: right;
+    width: 47%;
+}
+
+/** 2 Col */
+
+div.l-rcol {
+    float: left;
+    width: 100%;
+    clear: both;
+}
+
+div.l-rcol div.primary {
+    float: left;
+    width: 63%;
+}
+
+div.l-rcol div.secondary {
+    float: right;
+    width: 33.8%;
+}
+
+
+/** 3 Col */
+
+div.l-3col {
+    float: left;
+    width: 100%;
+    clear: both;
+}
+
+div.l-3col div.primary,
+div.l-3col div.secondary {
+    float: left;
+    margin-right: 5%;
+    padding: 0;	
+    width: 30%;
+}
+
+div.l-3col div.tertiary {
+    width: 30%;
+    float: right;
+    margin-right: 0;
+}
