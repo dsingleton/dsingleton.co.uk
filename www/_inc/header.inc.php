@@ -16,6 +16,8 @@
  
  <link rel="stylesheet" href="/static/css/harmonise.css" type="text/css" charset="utf-8" />
  <link rel="stylesheet" href="/static/css/default.css" type="text/css" charset="utf-8" />
+ <link rel="stylesheet" href="/static/css/columns.css" type="text/css" charset="utf-8" />
+ 
  <?php if (isset($feed)) { ?>
  <link href="<?php h($feed['url']); ?>" rel="alternate" type="application/rss+xml" title="<? h($title); ?>" />
  <?php } ?>
