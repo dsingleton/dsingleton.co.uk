@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<profile id="9958" cluster="2" username="bob">
-    <url>http://www.last.fm/user/bob/</url>
-                <mbox_sha1sum>e3d416c3b8aa97b3c3d0fabacb4c2ebb8672fccc</mbox_sha1sum>
-                <registered unixtime="1057968000">Jul 12, 2003</registered>
-                            <playcount>0</playcount>
-                <avatar>http://panther1.last.fm/depth/catalogue/noimage/nouser_140px.jpg</avatar>
-                    <icon>http://panther1.last.fm/depth/global/icon_user.gif</icon>
-    </profile>
