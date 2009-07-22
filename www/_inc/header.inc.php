@@ -38,6 +38,8 @@
                   living in <span class="adr"><span class="locality"><a href="/tag/london">London</a></span>.
               </span>
           </p>
+          <!-- @CSS -->
+          <!-- <p style="margin-top: -23px; font-size: 0.38em;">I write a <a href="/blog">blog</a>, collect and <a href="/tag">tag things</a> and write <a href="/code">code</a></p> -->
     </div>
     
     <div id="content">
