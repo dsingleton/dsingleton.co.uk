@@ -53,7 +53,7 @@ $feed = array('url' => '/feed/blog.rss');
             
             <p class="post-info">
                 Written on 
-                <span class="published" title="<?php d($oPost->getDate(), 'c'); ?>"><?php d($oPost->getDate()); ?></span>
+                <abbr class="published" title="<?php d($oPost->getDate(), 'c'); ?>"><?php d($oPost->getDate()); ?></abbr>
                 | By
                 <span class="vcard"><a class="url fn" href="/">David Singleton</a></span>
             </p>
