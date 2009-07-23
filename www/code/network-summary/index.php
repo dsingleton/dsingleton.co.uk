@@ -1,9 +1,10 @@
+<?php require '../../../init.php'; ?>
+    
 <?php
 
-require_once '../_resources/main.php';
 require_once 'DeliciousNetwork.class.php';
 
-if (!$user = $_GET['user']) {
+if (@!$user = $_GET['user']) {
     $user = "dsingleton";
 }
 
@@ -15,47 +16,34 @@ $aAuthors = $oNetwork->getTopAuthors(10);
 // $aDomains = $oNetwork->getTopDomains(10);
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <title>Delicious Network Summary</title>
-    <link rel="stylesheet" href="../_static/css/text.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/css/structure.css" type="text/css" />
+<?php require '../../_inc/header.inc.php'; ?>
     
-    <style>
-        ol {
-            list-style-type: decimal;
-        }
-    </style>
-  </head>
-
-  <body class="l-3col">
-      
-    <h1>Delicious Network Summary</h1>
-    <p>For <a href=""><?= h($oNetwork->getUser())?></a> from X friends</p>
+    <h2>Delicious Network Summary</h2>
+    <p>
+        What have <?php l('http://delicious.com/' . $oNetwork->getUser(), $oNetwork->getUser()); ?>'s friends been bookmarking? 
+        (all <?php echo count($oNetwork->getTopAuthors()); ?> of them)
+    </p>
     
-    <div class="">
+    <div>
         <h2>Top Bookmarks</h2>
         <ol>
             <? foreach($aLinks as $link => $count): ?>
             <li>
-                <a href=""><?= h($link); ?></a>
+                <?php l($link, $link); ?>
                 <small>(saved <?= $count; ?> times)</small>
             </li>
             <? endforeach; ?>
         </ol>
     </div>
     
+<div class="l-3col">
     <div class="primary content">
         <h2>Top Domains</h2>
         <ol>
             <? foreach($aLinks as $link => $count): ?>
             <li>
-                <a href=""><?= h($link); ?></a>
-                <small>(saved <?= $count; ?> times)</small>
+                <?php l('http://' . parse_url($link, PHP_URL_HOST), parse_url($link, PHP_URL_HOST)); ?>
+                <small>(<?= $count; ?>&nbsp;times)</small>
             </li>
             <? endforeach; ?>
         </ol>
@@ -66,8 +54,8 @@ $aAuthors = $oNetwork->getTopAuthors(10);
         <ol>
             <? foreach($aAuthors as $author => $count): ?>
             <li>
-                <a href=""><?= h($author); ?></a>
-                <small>(saved <?= $count; ?> items)</small>
+                <?php l('http://delicious.com/' . $author, $author); ?>
+                <small>(<?= $count; ?>&nbsp;items)</small>
             </li>
             <? endforeach; ?>
         </ol>
@@ -80,14 +68,11 @@ $aAuthors = $oNetwork->getTopAuthors(10);
             <? foreach($aTags as $tag => $count): ?>
             <li>
                 <a href=""><?= h($tag); ?></a>
-                <small>(used <?= $count; ?> times)</small>
+                <small>(<?= $count; ?>&nbsp;uses)</small>
             </li>
             <? endforeach; ?>
         </ol>
-
     </div>
-
-    <a href="/code" id="morelink">More Code</a>
-
-  </body>
-</html>
+</div>
+    
+<?php require '../../_inc/footer.inc.php'; ?>
