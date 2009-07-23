@@ -1,3 +1,4 @@
+<?php require_once '../../../init.php'; ?>
 <?php
 
 // To Do:
@@ -12,24 +13,21 @@ require_once 'php/caching.php';
 require_once 'php/SimpleXSLT.class.php';
 
 $user = $_GET['user'];
-$user_avatar = get_user_thumbnail($user);
-$user_exists = (bool) $user_avatar;
-
-if ($user_exists) {
-	$user_tagcloud = get_tagcloud_html($user);
+$user_exists = false;
+if ($user) {
+    // $user_tagcloud = get_tagcloud_html($user);
 }
 
-$user_escaped = htmlentities($user);
-
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Last.fm Weekly Artist Tag Cloud</title>
-	<link rel="stylesheet" type="text/css" href="style.css" />
-</head>
-<body>
+<?php require_once '../../_inc/header.inc.php'; ?>
+	
+	<style type="text/css">
+        
+        #page {
+            width: 100%;
+        }
+        
+	</style>
 	
 	<div id="container">
 		
@@ -66,8 +64,4 @@ $user_escaped = htmlentities($user);
 	
 	</div>
 	
-	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
-	<script type="text/javascript">_uacct = "UA-609105-1"; urchinTracker();</script>
-	
-</body>
-</html>
+<?php require_once '../../_inc/footer.inc.php'; ?>
