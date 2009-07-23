@@ -1,3 +1,4 @@
+<?php require '../../../init.php'; ?>
 <?php
 
 /*
@@ -32,14 +33,14 @@ class ReadingList
 
             $link = array();
             foreach (array('title', 'link', 'description') as $field) {
-                $link[$field] = $item->getElementsByTagName($field)->item(0)->nodeValue;
+                $link[$field] = @$item->getElementsByTagName($field)->item(0)->nodeValue;
             }
             $tags = array_flip(explode(' ', $item->getElementsByTagName('subject')->item(0)->nodeValue));
             $tags = array_flip($tags);
 
             foreach($tags as $k => $t) {
                 if ($t == $this->config['tag']) unset($tags[$k]);
-                else $this->tags[$t]++;
+                else @$this->tags[$t]++;
             }
 
             $link['tags'] = $tags;
@@ -130,9 +131,6 @@ switch (@$_GET['action']) {
         $tags = $readingList->getTags();
     break;
 }
-
-
-function h($str) { echo htmlentities($str); }
 
 ?>
 
