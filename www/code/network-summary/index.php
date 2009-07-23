@@ -10,9 +10,10 @@ if (@!$user = $_GET['user']) {
 
 $oNetwork = new DeliciousNetwork($user);
 
-$aLinks = $oNetwork->getTopLinks();
-$aTags = $oNetwork->getTopTags();
-$aAuthors = $oNetwork->getTopAuthors(10);
+$aLinks = $oNetwork->getTopLinks(5);
+
+$aTags = $oNetwork->getTopTags(5);
+$aAuthors = $oNetwork->getTopAuthors(5);
 // $aDomains = $oNetwork->getTopDomains(10);
 
 ?>
