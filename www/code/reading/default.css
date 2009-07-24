@@ -6,14 +6,15 @@ h1 {
     border-bottom: 6px solid #333;
 }
 
-h1 a {
+h2 a {
 	color: #fff;
 	text-decoration: none;
+	vertical-align: middle;
 }
 
-h1 a img {
+h2 a img {
 	position: relative;
-	top: 3px;
+	top: 11px;
 	margin-right: 5px;
 	border: 1px solid #999;
 }

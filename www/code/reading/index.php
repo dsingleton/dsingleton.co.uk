@@ -132,37 +132,24 @@ switch (@$_GET['action']) {
     break;
 }
 
+$title = "Reading List";
+$extra_css = array('default.css');
+
 ?>
+<?php require '../../_inc/header.inc.php'; ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-        <title>Reading List</title>
+    <body>
         
-        <link rel="stylesheet" href="/code/_static/css/text.css" type="text/css" />
-        <link rel="stylesheet" href="/code/_static/css/structure.css" type="text/css" />
-        
-        <link rel="stylesheet" href="default.css" type="text/css" />
-        
-        <link rel="alternate" type="application/rss+xml" href="<?php h($readingList->feed) ?>" />
-        
-        <script type="text/javascript" src="/_assets/js/jquery.js"></script>
-        <script type="text/javascript" src="default.js"></script>
-        
-    </head>
-    <body class="l-2col">
-        
-        <h1>
+        <h2>
             <a href="http://del.icio.us/<?php h($readingList->getUser()); ?>">
                 <img height="32" src="http://dsingleton.co.uk/code/grabicon/?url=del.icio.us" />
                 Reading List
             </a>
-        </h1>
-      
+        </h2>
+        
+      <div class="l-rcol">
         <div class="primary content toread">
-            <h2>To Read</h2>
+            <h3>To Read</h3>
             <ol>
             <?php foreach($links as $link) { ?>
                 
@@ -171,10 +158,6 @@ switch (@$_GET['action']) {
                     
                     <a class="deliciousEdit manage" href="http://del.icio.us/dsingleton/?url=<?php h(urlencode($link['link'])) ?>&amp;">
                         <img src="http://dsingleton.co.uk/code/grabicon/?url=del.icio.us" alt="Edit on del.icio.us" />
-                    </a>
-                    
-                    <a class="markRead manage" href="?action=remove&amp;url=<?php h(urlencode($link['link'])) ?>">
-                        <img src="http://dsingleton.co.uk/_assets/img/icons/famfamfam/tick.png" alt="Mark read" />
                     </a>
                     
                     
@@ -196,7 +179,7 @@ switch (@$_GET['action']) {
         </div>
         
         <div class="secondary content tagUsage">
-            <h2>Tags</h2>
+            <h3>Tags</h3>
             <?php if ($tags) { ?>
                 
             <ul class="tags">
@@ -209,6 +192,5 @@ switch (@$_GET['action']) {
             <?php } ?>
             
         </div>
-        
-    </body>
-</html>
+    </div>
+<?php require '../../_inc/footer.inc.php'; ?>
