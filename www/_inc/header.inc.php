@@ -17,12 +17,24 @@
  <link rel="stylesheet" href="/static/css/harmonise.css" type="text/css" charset="utf-8" />
  <link rel="stylesheet" href="/static/css/default.css" type="text/css" charset="utf-8" />
  <link rel="stylesheet" href="/static/css/columns.css" type="text/css" charset="utf-8" />
+
+ <?php if (isset($extra_css)) { ?>
+ <?php foreach($extra_css as $path) { ?>
+ <link rel="stylesheet" href="<?php h($path); ?>" type="text/css" />
+ <?php } ?>
+ <?php } ?>
+ 
+ <?php if (isset($extra_js)) { ?>
+ <?php foreach($extra_js as $path) { ?>
+ <script type="text/javascript" src="<?php h($path); ?>"></script>
+ <?php } ?>
+ <?php } ?>
  
  <?php if (isset($feed)) { ?>
  <link href="<?php h($feed['url']); ?>" rel="alternate" type="application/rss+xml" title="<? h($title); ?>" />
  <?php } ?>
  
- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6/prototype.js"></script>
+ <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6/prototype.js"></script> -->
  
 </head>
 
@@ -41,8 +53,7 @@
               </span>
           </p>
           
-          <!-- @CSS -->
-          <p style="margin-top: -23px; font-size: 0.38em;">I write a <a href="/blog">blog</a>, collect and <a href="/tag">tag things</a> and write <a href="/code">code</a>. Follow me on <a href="http://twitter.com/dsingleton">twitter</a>. Go on.</p>
+          <p class="tagline">I write a <a href="/blog">blog</a>, collect and <a href="/tag">tag things</a> and write <a href="/code">code</a>. Follow me on <a href="http://twitter.com/dsingleton">twitter</a>. Go on.</p>
           
     </div>
     
