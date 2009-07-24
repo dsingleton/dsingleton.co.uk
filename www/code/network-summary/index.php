@@ -1,5 +1,4 @@
 <?php require '../../../init.php'; ?>
-    
 <?php
 
 require_once 'DeliciousNetwork.class.php';
