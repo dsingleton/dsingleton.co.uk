@@ -24,6 +24,11 @@ body {
     margin-bottom: 1em;
 }
 
+#header p.tagline {
+    margin-top: -23px;
+    font-size: 0.38em;
+}
+
 #header a.fn {
     font-size: 1.5em;
 }
