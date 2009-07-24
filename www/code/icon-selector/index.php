@@ -1,30 +1,27 @@
 <?php require_once '../../../init.php'; ?>
 <?php 
+
 $icons = glob('icons/*.png');
-$icons = array_slice($icons, 0, 100);
+// $icons = array_slice($icons, 0, 100);
+
+$title = "Icon Selector";
+$extra_css = array('icons.css', '/static/css/slim.css');
+$extra_js = array('/static/js/jquery.js', 'icons.js');
+
 ?>
+<?php require '../../_inc/header.inc.php'; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <title>Icon Selector</title>
-	<link rel="stylesheet" href="/code/_static/css/text.css" type="text/css" />
-	<link rel="stylesheet" href="/code/_static/css/structure.css" type="text/css" />
-	<link rel="stylesheet" href="icons.css" type="text/css" />
-	
-	<script type="text/javascript" src="/code/_static/js/jquery.js"></script>
-	<script type="text/javascript" src="icons.js"></script>
-  </head>
-
-  <body class="l-flex">
-	
-	<h1>Silk Icons</h1>
-	<p class="tagline">by <a href="http://www.famfamfam.com/">FamFamFam</a></p>
-	
-	<div class="primary">
-
+    <div class="l-3col">
+        <div class="primary">
+        	<h1>Icon Selector</h1>
+        	<p class="tagline">For the <a href="http://www.famfamfam.com/">Silk Icon</a> set, <a href="/blog/fun-with-famfamfam-icons-and-jquery">find out more</a></p>
+        </div>
+    </div>
+    
+	<div id="iconSelector">
 		<ol class="icons">
 <?php foreach($icons as $file) { ?>
 			<li>
@@ -36,10 +33,5 @@ $icons = array_slice($icons, 0, 100);
 		</ol>
 	</div>
 	
-	<a href="/code/" id="morelink">More Code</a>
-	
-	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
-	<script type="text/javascript">_uacct = "UA-609105-1"; urchinTracker();</script>
-	
-  </body>
-</html>
+		
+<?php require '../../_inc/footer.inc.php'; ?>

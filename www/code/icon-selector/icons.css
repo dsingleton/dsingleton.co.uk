@@ -1,41 +1,9 @@
 
-/** Page */		
-
-h1 {
-	margin: 0;
-}
-
-p.tagline { 
-	float: left;
-	position: relative;
-	left: 110px;
-	top: -6px;
-	font-size: 90%;
-	color: #888;
-	margin: 0;
-}
-
-p.tagline a { 
-	color: #3168a8;
-}
-
-div.primary {
-	float: left;
-}
-
 /** Filter */
 .filter {
-	position: absolute;
-	top: 2.5em;
-	left: 34%;
-	width: 30%;
-	margin: 0;
-	text-align: right;
 }
 
 .filter h2 {
-	display: inline;
-	margin-right: .5em;
 }
 
 .filter input {
@@ -46,21 +14,15 @@ div.primary {
 
 /** Preview */
 .preview {
-	position: absolute;
-	top: .91em;
-	left: 70%;
-	width: 25%;
 
 }
 
 .preview h2 {
-	float: right;
-	position: relative;
-	right: 85px;
+    margin-left: 60px;
 }
 .preview #preview {
-	float: right;
 	height: 64px;
+	float: left;
 	width: 64px;
 	padding: 4px;
 	border: 1px solid #ddd;
@@ -69,7 +31,8 @@ div.primary {
 	color: #555;
 	
 	position: relative;
-	left: 80px;
+	left: 180px;
+	top: -30px;
 }
 
 /** Icons */
@@ -86,6 +49,10 @@ ol li {
 	padding: 0 3px 0 0;
 }
 
+ol li a:hover {
+    background: none;
+}
+
 ol li img {
 	border: 1px solid #eee;
 	padding: 2px;
@@ -93,6 +60,7 @@ ol li img {
 	height: 16px;
 }
 
-a#morelink {
-	margin-right: 5px;
+ol li a:hover img {
+     border: 1px solid #0063DC;
+     background: #eee;   
 }

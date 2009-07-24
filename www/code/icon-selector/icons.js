@@ -1,22 +1,26 @@
 
 $(document).ready(function() {
-		
+	
+	// Add Form
+	$('div.primary').after(
+		'<div class="secondary"> \
+		    <form action="" class="filter" autocomplete="off"> \
+			    <h2><label for="search">Filter</label></h2> \
+			    <input type="text" class="text" name="search" id="search" /> \
+		    </form> \
+		</div>'
+	);
+	
 	// Add preview 
-	$('div.primary').before(
-		'<div class="preview"> \
+	$('div.secondary').after(
+		'<div class="tertiary preview"> \
 			<h2>Preview</h2> \
-			<img id="preview" alt="Hover on an icon for a preview " /> \
+			<img id="preview" alt="Hover on icon " /> \
 		</div>'
 	);
 	$('.preview').hide().fadeIn(1500);
 	
-	// Add Form
-	$('div.primary').before(
-		'<form action="" class="filter" autocomplete="off"> \
-			<h2><label for="search">Filter</label></h2> \
-			<input type="text" class="text" name="search" id="search" /> \
-		</form>'
-	);
+
 	$('.filter').hide().fadeIn(1500);
 	
 	// All the icons, we'll be using this a lot
