@@ -6,21 +6,51 @@
 @list(, $page, $tag, $source) = explode('/', urldecode($_SERVER['REQUEST_URI']));
 $source = substr($source, 1);
 
-$oTag = new Tag($tag);
+if ($tag) {
+    
+    $oTag = new Tag($tag);
 
-if ($source) {
-    $list = $oTag->getItemsBySource($source);
+    if ($source) {
+        $list = $oTag->getItemsBySource($source);
+    }
+    else {
+        $list = $oTag->getRecentItems();
+    }
+    
+    $title = 'Tagged ' . $oTag->getTitle();
+    $feed = array('url' => '/feed/tag/' . $oTag->getSlug() . '.rss');
 }
 else {
-    $list = $oTag->getRecentItems();
+    $title = "Tags";
 }
-
-$title = 'Tagged ' . $oTag->getTitle();
-$feed = array('url' => '/feed/tag/' . $oTag->getSlug() . '.rss');
 
 ?>
 <?php require_once '_inc/header.inc.php'; ?>
 
+    <?php if (!$tag) { ?>
+
+    <h1>
+        My life in tags
+    </h1>
+    
+    <p>Mostly of the sites I use daily give me the option to tag content, particuarly my bookmarks and photos, even Twitter has some explicit tagging (hash tags).</p>
+    
+    <p>This site takes content from each of those sites and filters it by tag, that mean if you visit my <a href="/tag/design">design</a> tag page, you'll get content form those sites that i've tagged design.</p>
+    
+    <p>These are some bundles (in <a href="http://delicious.com">delicious</a> terms) of grouped/related of the more common tags I use.</p>
+    
+    <h2>Front End Development &amp; Design</h2>
+    <p><a href="/tag/webdev">Web Development</a>, <a href="/tag/php">PHP</a>, <a href="/tag/css">CSS</a>, <a href="/tag/javascript">Javascript</a>, <a href="/tag/html">HTML</a>, <a href="/tag/html5">HTML5</a>, <a href="/tag/standards">Standards</a>, <a href="/tag/browser">Browsers</a>, <a href="/tag/flash">Flash</a></p>
+        
+    <h2>Back End Development</h2>
+    <p><a href="/tag/php">PHP</a>, <a href="/tag/mysql">MySQL</a>, <a href="/tag/python">Python</a>, <a href="/tag/scalability">Scalability</a>, <a href="/tag/testing">Testing</a>, <a href="/tag/apache">Apache</a>, <a href="/tag/hacking">Hacking</a>, <a href="/tag/unix">Unix</a>, <a href="/tag/bash">Bash</a>, <a href="/tag/sqlite">SQLite</a>, <a href="/tag/Git">Git</a></p>
+    
+    <h2>London</h2>
+    <p>
+        <a href="/tag/london">London</a>, <a href="/tag/thingstodo">Things to do</a>, <a href="/tag/lastfm">Last.fm</a>, <a href="/tag/shoreditch">Shoreditch</a>, <a href="/tag/pubstandards">Pub Standards</a>, <a href="/tag/music">Music</a>, <a href="/tag/history">History</a>, <a href="/tag/hackney">Hackney</a>, <a href="/tag/transport">Transport</a>.
+    </p>
+
+    <?php } else { ?>
     <h2>
         Things I've tagged &ldquo;<?php h($oTag->getTitle()); ?>&rdquo;
         <?php if ($source) { ?> 
@@ -31,7 +61,7 @@ $feed = array('url' => '/feed/tag/' . $oTag->getSlug() . '.rss');
             <span style="font-weight: normal">(<?php h('%s things', count($list)); ?>)</span>
         <?php ?>
     </h2>
-       
+    
     <ul class="hfeed">
         <?php foreach ($list as $oItem) { ?>
         <!-- @CSS -->
@@ -70,5 +100,7 @@ $feed = array('url' => '/feed/tag/' . $oTag->getSlug() . '.rss');
             <p>Nothing found for that tag</p>
         <?php } ?>
     </ul>
+    
+    <?php } ?>
     
 <?php require_once '_inc/footer.inc.php'; ?>
