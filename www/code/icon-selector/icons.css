@@ -28,7 +28,7 @@
 	border: 1px solid #ddd;
 	text-align: center;
 	vertical-align: bottom;
-	color: #555;
+	color: #ccc;
 	
 	position: relative;
 	left: 180px;
@@ -36,6 +36,13 @@
 }
 
 /** Icons */
+
+div#iconSelector {
+    float: left;
+    width: 100%;
+    padding: 0 0 40px 0;
+}
+
 ol {
 	margin: 1em 0 2em;
 	padding: 20px 0 4em;
@@ -46,7 +53,12 @@ ol li {
 	display: inline;
 	float: left;
 	margin: 0;
-	padding: 0 3px 0 0;
+}
+
+ol li a {
+    display: block;
+    float: left;
+    padding: 2px;
 }
 
 ol li a:hover {
@@ -58,6 +70,7 @@ ol li img {
 	padding: 2px;
 	width: 16px;
 	height: 16px;
+	float: left;
 }
 
 ol li a:hover img {
