@@ -20,7 +20,7 @@ $aAuthors = $oNetwork->getTopAuthors(5);
     
     <h2>Delicious Network Summary</h2>
     <p>
-        What have <?php l('http://delicious.com/' . $oNetwork->getUser(), $oNetwork->getUser()); ?>'s friends been bookmarking? 
+        What have <?php l('http://delicious.com/' . $oNetwork->getUser(), $oNetwork->getUser()); ?>'s friends been bookmarking recently? 
         (all <?php echo count($oNetwork->getTopAuthors()); ?> of them)
     </p>
     
@@ -67,7 +67,7 @@ $aAuthors = $oNetwork->getTopAuthors(5);
         <ol>
             <? foreach($aTags as $tag => $count): ?>
             <li>
-                <a href=""><?= h($tag); ?></a>
+                <a href="http://delicious.com/network/dsingleton/<?= h($tag); ?>"><?= h($tag); ?></a>
                 <small>(<?= $count; ?>&nbsp;uses)</small>
             </li>
             <? endforeach; ?>
