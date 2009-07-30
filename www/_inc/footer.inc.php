@@ -17,7 +17,7 @@
      
  </div>
 
-<?php require_once dirname(__FILE__) . '/analytics.html' ?>
+<?php require_once dirname(__FILE__) . '/analytics.php' ?>
  
 </body>
 </html>
