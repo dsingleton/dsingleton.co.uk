@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head profile="http://gmpg.org/xfn/11">
  <title><?php h((isset($title) ? $title : 'Home') . ' - David Singleton'); ?></title>
  
- <meta http-equiv="Content-Type" content="utf-8" /> 
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
  <meta name="description" content="The blog of David Singleton, Ramblings of a Web Developer" />
  <meta name="keywords" content="david singleton, dave singleton, web developer, london, css, php, lamp, mysql, unix, programming, web standards, coding, microformats, web sites, angry rants" />
  <meta name="robots" content="index, follow" />
@@ -14,9 +14,9 @@
  <link rel="openid.delegate" href="http://dsingleton.myopenid.com/" />
  <meta http-equiv="X-XRDS-Location" content="http://dsingleton.myopenid.com/xrds" />
  
- <link rel="stylesheet" href="/static/css/harmonise.css" type="text/css" charset="utf-8" />
- <link rel="stylesheet" href="/static/css/default.css" type="text/css" charset="utf-8" />
- <link rel="stylesheet" href="/static/css/columns.css" type="text/css" charset="utf-8" />
+ <link rel="stylesheet" href="/static/css/harmonise.css" type="text/css" />
+ <link rel="stylesheet" href="/static/css/default.css" type="text/css" />
+ <link rel="stylesheet" href="/static/css/columns.css" type="text/css" />
 
  <?php if (isset($extra_css)) { ?>
  <?php foreach($extra_css as $path) { ?>
