@@ -1,3 +1,4 @@
+<?php include '../../../init.php'; ?>
 <?php
 
 /*    
@@ -25,7 +26,6 @@
 date_default_timezone_set("Europe/London");
 //error_reporting(0);
 
-function h($h) { echo htmlentities($h); }
 function ifnull($what, $else) { return $what ? $what : $else; }
 
 $socialGraphAPI = "http://socialgraph.apis.google.com/lookup?q=%s&fme=1&pretty=1";
