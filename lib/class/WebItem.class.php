@@ -13,6 +13,8 @@ class WebItem implements iWebItem
     
     public function getTitle()
     {
+        var_dump($this);
+        die;
         return $this->title;
     }
 
@@ -23,7 +25,13 @@ class WebItem implements iWebItem
     
     public function getURL()
     {
-        return $this->link;
+        switch ($this->getSourceDomain()) {
+            case 'dsingleton.tumblr.com':
+            
+            default:
+                return $this->link;
+            break;
+        }
     }
     
     public function getExtract()
@@ -39,6 +47,16 @@ class WebItem implements iWebItem
     public function getTags()
     {
         return $this->tags;
+    }
+    
+    public function getSourceURL()
+    {
+        return $this->link;
+    }
+    
+    public function getSourceDomain()
+    {
+        return parse_url($this->link, PHP_URL_HOST);
     }
 }
 
