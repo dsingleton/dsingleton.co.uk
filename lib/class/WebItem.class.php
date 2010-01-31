@@ -13,8 +13,6 @@ class WebItem implements iWebItem
     
     public function getTitle()
     {
-        var_dump($this);
-        die;
         return $this->title;
     }
 
