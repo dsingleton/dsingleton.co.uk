@@ -1,11 +1,13 @@
 <?php
 
-function parse_rss($url) {
+function parse_rss($url, $xml = null) {
 
     $list = array();
     
-    if (!$xml = @file_get_contents($url)) {
-        return $list;
+    if (!$xml) {
+        if (!$xml = @file_get_contents($url)) {
+            return $list;
+        }
     }
     
     $rss = new DOMDocument();

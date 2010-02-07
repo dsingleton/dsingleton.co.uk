@@ -6,7 +6,7 @@ class TumblrPost implements iWebItem
     
     public static function getRecent($limit = 20)
     {
-        $oPosts = self::callAPI(array('num' => $limit, 'type' => 'regular'));
+        $oPosts = self::callAPI(array('num' => $limit, 'type' => 'regular'), 60 * 60);
         $aPosts = array();
         
         foreach($oPosts->posts as $oPost) {
@@ -57,12 +57,23 @@ class TumblrPost implements iWebItem
         return isset($aMap[$slug]) ? $aMap[$slug] : false;
     }
     
-    protected static function callAPI($aParams)
+    protected static function callAPI($aParams, $timeout = 86400) 
     {
         $aParams = http_build_query(array_map('urlencode', $aParams));
-        $url = self::TUMBLR_API . '?' . $aParams . '&cache_bust=' . md5(time());
-        $json = file_get_contents($url);
-        return self::parseJSON($json);
+
+        $oCache = Cache::instance();
+        $key = "tumblr:api:{$aParams}";
+
+        if (!$oResult = $oCache->get($key)) {
+            $url = self::TUMBLR_API . '?' . $aParams . '&cache_bust=' . md5(time());
+            $json = file_get_contents($url);
+            $oResult = self::parseJSON($json);
+            if ($oResult->posts) {
+                $oCache->set($key, $oResult, $timeout);
+            }
+        }
+
+        return $oResult;
     }
     
     protected static function parseJSON($json)

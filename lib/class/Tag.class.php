@@ -35,12 +35,27 @@ class Tag
         $aItems = array();
         
         foreach($aFeeds as $feed => $url) {
-            $remoteList = parse_rss($url);
+            $remoteList = parse_rss(false, $this->fetchFeedXML($url));
             $aItems = $aItems + $remoteList;
         }
 
         krsort($aItems);
         return $aItems;
+    }
+    
+    public function fetchFeedXML($url)
+    {
+        $oCache = Cache::instance();
+        $key = "tag:feed:{$url}";
+        
+        if (!$xml = $oCache->get($key)) {
+            $xml = file_get_contents($url);
+            if (trim($xml)) {
+                $oCache->set($key, $xml, 60 * 60 * 2);
+            }
+        }
+        
+        return $xml;
     }
     
     public function getItemsBySource($source, $limit = 25)
@@ -51,7 +66,7 @@ class Tag
             return array();
         }
         
-        return parse_rss($aFeeds[$source]);
+        return parse_rss(false, $this->fetchFeedXML($aFeeds[$source]));
     }
     
     public function getTitle()
