@@ -51,7 +51,7 @@ class TumblrPost implements iWebItem
     {
         $aMap = array(
             'sxsw-day-two' => 144913919,
-            '' => 0,
+            'lastfm-vs-xbox-dibi-conference' => 577578854,
             'open-tech-2009' => 140265426
         );
         return isset($aMap[$slug]) ? $aMap[$slug] : false;
@@ -66,6 +66,7 @@ class TumblrPost implements iWebItem
 
         if (!$oResult = $oCache->get($key)) {
             $url = self::TUMBLR_API . '?' . $aParams . '&cache_bust=' . md5(time());
+
             $json = file_get_contents($url);
             $oResult = self::parseJSON($json);
             if ($oResult->posts) {
