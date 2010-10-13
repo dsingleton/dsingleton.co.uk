@@ -1,3 +1,4 @@
+<!-- a -->
 <?php require_once '../init.php'; ?>
 <?php
 
@@ -5,8 +6,8 @@ $aRecentPosts = TumblrPost::getRecent(3);
 
 ?>
 <?php require_once './_inc/header.inc.php'; ?>
-
-        <h3>About</h3>
+    <article>
+        <h2>About</h2>
         <p>
             Check out my <a href="/about/cv/">CV</a> (recently updated) for more about my skills and work history. Working on something interesting? Let me know. Or take a look at my "elsewhere" links to learn a bit more about me personally.
         </p>
@@ -26,7 +27,7 @@ $aRecentPosts = TumblrPost::getRecent(3);
 
         <p>You can contact me via <em>[my first name]</em>@<em>[this domain]</em>. No spam please.</p>
 
-        <h3>Elsewhere online</h3>
+        <h2>Elsewhere online</h2>
         <p>
             I collect <a href="http://del.icio.us/dsingleton/" rel="me">links</a>, 
             take <a href="http://flickr.com/photos/davidsingleton/" rel="me">photos</a>,
@@ -37,5 +38,6 @@ $aRecentPosts = TumblrPost::getRecent(3);
         </p>
 
         <p>There are also some other David Singletons. You might be looking for <a href="http://www.google.com/search?q=david%20singleton%20-dsingleton.co.uk">one of them</a> instead.</p>
+    </article>
 
 <?php require_once './_inc/footer.inc.php'; ?>

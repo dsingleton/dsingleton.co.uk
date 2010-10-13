@@ -6,6 +6,13 @@
 @list(, $page, $tag, $source) = explode('/', urldecode($_SERVER['REQUEST_URI']));
 $source = substr($source, 1);
 
+
+$aBundles = array(
+    'Front End Development & Design' => array('Web Development', 'PHP', 'CSS', 'Javascript', 'HTML', 'HTML5', 'Standards', 'Browsers'),
+    'Back End Development' => array('PHP', 'MySQL', 'Python', 'Ruby', 'NoSQL', 'Scalability', 'Testing', 'Apache', 'Hacking', 'Unix', 'Bash', 'SQLite', 'Git', 'Programming', 'Security'),
+    'London' => array('London', 'Things to do', 'Last.fm', 'Shoreditch', 'Pub Standards', 'Music', 'History', 'Hackney', 'Transport')
+);
+
 if ($tag) {
     
     $oTag = new Tag($tag);
@@ -28,7 +35,7 @@ else {
 <?php require_once '_inc/header.inc.php'; ?>
 
     <?php if (!$tag) { ?>
-
+<article>
     <h1>
         My life in tags
     </h1>
@@ -38,60 +45,70 @@ else {
     <p>This site takes content from each of those sites and filters it by tag, that mean if you visit my <a href="/tag/design">design</a> tag page, you'll get content form those sites that i've tagged design.</p>
     
     <p>These are some bundles (in <a href="http://delicious.com">delicious</a> terms) of grouped/related of the more common tags I use.</p>
-    
-    <h2>Front End Development &amp; Design</h2>
-    <p><a href="/tag/webdev">Web Development</a>, <a href="/tag/php">PHP</a>, <a href="/tag/css">CSS</a>, <a href="/tag/javascript">Javascript</a>, <a href="/tag/html">HTML</a>, <a href="/tag/html5">HTML5</a>, <a href="/tag/standards">Standards</a>, <a href="/tag/browser">Browsers</a>, <a href="/tag/flash">Flash</a></p>
-        
-    <h2>Back End Development</h2>
-    <p><a href="/tag/php">PHP</a>, <a href="/tag/mysql">MySQL</a>, <a href="/tag/python">Python</a>, <a href="/tag/scalability">Scalability</a>, <a href="/tag/testing">Testing</a>, <a href="/tag/apache">Apache</a>, <a href="/tag/hacking">Hacking</a>, <a href="/tag/unix">Unix</a>, <a href="/tag/bash">Bash</a>, <a href="/tag/sqlite">SQLite</a>, <a href="/tag/Git">Git</a></p>
-    
-    <h2>London</h2>
-    <p>
-        <a href="/tag/london">London</a>, <a href="/tag/thingstodo">Things to do</a>, <a href="/tag/lastfm">Last.fm</a>, <a href="/tag/shoreditch">Shoreditch</a>, <a href="/tag/pubstandards">Pub Standards</a>, <a href="/tag/music">Music</a>, <a href="/tag/history">History</a>, <a href="/tag/hackney">Hackney</a>, <a href="/tag/transport">Transport</a>.
-    </p>
-
+    <?php foreach($aBundles as $bundleName => $aTags) { ?>
+        <h2><?php h($bundleName); ?></h2>
+        <ul class="tags">
+            <?php foreach($aTags as $tag) { $oTag = new Tag($tag); ?>
+            <li><a href="<?php h($oTag->getURL()); ?>"><?php h($oTag->getTitle()); ?></a></li>
+            <?php } ?>
+        </ul>
+    <?php } ?>
+</article>
     <?php } else { ?>
-    <h2>
-        Things I've tagged &ldquo;<?php h($oTag->getTitle()); ?>&rdquo;
+
+<article>
+    <h1>
+        <?php h("%s things tagged “%s”", count($list), $oTag->getTitle()); ?>
         <?php if ($source) { ?> 
             from <?php h($source); ?>
         <?php } ?>
-        <?php if ($list) ?>
-            <!-- @CSS -->
-            <span style="font-weight: normal">(<?php h('%s things', count($list)); ?>)</span>
-        <?php ?>
-    </h2>
+    </h1>
     
     <ul class="hfeed">
+        <?php $lastDate = null; ?>
         <?php foreach ($list as $oItem) { ?>
-        <!-- @CSS -->
-        <li class="hentry" style="border-bottom: 1px solid #ccc">
-            <h3>
-                <a href="<?php h($oItem->getURL()); ?>" rel="bookmark" class="entry-title">
-                    <?php h($oItem->getTitle()); ?>
-                </a>
-                &nbsp;
-                <!-- @CSS -->
-                <span class="date" style="font-weight: normal">
-                    (<abbr class="published" title="<?php d($oItem->getDate(), 'c'); ?>"><?php d($oItem->getDate()); ?></abbr>)
-                </span>
-            </h3>
+        <li class="hentry">
+            <hgroup>
+                <?php if ($lastDate != date('d-m-y', $oItem->getDate())) { ?>
+                <h2 class="date">
+                    <abbr class="published" title="<?php d($oItem->getDate(), 'c'); ?>"><?php d($oItem->getDate()); ?></abbr>
+                </h2>
+                <?php 
+                } 
+                $lastDate = date('d-m-y', $oItem->getDate()); ?>
+                <h3>
+                    <a href="<?php h($oItem->getURL()); ?>" rel="bookmark" class="entry-title">
+                        <?php h($oItem->getTitle()); ?>
+                    </a>
+                </h3>
+            </hgroup>
             
-            <?php if ($oItem->getBody() && strip_tags($oItem->getBody())!=$oItem->getTitle()) { ?>
+            <style>
+                a img {
+                    margin: 0pt 15px 15px 0pt;
+                    -moz-transform: rotate(-1deg);
+                    float: left;
+                    border: 1px solid rgb(34, 34, 34);
+                    -moz-box-shadow: 1px 5px 10px rgb(204, 204, 204);
+                    padding: 1px;
+                }
+            </style>
+            
             <p class="entry-content">
-                <?php echo $oItem->getBody(); ?>
+                <?php if ($oItem->getBody() && strip_tags($oItem->getBody())!=$oItem->getTitle()) { ?>
+                    <?php echo $oItem->getBody(); ?>
+                <?php } ?>
             </p>
-            <?php } ?>
             
             <?php if ($oItem->getTags()) { ?>
             <!-- @CSS -->
-            <p class="entry-tags" style="font-size: .8em; margin-top: -1em">
-                Also tagged
-                    <?php foreach($oItem->getTags() as $itemTag) { ?>
-                        <a href="/tag/<?php h($itemTag); ?>"><?php h($itemTag); ?></a>
-                    <?php } ?>
-                </small>
-            </p>
+            <div class="entry-tags tags" style="margin-bottom: 10px; clear: both">
+                <ul>
+                <?php foreach($oItem->getTags() as $itemTag) { ?>
+                    <li><a href="/tag/<?php h($itemTag); ?>"><?php h($itemTag); ?></a></li>
+                <?php } ?>
+                </ul>
+            </div>
             <?php } ?>
         </li>
         <?php } ?>
@@ -100,7 +117,8 @@ else {
             <p>Nothing found for that tag</p>
         <?php } ?>
     </ul>
-    
+</article>
+
     <?php } ?>
     
 <?php require_once '_inc/footer.inc.php'; ?>

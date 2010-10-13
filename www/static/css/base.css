@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 2.5em 0 0;
+    
+    color: #333;
+    background: url("/static/images/grey_to_white.png") repeat-x scroll 0 0 #fff;
+    border-top: 3px solid DodgerBlue;
+}
+
+/** Header */
+#page header p a.name {
+    -moz-border-radius: 3px 3px 3px 3px;
+    -moz-box-shadow: 2px 2px 8px #666666;
+    -moz-transform: rotate(-2deg);
+    background-color: DodgerBlue;
+    color: #FFFFFF;
+    float: left;
+    font-size: 40px;
+    margin: -5px 25px 15px 0;
+    padding: 5px 10px;
+    text-shadow: 2px 2px 3px #666666;
+    text-decoration:  none;
+}
+
+#page {
+    margin: 0 auto;
+    width: 840px;
+    padding-top: 0;
+    padding-bottom: 72px;
+    background: auto;
+    
+    
+    font: 13px/1.6 "Droid Sans", Helvetica, Arial, Sans-Serif;
+}
+
+article {
+    margin: 24px 0;
+    float: left;
+}
+
+header {
+    margin: 0 0 24px;
+}
+
+header p.bio {
+    font-size: 16px;
+}
+
+header p.tagline {
+    border-top: 1px solid #ddd;
+    display: inline-block;
+    margin-top: 5px;
+    padding-top: 5px;
+}
+
+article {
+    width: 552px;
+}
+
+article p {
+    margin: 0 0 1em 0;
+}
+
+ul.tags li, 
+div.tags ul li {
+    background: #eee;
+    -moz-border-radius: 3px;
+    display: inline-block;
+    padding: 2px 5px;
+    margin: 4px 2px;
+    text-decoration: none;
+}
+
+aside {
+    float: right;
+    max-width: 240px;
+    color: #666;
+    margin: 25px 0;
+    padding: 0 0 0 20px;
+    border-left: 3px solid #eee;
+}
+
+footer {
+    clear: both;
+    border-top: 1px solid #ccc;
+}
+
+footer ul li {
+    float: left;
+    margin: 0 15px 0 0;
+    padding: 5px 15px 5px 0;
+    list-style: none;
+    
+    font-size: 11px;
+}
+
+footer ul li a[href$=rss] {
+    background: url(http://img.thisismoney.co.uk/i/std/tim_skin_0309/rss.gif) center left no-repeat;
+    padding-left: 20px;
+}
+
+footer ul li a[href*=twitter] {
+    background: url(http://twitter.com/favicon.ico) center left no-repeat;
+    padding-left: 20px;
+}
+
+#page a {
+    color: DodgerBlue;
+}
+
+h1, h2 {
+    clear: both;
+}

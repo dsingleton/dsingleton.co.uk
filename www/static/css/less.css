@@ -1,0 +1,80 @@
+/*
+	Less Framework 2, version 2.0
+	by Joni Korpi
+	-----------------------------
+	http://lessframework.com
+*/
+
+
+
+/* 
+	Resets
+	------
+*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
+img, ins, q, small, strong, sub, sup, dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, video, object {
+	display: block;
+}
+
+a img {border: 0;}
+
+figure {position: relative;}
+figure img {width: 100%;}
+
+
+/*
+	Default 5-column, 768 px layout for iPads, netbooks, and IE
+	(All other layouts inherit styles from this layout)
+	-----------------------------------------------------------
+	1      2      3      4      5     
+	120px  264px  408px  552px  696px   (24px gutters)
+*/
+
+#page {
+	padding: 60px 36px 0;
+	width: 696px;
+}
+
+/* 
+	2-column, 320 px layout for smartphones
+	---------------------------------------
+	1      2
+	120px  264px   (24px gutters)
+*/
+
+@media only screen and (max-width: 767px) {
+	
+	#page {
+		padding: 48px 28px 0;
+		width: 264px;
+	}
+	
+}
+
+
+
+/* 
+	8-column, 1224 px layout for desktops and laptops
+	------------------------------------------------------------------------
+	1      2      3      4      5      6      7      8
+	120px  264px  408px  552px  696px  840px  984px  1128px   (24px gutters)
+*/
+
+@media only screen and (min-width: 1224px) {
+	
+	#page {
+		padding: 72px 48px 0;
+		width: 1128px;
+	}
+	
+}

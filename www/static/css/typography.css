@@ -1,0 +1,72 @@
+body {
+    font-size: medium/1.3;
+}
+
+h1 {
+    
+    border-bottom:3px solid #EEEEEE;
+    font-size:42px;
+    letter-spacing:-2px;
+    line-height:60px;
+    margin: 0 0 15px;
+    
+}
+
+h2 {
+	font-size: 32px;
+	line-height: 38px;
+	letter-spacing: -1px;
+	
+	clear: both;
+    margin: 10px 0 5px 0;
+    padding: 0 0 3px 0;
+    display: inline-block;
+    border-bottom: 3px solid #ddd;
+}
+
+h3 {
+	font-size: 24px;
+	line-height: 36px;
+}
+
+h4 {
+    margin: .5em 0;
+	font-size: 18px;
+	line-height: 24px;
+}
+
+#page {
+/*  font: 14px/1.5 Helvetica, Arial, sans-serif;*/
+}
+
+small {
+	font-size: 13px;
+	line-height: 18px;
+}
+
+
+/**********************************************/
+
+#page h2 a,
+#page h3 a,
+#page h4 a {
+    text-decoration: none;
+}
+
+ul.hfeed {
+    list-style: none;
+}
+
+ul.hfeed li {
+    padding: 0 0 10px 0;
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+
+
+
+dl dt {
+    font-weight: bold;
+    margin-top: 1em;
+}

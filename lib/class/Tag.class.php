@@ -49,7 +49,7 @@ class Tag
         $key = "tag:feed:{$url}";
         
         if (!$xml = $oCache->get($key)) {
-            $xml = file_get_contents($url);
+            $xml = @file_get_contents($url);
             if (trim($xml)) {
                 $oCache->set($key, $xml, 60 * 60 * 2);
             }

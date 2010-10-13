@@ -18,10 +18,13 @@ function html_array2attr(array $aParams)
 
 /** Template functions */
 
-function h($html)
+function h($html, $args = null)
 {
-    if ($args = func_get_args()) {
-        $html = vsprintf(array_shift($args), $args);
+    $args = func_get_args();
+    $html = array_shift($args);
+    
+    if ($args) {
+        $html = vsprintf($html, $args);
     }
     echo html_escape($html);
 }
