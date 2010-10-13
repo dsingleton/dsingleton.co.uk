@@ -1,3 +1,5 @@
+/** Body */
+
 body {
     margin: 0;
     padding: 2.5em 0 0;
@@ -7,35 +9,29 @@ body {
     border-top: 3px solid DodgerBlue;
 }
 
+
 /** Header */
+
 #page header p a.name {
+    float: left;
+    
+    margin: -5px 25px 15px 0;
+    padding: 5px 10px;
+    
+    color: #FFFFFF;
+    background-color: DodgerBlue;
+    font-size: 40px;
+
+    text-shadow: 2px 2px 3px #666666;
+    text-decoration:  none;
+    
     -moz-border-radius: 3px 3px 3px 3px;
     -moz-box-shadow: 2px 2px 8px #666666;
     -moz-transform: rotate(-2deg);
-    background-color: DodgerBlue;
-    color: #FFFFFF;
-    float: left;
-    font-size: 40px;
-    margin: -5px 25px 15px 0;
-    padding: 5px 10px;
-    text-shadow: 2px 2px 3px #666666;
-    text-decoration:  none;
-}
-
-#page {
-    margin: 0 auto;
-    width: 840px;
-    padding-top: 0;
-    padding-bottom: 72px;
-    background: auto;
     
-    
-    font: 13px/1.6 "Droid Sans", Helvetica, Arial, Sans-Serif;
-}
-
-article {
-    margin: 24px 0;
-    float: left;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -webkit-box-shadow: 2px 2px 8px #666666;
+    -webkit-transform: rotate(-2deg);
 }
 
 header {
@@ -52,6 +48,30 @@ header p.tagline {
     margin-top: 5px;
     padding-top: 5px;
 }
+
+
+/** Page */
+
+#page {
+    margin: 0 auto;
+    width: 840px;
+    padding-top: 0;
+    padding-bottom: 72px;
+    background: auto;
+}
+
+#page a {
+    color: DodgerBlue;
+}
+
+
+/** Article */
+
+article {
+    margin: 24px 0;
+    float: left;
+}
+
 
 article {
     width: 552px;
@@ -71,6 +91,9 @@ div.tags ul li {
     text-decoration: none;
 }
 
+
+/** Aside */
+
 aside {
     float: right;
     max-width: 240px;
@@ -80,6 +103,7 @@ aside {
     border-left: 3px solid #eee;
 }
 
+/** Footer */
 footer {
     clear: both;
     border-top: 1px solid #ccc;
@@ -88,26 +112,44 @@ footer {
 footer ul li {
     float: left;
     margin: 0 15px 0 0;
-    padding: 5px 15px 5px 0;
+    padding: 0;
+
     list-style: none;
-    
     font-size: 11px;
 }
 
 footer ul li a[href$=rss] {
+    display: inline-block;
     background: url(http://img.thisismoney.co.uk/i/std/tim_skin_0309/rss.gif) center left no-repeat;
-    padding-left: 20px;
+    padding: 5px 15px 5px 20px;
 }
 
 footer ul li a[href*=twitter] {
     background: url(http://twitter.com/favicon.ico) center left no-repeat;
-    padding-left: 20px;
+    display: inline-block;
+    
+    padding: 5px 15px 5px 20px;
 }
 
-#page a {
-    color: DodgerBlue;
+
+/** Elements & Misc */
+
+dl dt {
+    font-weight: bold;
+    margin-top: 1em;
 }
 
-h1, h2 {
-    clear: both;
+ul.hfeed {
+    list-style: none;
+}
+
+ul.hfeed li {
+    padding: 0 0 10px 0;
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+small {
+	font-size: 13px;
+	line-height: 18px;
 }
