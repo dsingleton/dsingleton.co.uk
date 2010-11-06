@@ -34,7 +34,7 @@ $hKitURL = "http://tools.microformatic.com/query/json/hkit/%s";
 $feeds = array();
 $list = array();
 
-$url = @$_GET['profile'];
+$url = @$_GET['url'];
 $profileURL = preg_replace('/^(http[s]?:\/\/)([^\/]*)/i', '$1$2', $url);
 
 
@@ -45,9 +45,9 @@ if ($profileURL && !preg_match('/http[s]?:\/\//', $profileURL)) {
 
 if ($profileURL) {
     // Log access
-    $log = fopen('access.log', 'a');
-    fwrite($log, date('r') . "\t$profileURL\n");
-    fclose($log);
+    // $log = fopen('access.log', 'a');
+    // fwrite($log, date('r') . "\t$profileURL\n");
+    // fclose($log);
     
     // Up the hKit..
     $hCardURL = sprintf($hKitURL, $profileURL);
@@ -95,21 +95,19 @@ if ($profileURL) {
 
 function getCachedURL($url, $timeout = 900) // 15 min
 {
-    $cache = 'cache/' . md5($url);
-    $feed = @file_get_contents($cache);
-    $age = time() - getlastmod($cache);
-    if (!$feed || $age > $timeout ) {
-
+    $oCache = Cache::instance();
+    $key = "lifestream:url:{$url}";
+    
+    if (!$content = $oCache->get($key)) {
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 4);
-        $feed = curl_exec($ch);
-        file_put_contents($cache, $feed);
+        $content = curl_exec($ch);
         
-        if (@$_GET['showCaching']) trigger_error("Cache hit for ($url)", E_USER_NOTICE);
+        $oCache->set($key, $content, $timeout);
     }
-    return $feed;
+    return $content;
 }
 
 function feedsToList($feeds) {
@@ -141,25 +139,131 @@ function feedsToList($feeds) {
 
 <?php include '../../_inc/header.inc.php'; ?>
 
+<style>
+table.activity {
+    font-size: 11px;
+}
 
-        <h1>Activity derived from XFN</h1>
+table.activity td,
+table.activity th {
+    padding: 5px 3px;
+    border-top: 1px solid #ddd;
+}
+
+table.activity tr.day th {
+    font-size: 14px;
+    text-align: left;
+    padding-top: 15px;
+    border-bottom: 0;
+    border-top: none;
+}
+</style>
+
+<article>
+    <h1>Activity derived from XFN</h1>
         
-        <div class="content secondary" style="float: right; width: 170px; margin-right: -200px">         
-            <form action="./" method="get">
-                <label for="profile">Enter a URL</label>
-                <input type="text" class="text" id="profile" name="profile" />
-                
-                <input type="submit" class="submit" value="Go" />
-                <p>Or try one of these&hellip; <a href="/code/lifestream/dsingleton.co.uk">dsingleton.co.uk</a>, <a href="/code/lifestream/ben-ward.co.uk">ben-ward.co.uk</a>, <a href="/code/lifestream/adactio.com">adactio.com</a>, <a href="/code/lifestream/bradfitz.com">bradfitz.com</a></p>
-            </form>
+    <?php if (!$profileURL) { ?>
+        
+        <p>Enter a URL to search to the right, or try an example URL.</p>
+        
+        <p>The first load for a URL might be a little slow, after that it will cache for a while;</p>
+        <ul>
+            <li><strong>RSS</strong> - Cached for 15 minutes</li>
+            <li><strong>hCard</strong>, <strong>Social Graph</strong> - Cached for 6 hours</li>
+        </ul>
+        
+    <?php } else { ?>
+        
+        <?php if (!$list) { ?>
+            <h3>Uh oh, couldn't find any feeds for your URL.</h3>
             
-            <?php if (@$profileURL) { ?>
-                
-            <h3>Activity for</h3>
-            <p><a href="<?php h($profileURL) ?>"><?php h($profileURL) ?></a></p>
+            <p>First of all, this requires you to have some XFN <em>rel=me</em> marked up around the web (or a discoverable FOAF file). If you haven't got these then it won't work :(</p>
             
-            <?php if (@$hCard->fn) { ?>
-            <div class="vcard">
+            <p>Take a look at the <a href="<?php h($sgURL); ?>">Show SocialGraph API response</a>, if there are no claimed nodes then it's possible the API may not have indexed you properly, or not updated it's cache of your profile recently.</p>
+            
+            <p>If you're pretty sure your site is right you it may be a parsing bug with the SocialGraph API, why not visit the <a href="http://groups.google.com/group/social-graph-api">mailing list</a> and let them know.</p>
+            
+            <h4>Known Issues</h4>
+            <ul>
+                <li>Don't use your twitter account as a start point, they use <strong>rel="me nofollow"</strong> so it's rightfully not followed. Bad twitter.</li>
+            </ul>
+        <?php } ?>
+        
+    <table class="hcalendar hfeed activity">
+        <tbody>
+    <?php $day = ""; ?>
+
+    <?php foreach ($list as $timestamp => $item) { ?>
+
+        <?php if ($day != ($this_day = date("F jS Y",$timestamp))) { ?>
+            </tbody>
+        
+            <tbody> 
+                <tr class="day">
+                    <th colspan="3"><?php h($this_day); ?></th>
+                </tr>
+        
+            <?php $day = $this_day; ?>
+
+            <?php } ?> 
+            
+            <tr class="vevent hentry">
+                <th class="time">
+                    <abbr class="dtstart published" title="<?php h(date('c', $timestamp)); ?>">
+                        <?php echo date("g:ia",$timestamp); ?>
+                        
+                    </abbr>
+                </th>
+    
+                <td class="item">
+                    <a class="url summary entry-title" rel="bookmark" href="<?php h($item["link"]); ?>">
+                        <?php echo htmlentities($item["title"]); ?>
+                        
+                    </a>
+                </td class="site">
+                <td>
+                    <?php printf('<img class="icon" src="/code/grabicon/?url=%s" alt="%s" title="%s" width="16" />', $item['name'], $item['name'], $item['name']); ?>
+                    
+                </td>   
+            </tr>
+        <?php } ?>
+        </tbody>
+    </table>
+    <?php } ?>
+    
+    <?php if ($profileURL) { ?>
+    <h3>URLs called</h3>
+    <ul>
+        <?php if (isset($hCardURL)) { ?>
+            <li><a href="<?php h($hCardURL)?>"><?php h($hCardURL) ?></a></li>
+        <?php } ?>
+        <?php if (isset($sgURL)) { ?>
+            <li><a href="<?php h($sgURL)?>"><?php h($sgURL) ?></a></li>
+        <?php } ?>
+    </ul>
+    <?php } ?>
+</article>
+
+<aside>
+    
+    <h2>Try it</h2>
+    <br><br>
+    <form action="./" method="get">
+        <label for="lifestream_url">URL</label>
+        <input type="text" class="text" id="lifestream_profile" name="url" />
+        
+        <input type="submit" class="submit" value="Go" />
+    </form>
+    <br>
+    <p>Or try one of these&hellip; <a href="/code/lifestream?url=dsingleton.co.uk">dsingleton.co.uk</a>, <a href="/code/lifestream?url=ben-ward.co.uk">ben-ward.co.uk</a>, <a href="/code/lifestream?url=adactio.com">adactio.com</a>, <a href="/code/lifestream?url=bradfitz.com">bradfitz.com</a></p>
+    
+    <?php if (@$profileURL) { ?>
+        
+        <h3>Activity for</h3>
+        <p><a href="<?php h($profileURL) ?>"><?php h($profileURL) ?></a></p>
+    
+        <?php if (@$hCard->fn) { ?>
+        <div class="vcard">
             <address>
                 <?php if (@$hCard->logo) { ?>
                 <img class="logo" src="<?php h($hCard->logo) ?>" alt="x" />
@@ -168,106 +272,31 @@ function feedsToList($feeds) {
                 <?php echo htmlentities($hCard->fn); ?>
                 </a>                
             </address>
-            </div>
-            <?php } else { ?>
-                <p>No hCard found :(</p>
-            <?php } ?>
+        </div>
+    <?php } else { ?>
+        <p>No hCard found :(</p>
+    <?php } ?>
 
-            <?php if ($feeds) { ?>
-            <p>
-                Available as
-                <a class="ical" href="webcal://suda.co.uk/projects/microformats/hcalendar/get-cal.php?uri=http://me.dsingleton.co.uk/code/lifestream/<?h(rawurlencode($profileURL)) ?>">iCal</a>
-                or
-                <a class="feed" href="feed://tools.microformatic.com/transcode/atom/hatom/me.dsingleton.co.uk/code/lifestream/<?php h($profileURL); ?>">RSS</a>
-            </p>
-            <?php } ?>
-            
-            <?php if (@$noFeeds) { ?>
+    <?php if ($feeds) { ?>
+        <p>
+            Available as
+            <a class="ical" href="webcal://suda.co.uk/projects/microformats/hcalendar/get-cal.php?uri=http://me.dsingleton.co.uk/code/lifestream/<?h(rawurlencode($profileURL)) ?>">iCal</a>
+            or
+            <a class="feed" href="feed://tools.microformatic.com/transcode/atom/hatom/me.dsingleton.co.uk/code/lifestream/<?php h($profileURL); ?>">RSS</a>
+        </p>
+    <?php } ?>
+        
+        <?php if (@$noFeeds) { ?>
             <h3>Links without feeds</h3>
             <ul class="noFeeds">
-            <?php foreach($noFeeds as $domain => $feed) { ?>
-            <li><img src="/code/grabicon/<?php h($feed) ?>" width="16" /> <a href="<?php h($feed) ?>"><?php h(ifnull($domain, $feed)) ?></a></li>
-            <?php } ?>
+                <?php foreach($noFeeds as $domain => $feed) { ?>
+                    <li><img src="/code/grabicon?url=<?php h($feed) ?>" width="16" /> <a href="<?php h($feed) ?>"><?php h(ifnull($domain, $feed)) ?></a></li>
+                <?php } ?>
             </ul>
-            <?php } ?>
-            
-            <?php } ?>
-        </div>
-        
-        <div class="content primary">
-        <?php if (!$profileURL) { ?>
-            
-            <p>Enter a URL to search to the right, or try an example URL.</p>
-            
-            <p>The first load for a URL might be a little slow, after that it will cache for a while;</p>
-            <ul>
-                <li><strong>RSS</strong> - Cached for 15 minutes</li>
-                <li><strong>hCard</strong>, <strong>Social Graph</strong> - Cached for 6 hours</li>
-            </ul>
-            
-        <?php } else { ?>
-            
-            <?php if (!$list) { ?>
-                <h3>Uh oh, couldn't find any feeds for your URL.</h3>
-                
-                <p>First of all, this requires you to have some XFN <em>rel=me</em> marked up around the web (or a discoverable FOAF file). If you haven't got these then it won't work :(</p>
-                
-                <p>Take a look at the <a href="<?php h($sgURL); ?>">Show SocialGraph API response</a>, if there are no claimed nodes then it's possible the API may not have indexed you properly, or not updated it's cache of your profile recently.</p>
-                
-                <p>If you're pretty sure your site is right you it may be a parsing bug with the SocialGraph API, why not visit the <a href="http://groups.google.com/group/social-graph-api">mailing list</a> and let them know.</p>
-                
-                <h4>Known Issues</h4>
-                <ul>
-                    <li>Don't use your twitter account as a start point, they use <strong>rel="me nofollow"</strong> so it's rightfully not followed. Bad twitter.</li>
-                </ul>
-            <?php } ?>
-            
-        <table class="hcalendar hfeed activity">
-            <tbody>
-        <?php $day = ""; ?>
-
-        <?php foreach ($list as $timestamp => $item) { ?>
-
-        <?php if ($day != ($this_day = date("F jS",$timestamp))) { ?>
-            </tbody>
-            
-            <tbody> 
-                <tr class="day">
-                    <th colspan="3"><?php h($this_day); ?></th>
-                </tr>
-            
-            <?php $day = $this_day; ?>
-
-        <?php } ?> 
-                <tr class="vevent hentry">
-                    <th class="time">
-                        <abbr class="dtstart published" title="<?php h(date('c', $timestamp)); ?>">
-                            <?php echo date("g:ia",$timestamp); ?>
-                            
-                        </abbr>
-                    </th>
-        
-                    <td class="item">
-                        <a class="url summary entry-title" rel="bookmark" href="<?php h($item["link"]); ?>">
-                            <?php echo htmlentities($item["title"]); ?>
-                            
-                        </a>
-                    </td class="site">
-                    <td>
-                        <?php printf('<img class="icon" src="/code/grabicon/?url=%s" alt="%s" title="%s" width="16" />', $item['name'], $item['name'], $item['name']); ?>
-                        
-                    </td>   
-                </tr>
-
         <?php } ?>
-            </tbody>
-        </table>
-        <?php } ?>
-        
-        <h3>URLs called</h3>
-        <ul>
-            <li><a href="<?php h($hCardURL)?>"><?php h($hCardURL) ?></a></li>
-            <li><a href="<?php h($sgURL)?>"><?php h($sgURL) ?></a></li>
-        </div>
+    
+    <?php } ?>
+</aside>
+
         
 <?php include '../../_inc/footer.inc.php'; ?>

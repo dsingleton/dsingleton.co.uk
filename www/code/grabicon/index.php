@@ -1,6 +1,16 @@
 <?php
 
+// Extract domain
+$aURL = @parse_url($_GET['url']);
+$url = isset($aURL['host']) ? $aURL['host'] : $aURL['path'];
+
+// Proxy on to google service
+header('Location: http://www.google.com/s2/favicons?domain=' . urlencode($url));
+exit;
+
 /*
+ * Deprecated in favour of the google service.
+ * 
  * URL Rewriting: http://dsingleton.co.uk/code/favitar/png/google.com/
  * Cache defaults. (As symlinks, soft vs hard for date checking/accidental delete)
  * Better favico.ico test, HTTP following. - wget for everything? :/
@@ -11,8 +21,6 @@
  * http://upcoming.yahoo.com/event/197924/ -- rel="shortcut icon" -- header bullshit
  * http://www.deviantart.com/ -- <link href="http://s.deviantart.com/icons/favicon.ico" rel="icon"/>
  */
-
-$url = @$_GET['url'];
 
 if (!$url) {
     die('Demo page');
