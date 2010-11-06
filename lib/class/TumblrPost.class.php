@@ -17,20 +17,13 @@ class TumblrPost implements iWebItem
     
     public static function getBySlug($slug)
     {
-        if ($id = self::slugToId($slug)) {
-            return self::getById($id);
-        }
-        
-        $oPosts = self::callAPI(array('search' => $slug));
+        $aPosts = self::getRecent(50);
 
-        if ($oPosts && isset($oPosts->posts)) {
-            foreach($oPosts->posts as $aPost) {
+        foreach($aPosts as $oPost) {
 
-                $oPost = new TumblrPost($aPost);
+            if ($oPost->getSlug() == $slug) {
 
-                if ($oPost->getSlug() == $slug) {
-                    return $oPost;
-                }
+                return $oPost;
             }
         }
         return false;
@@ -45,16 +38,6 @@ class TumblrPost implements iWebItem
         }
         
         return false;
-    }
-    
-    public static function slugToId($slug)
-    {
-        $aMap = array(
-            'sxsw-day-two' => 144913919,
-            'lastfm-vs-xbox-dibi-conference' => 577578854,
-            'open-tech-2009' => 140265426
-        );
-        return isset($aMap[$slug]) ? $aMap[$slug] : false;
     }
     
     protected static function callAPI($aParams, $timeout = 86400) 
