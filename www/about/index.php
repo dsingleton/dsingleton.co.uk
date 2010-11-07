@@ -38,7 +38,7 @@ $title = 'About';
     </style>
     
     <h2>Photos</h2>
-    <p>There are more <a href="http://www.flickr.com/search/?ss=2&amp;w=all&amp;q=davidsingleton+-WFEE09&amp;m=text">photos of me</a> on Flickr.</p>
+    <p>There are more <a href="http://www.flickr.com/people/davidsingleton/photosof/" rel="me">photos of me</a> on Flickr.</p>
     <ul id="about-photos" class="inline photos">
         <li><a href="http://www.flickr.com/photos/davidsingleton/3353460521/" title="Me on a lock by David Singleton, on Flickr"><img src="http://farm4.static.flickr.com/3620/3353460521_0ec66c7113_s.jpg" width="75" height="75" alt="Me on a lock" /></a></li>
         <li><a href="http://www.flickr.com/photos/davidsingleton/3057540234/" title="David on deck by David Singleton, on Flickr"><img src="http://farm4.static.flickr.com/3178/3057540234_51d0c64afe_s.jpg" width="75" height="75" alt="David on deck" /></a></li>
