@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 	
-	<title>Home - David Singleton</title>
+	<title><?php if (isset($title)) { ?><?php h($title); ?> - <?php } ?>David Singleton</title>
 
     
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -49,11 +49,9 @@
                 <a class="name" href="/" ><span class="firstname">David</span> <span class="lastname">Singleton</span></a>
                 A <a href="/tag/web"><span class="title">web developer</span></a>
                 living in <span class="adr"><span class="locality"><a href="/tag/london">London</a></span></span>
-                and working at <a href="http://last.fm">Last.fm</a>
+                and working at <a href="http://last.fm">Last.fm</a>.
+                
+                <span class="tagline">I write a <a href="/blog">blog</a>, tag <a href="/tag">things</a> and <a href="/code">code</a>, find out <a href="/about">more &raquo;</a></span>
             </p>
-                  
-            <span class="tagline">I write a <a href="/blog">blog</a>, collect and <a href="/tag">tag things</a> and write <a href="/code">code</a></span>
-            &para;<br>
-            <span class="contact">You can find out more <a href="/about">about me</a> or get in <a href="/about#contact">contact</a></span>
-            &para;
+
         </header>
