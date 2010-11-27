@@ -4,14 +4,20 @@ class TumblrPost implements iWebItem
 {
     const TUMBLR_API = 'http://dsingleton.tumblr.com/api/read/json/';
     
-    public static function getRecent($limit = 20)
+    public static function getRecent($limit = null)
     {
-        $oPosts = self::callAPI(array('num' => $limit, 'type' => 'regular'), 60 * 60);
+        $oPosts = self::callAPI(array('num' => 50, 'type' => 'regular'), 60 * 60);
         $aPosts = array();
+        
+        if ($limit) {
+            $oPosts->posts = array_slice($oPosts->posts, 0, $limit);
+        }
         
         foreach($oPosts->posts as $oPost) {
             $aPosts[] = new TumblrPost($oPost);
         }
+    
+        
         return $aPosts;
     }
     
