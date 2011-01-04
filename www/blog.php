@@ -10,6 +10,7 @@ if ($post) {
     $oPost = TumblrPost::getBySlug($post);
     if ($oPost) {
         $title = $oPost->getTitle();
+        $aPosts = array_slice($aPosts, 0, 10);
     }
     else {
         $action = '404';
@@ -27,21 +28,18 @@ $feed = array('url' => '/feed/blog.rss');
 
 <?php if ($action == 'view') { ?>
         
-<article>
+<article class="blog-entry">
         <h1><?php h($oPost->getTitle()); ?></h1>
         <?php echo $oPost->getBody(); ?>
+
+        <ul class="tags">
+        <?php foreach($oPost->getTags() as $tag) { ?>
+            <li><a rel="tag" href="/tag/<?php h($tag); ?>"><?php h($tag); ?></a></li>
+        <?php } ?>
+        </ul>
 </article>
 
 <aside>
-    <div class="tags">
-        <h4>Tagged</h4>
-        <ul class="tags">
-        <?php foreach($oPost->getTags() as $tag) { ?>
-            <li><a href="/tag/<?php h($tag); ?>"><?php h($tag); ?></a></li>
-        <?php } ?>
-        </ul>
-    </div>
-    
     <div class="recent posts">
         <h4>Recent posts</h4>
         <ul class="posts">
@@ -49,6 +47,8 @@ $feed = array('url' => '/feed/blog.rss');
             <li><a href="<?php h($oPost->getURL()); ?>"><?php h($oPost->getTitle()); ?></a></li>
         <?php } ?>
         </ul>
+        
+        <p><a href="/blog">More&hellip;</p>
     </div>
 </aside>
 

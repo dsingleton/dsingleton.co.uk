@@ -1,0 +1,36 @@
+aside ul {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+}
+
+aside ul li a {
+    background-position: center left;
+    background-repeat: no-repeat;
+    display: inline-block;
+    padding: 2px 0 2px 22px;
+}
+
+aside ul li a[href^="http://last.fm"] {
+    background-image: url(http://www.google.com/s2/favicons?domain=www.last.fm);
+}
+
+aside ul li a[href^="http://twitter.com"] {
+    background-image: url(http://www.google.com/s2/favicons?domain=twitter.com);
+}
+
+aside ul li a[href^="http://delicious.com"] {
+    background-image: url(http://www.google.com/s2/favicons?domain=delicious.com);
+}
+
+aside ul li a[href^="http://flickr.com"] {
+    background-image: url(http://www.google.com/s2/favicons?domain=flickr.com);
+}
+
+aside ul li a[href^="http://github.com"] {
+    background-image: url(http://www.google.com/s2/favicons?domain=github.com);
+}
+
+aside ul li a[href^="http://upcoming.yahoo.com"] {
+    background-image: url(http://www.google.com/s2/favicons?domain=upcoming.org);
+}

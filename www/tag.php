@@ -49,7 +49,7 @@ else {
         <h2><?php h($bundleName); ?></h2>
         <ul class="tags">
             <?php foreach($aTags as $tag) { $oTag = new Tag($tag); ?>
-            <li><a href="<?php h($oTag->getURL()); ?>"><?php h($oTag->getTitle()); ?></a></li>
+            <li><a rel="tag" href="<?php h($oTag->getURL()); ?>"><?php h($oTag->getTitle()); ?></a></li>
             <?php } ?>
         </ul>
     <?php } ?>
@@ -64,7 +64,7 @@ else {
         <?php } ?>
     </h1>
     
-    <ul class="hfeed">
+    <ul class="hfeed things">
         <?php $lastDate = null; ?>
         <?php foreach ($list as $oItem) { ?>
         <li class="hentry">
@@ -83,38 +83,35 @@ else {
                 </h3>
             </hgroup>
             
-            <style>
-                a img {
-                    margin: 0pt 15px 15px 0pt;
-                    -moz-transform: rotate(-1deg);
-                    float: left;
-                    border: 1px solid rgb(34, 34, 34);
-                    -moz-box-shadow: 1px 5px 10px rgb(204, 204, 204);
-                    padding: 1px;
-                }
-            </style>
+            <!--
+            <p class="info">
+                A <strong>thing</strong> 
+                from <a style="bacground-image: url()" class="favicon" href="<?php h($oItem->getSourceURL()); ?>"><?php h($oItem->getSourceDomain()); ?></a>
+            </p>
+            -->
             
-            <p class="entry-content">
+            <div class="entry-content">
                 <?php if ($oItem->getBody() && strip_tags($oItem->getBody())!=$oItem->getTitle()) { ?>
                     <?php echo $oItem->getBody(); ?>
                 <?php } ?>
-            </p>
+            </div>
             
             <?php if ($oItem->getTags()) { ?>
-            <!-- @CSS -->
-            <div class="entry-tags tags" style="margin-bottom: 10px; clear: both">
-                <ul>
+            <ul class="entry-tags tags" title="Tagged with&hellip;">
                 <?php foreach($oItem->getTags() as $itemTag) { ?>
-                    <li><a href="/tag/<?php h($itemTag); ?>"><?php h($itemTag); ?></a></li>
+                    <li>
+                        <a rel="tag" href="/tag/<?php h($itemTag); ?>" title="More things tagged &ldquo;<?php h($itemTag); ?>&rdquo;">
+                            <?php h($itemTag); ?>
+                        </a>
+                    </li>
                 <?php } ?>
-                </ul>
-            </div>
+            </ul>
             <?php } ?>
         </li>
         <?php } ?>
         
         <?php if (!$list) { ?>
-            <p>Nothing found for that tag</p>
+            <p>Nothing found</p>
         <?php } ?>
     </ul>
 </article>

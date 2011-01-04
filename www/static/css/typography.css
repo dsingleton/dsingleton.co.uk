@@ -13,36 +13,50 @@ body {
 
 h1 {
     clear: both;
-    margin: 0 0 15px;
+    margin: 0 0 .5em;
     
-    border-bottom: 3px solid #EEE;
-    font-size: 42px;
-    letter-spacing: -2px;
-    line-height: 60px;
+    border-bottom: 3px solid #ddd;
+    font-size: 36px;
+    letter-spacing: -1px;
+    line-height: 48px;
 }
 
 h2 {
     clear: both;
     display: inline-block;
-    margin: 10px 0 5px 0;
-    padding: 0 0 3px 0;
+    margin: .5em 0 .25em;
     
     border-bottom: 3px solid #ddd;
     
-	font-size: 32px;
-	line-height: 38px;
+	font-size: 28px;
+	line-height: 36px;
 	letter-spacing: -1px;
 }
 
+h2 + h3 {
+    margin-top: 0;
+}
+
 h3 {
-	font-size: 24px;
-	line-height: 36px;
+    margin: .5em 0 .25em;
+	font-size: 22px;
+	line-height: 28px;
 }
 
 h4 {
-    margin: .5em 0;
+    margin: .5em 0 .25em;
 	font-size: 18px;
 	line-height: 24px;
+}
+
+aside {
+
+}
+
+aside h2,
+aside h3 {
+    border-bottom: none;
+    font-size: 1.5em;
 }
 
 #page h2 a,
@@ -51,3 +65,127 @@ h4 {
     text-decoration: none;
 }
 
+/** Body text */
+
+dl dt {
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+small {
+	font-size: 13px;
+	line-height: 18px;
+}
+
+blockquote {
+    margin: 0 1em 1em 1em;
+    padding: 0 1em;
+    border-left: 5px solid #eee;
+    font-size: 14px;
+    font-style: italic;
+}
+
+article p {
+    margin: 0 0 1em 0;
+}
+
+#page a {
+    color: DodgerBlue;
+}
+
+/** Lists */
+ul {
+    margin: 1em 0;
+    padding: 0 1em;
+    list-style: circle;
+}
+
+ul li {
+    margin: 0 0 .25em 0;
+}
+
+ol {
+    margin: 1em 0;
+    padding: 0 2em;
+    
+    list-style: decimal;
+}
+
+ol li {
+    margin: 0 0 .25em 0;
+}
+
+
+/** Things list */
+
+ul.things {
+    padding: 0;
+    list-style: none;
+}
+
+ul.things li {
+    clear: left;
+    margin-bottom: 1em;
+}
+
+article.blog-entry a[href*=flickr] img,
+a img.snapshot,
+ul.things a[href*=flickr] img {
+    float: left;
+    margin: 0pt 15px 15px 0pt;
+    
+    border: 1px solid #666;
+    -moz-box-shadow: 1px 5px 10px #ccc;
+    -moz-transform: rotate(-1deg);
+}
+
+article.blog-entry a[href*=flickr] img {
+    float: none;
+}
+
+/** Tags */
+
+ul.tags {
+    margin: 0.5em 0 1.5em;
+    padding: 0 0 0 24px;
+    clear: left;
+    
+    background: url("/_assets/img/icons/famfamfam/tag_blue.png") no-repeat 0px 10px ;
+}
+
+ul.tags li {
+    display: inline;
+}
+
+ul.tags li a[rel=tag] {
+    display: inline-block;
+    padding: 2px 5px;
+    margin: 4px 4px 4px 0;
+    
+    background: #eee;
+    -moz-border-radius: 3px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+}
+
+#page ul.tags li a[rel=tag]:hover {
+    background: DodgerBlue;
+    color: #fff;
+    border-color: #444;
+    text-decoration: underline;
+}
+
+code {
+    background: #eee;
+    font-family: monospace;
+    padding: .5em 1em;
+    margin: 1em 0;
+    display: block;
+    border: 1px dashed #666666;
+}
+
+p code {
+    display: inline;
+    padding: 3px 5px;
+    margin: 0;
+}

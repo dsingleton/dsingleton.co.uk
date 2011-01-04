@@ -12,13 +12,13 @@ body {
 
 /** Header */
 
-#page header p a.name {
+#page header span.myname {
     float: left;
     
     margin: -5px 25px 15px 0;
     padding: 5px 10px;
     
-    color: #FFFFFF;
+    color: #fff;
     background-color: DodgerBlue;
     font-size: 40px;
 
@@ -34,20 +34,14 @@ body {
     -webkit-transform: rotate(-2deg);
 }
 
+#page header span.myname a {
+    color: #fff;
+    text-decoration:  none;
+}
+
 header {
     margin: 0 0 24px;
     width: 552px;
-}
-
-header p.bio {
-    font-size: 16px;
-}
-
-header p.tagline {
-    border-top: 1px solid #ddd;
-    display: inline-block;
-    margin-top: 5px;
-    padding-top: 5px;
 }
 
 
@@ -61,50 +55,33 @@ header p.tagline {
     background: auto;
 }
 
-#page a {
-    color: DodgerBlue;
-}
-
 
 /** Article */
 
 article {
     margin: 24px 0;
     float: left;
-}
-
-
-article {
     width: 552px;
 }
-
-article p {
-    margin: 0 0 1em 0;
-}
-
-ul.tags li, 
-div.tags ul li {
-    background: #eee;
-    -moz-border-radius: 3px;
-    display: inline-block;
-    padding: 2px 5px;
-    margin: 4px 2px;
-    text-decoration: none;
-}
-
 
 /** Aside */
 
 aside {
     float: right;
-    max-width: 240px;
+    max-width: 200px;
+    
+    margin: 2em 0;
+    padding: 0 20px 20px;
+    
     color: #666;
-    margin: 25px 0;
-    padding: 0 0 0 20px;
-    border-left: 3px solid #eee;
+    background: #f6f6f6;
+    
+    border: 1px solid #eee;
+    -moz-border-radius: 5px;
 }
 
 /** Footer */
+
 footer {
     clear: both;
     border-top: 1px solid #ccc;
@@ -130,27 +107,4 @@ footer ul li a[href*=twitter] {
     display: inline-block;
     
     padding: 5px 15px 5px 20px;
-}
-
-
-/** Elements & Misc */
-
-dl dt {
-    font-weight: bold;
-    margin-top: 1em;
-}
-
-ul.hfeed {
-    list-style: none;
-}
-
-ul.hfeed li {
-    padding: 0 0 10px 0;
-    margin: 0 0 10px 0;
-    border-bottom: 1px solid #eee;
-}
-
-small {
-	font-size: 13px;
-	line-height: 18px;
 }

@@ -6,7 +6,7 @@ $title = 'About';
 ?>
 <?php require_once '../_inc/header.inc.php'; ?>
 <article>
-            <h2>About</h2>
+    <h2>About</h2>
     <p>I'm a web developer, I wrote code for a living and for fun. I live in East London, also for fun.</p>
     
     <p>I love taking things apart, figuring out how they work, and solving problems. Mostly <a href="/tag/code">code</a> or <a href="/code/design">design</a>, but sometimes baking too. Sometimes I write about these things on my <a href="/blog">blog</a>.</p>
