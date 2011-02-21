@@ -2,4 +2,5 @@
 
 vhost.conf
 www/code/lastfm-tagcloud/cache/
+www/api
 lib/external
