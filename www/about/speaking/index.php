@@ -1,8 +1,8 @@
-<?php require_once '../../init.php'; ?>
+<?php require_once '../../../init.php'; ?>
 <?php
     $title = "Speaking & Presentations"
 ?>
-<?php require_once '../_inc/header.inc.php'; ?>
+<?php require_once '../../_inc/header.inc.php'; ?>
 
     <article>
         <h1>Speaking</h1>
@@ -23,4 +23,4 @@
         
     </article>
 
-<?php require_once '../_inc/footer.inc.php'; ?>
+<?php require_once '../../_inc/footer.inc.php'; ?>
