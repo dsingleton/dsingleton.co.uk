@@ -25,7 +25,7 @@ $title = 'Code';
             <dt><a href="/code/firefox-plugin-test-suite">Firefox plugin detection test-suite</a></dt>
             <dd>A set of heuristic test to detect certain plugins, like NoScript, FlashBlock and AdBlock.</dd>
 
-            <dt><a href="/code/icon-selector">Icon Selector</a></dt>
+            <dt><a href="http://dsingleton.github.com/icon-selector">Icon Selector</a></dt>
             <dd>An interface to searching for icons within the excellent FamFamFam icon set, powered by jQuery. Provides a live search, with immediate visual feedback highlight matching icons.</dd>
 
             <dt><a href="/code/1bit">1bit Player</a></dt>
