@@ -42,11 +42,6 @@ $title = 'Code';
 
             <dt>Grabicon</dt>
             <dd>A short lived project to provide a consistent interface to website favicon images. As a 3rd party API you would call with the domain you wanted an icon for and it would return the image data. This was superseded by a Google service doing pretty much the same thing (though theirs came later)</dd>
-
-            <dt>Older demos</dt>
-            <dd>
-                <a href="/code/fades">Javascript Fades</a> - Using Javascript to fade content from one colour to any other.</p>
-            </dd>
         </dl>
             
     </article>
