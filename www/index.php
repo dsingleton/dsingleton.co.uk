@@ -21,12 +21,6 @@ $feed = array('url' => '/feed/blog.rss');
         <p>I also like to write about my passions; <a href="/blog">technology</a>, <a href="http://last.fm/user/underpangs">music</a>, and <a href="http://munchmun.ch">food</a>, that sort of thing.</p>
         <br>
         
-        <!-- <p>I have a few projects of my own hosted here, such as; 
-                    a selector for <a href="/code/icon-selector">Famfamfam silk icons</a>,
-                    a JS/Flash MP3 player called <a href="/code/1bit">1Bit</a>,
-                    and some prototype hacking on <a href="/code/lifestream">activity/life streaming</a> (powered by <a href="/tag/microformats">microformats</a> and Google <a href="/tagsocialgraph">Social Graph</a>).
-                </p> -->
-        
         <h2>Recent blog posts</h2>
         <div class="hfeed">
             <?php foreach($aPosts as $oPost) { ?>
