@@ -34,9 +34,6 @@ $title = 'Code';
             <dt><a href="/code/lifestream">Lifestream</a></dt>
             <dd>Powered by microformats (XFN relationships) and the Google Social Graph API. This takes a starting URL, like a users homepage, and tries to find feeds for all mapped sites, then builds an activity stream using this data.</dd>
 
-            <dt>Last.fm Tag-Cloud <small>(retired)</small></dt>
-            <dd>A visualization of a users weekly top artists. It combines a Last.fm webservice call and an XSL transformation to generate the tag-cloud markup.</dd>
-
             <dt><a href="/code/network-summary">Delicious Network Summary</a></dt>
             <dd>An aggregate view of my <a href="http://delicious.com">delicious</a> network page, it aims to highlight trends, tags and popular bookmarks across a number of friends</dd>
 
