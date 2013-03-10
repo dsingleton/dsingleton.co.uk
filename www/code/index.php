@@ -34,9 +34,6 @@ $title = 'Code';
             <dt><a href="/code/lifestream">Lifestream</a></dt>
             <dd>Powered by microformats (XFN relationships) and the Google Social Graph API. This takes a starting URL, like a users homepage, and tries to find feeds for all mapped sites, then builds an activity stream using this data.</dd>
 
-            <dt><a href="/code/network-summary">Delicious Network Summary</a></dt>
-            <dd>An aggregate view of my <a href="http://delicious.com">delicious</a> network page, it aims to highlight trends, tags and popular bookmarks across a number of friends</dd>
-
             <dt>Grabicon</dt>
             <dd>A short lived project to provide a consistent interface to website favicon images. As a 3rd party API you would call with the domain you wanted an icon for and it would return the image data. This was superseded by a Google service doing pretty much the same thing (though theirs came later)</dd>
         </dl>
