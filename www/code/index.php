@@ -45,7 +45,6 @@ $title = 'Code';
 
             <dt>Older demos</dt>
             <dd>
-                <p><a href="/code/better-tables">Better Tables</a> - An example of well designed table, visually and semantically.<br>
                 <a href="/code/fades">Javascript Fades</a> - Using Javascript to fade content from one colour to any other.</p>
             </dd>
         </dl>
