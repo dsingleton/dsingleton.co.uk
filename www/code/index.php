@@ -31,7 +31,7 @@ $title = 'Code';
             <dt><a href="https://github.com/dsingleton/1bit-audio-player/">1bit Player</a></dt>
             <dd><em>1bit is now <a href="http://1bit.markwheeler.net/">unsupported</a>, but has been open sourced.</em> A simple and lightweight inline Flash MP3 player with automatic JavaScript insertion. It's main purpose is to act as a quick in-page preview for audio files you link to from your website or blog.</dd>
 
-            <dt><a href="/code/lifestream">Lifestream</a></dt>
+            <dt><a href="https://github.com/dsingleton/php-lifestream">Lifestream</a></dt>
             <dd>Powered by microformats (XFN relationships) and the Google Social Graph API. This takes a starting URL, like a users homepage, and tries to find feeds for all mapped sites, then builds an activity stream using this data.</dd>
 
             <dt>Grabicon</dt>
