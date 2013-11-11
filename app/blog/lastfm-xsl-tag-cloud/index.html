@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	
+	<title>A last.fm tag-cloud generated from XSL - David Singleton</title>
+
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    	
+    <meta name="description" content="The blog of David Singleton, Ramblings of a Web Developer" />
+    <meta name="keywords" content="david singleton, dave singleton, web developer, london, css, php, lamp, mysql, unix, programming, web standards, coding, microformats, web sites, angry rants" />
+    <meta name="author" content="David Singleton" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0"/>
+
+    <link rel="openid.server" href="http://www.myopenid.com/server" />
+    <link rel="openid.delegate" href="http://dsingleton.myopenid.com/" />
+    <meta http-equiv="X-XRDS-Location" content="http://dsingleton.myopenid.com/xrds" />
+
+    <link rel="stylesheet" href="/static/css/less.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/typography.css" type="text/css" />
+    
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    
+
+</head>
+
+<body>
+    
+    <div id="page">
+
+        <header>
+            <p>
+                <span class="myname">
+                    <a class="name" href="/" ><span class="firstname">David</span> <span class="lastname">Singleton</span></a>
+                </span>
+                <span class="aboutme">
+                    A <span class="title">web developer</span>
+                    living in <span class="adr"><span class="locality">London</span></span>
+                    and working at <a href="http://last.fm">Last.fm</a>.
+                </span>
+                <span class="tagline">I occasionally write a <a href="/blog">blog</a> and publish some <a href="/code">code</a>, find out <a href="/about">more &raquo;</a></span>
+            </p>
+
+        </header>
+
+        
+<article class="blog-entry">
+        <h1>A last.fm tag-cloud generated from XSL</h1>
+        <p><strong>19/07/2009: The script in this post is currently broken, it&#8217;ll be fixed soon 
+</strong></p>
+
+<p>If you use last.fm the you can get some pretty interesting statistical data about your musical habits.</p>
+<p>Being a web <em>and</em> music geek I’ve put together a simple tag-cloud to show what i’ve listened to that week. <em>Everyone</em> loves a nice tag-cloud.<a id="more-57"></a></p>
+<p>You can take a look at the finished version on my <a href="http://dsingleton.co.uk/music">Music</a> page.</p>
+
+<h3>How it was made</h3>
+<p>I’ve had a rough version of this for a while, but it had quite a few issues, was generally a little broken and not very semantic. So I took a few hours to re-write it and make then make it public.</p>
+<p>First of it all it uses my last.fm  <a href="http://ws.audioscrobbler.com/1.0/user/underpangs/weeklyalbumchart.xml">Weekly Artists</a> XML, which gets turned in to <span class="caps">HTML</span> through a simple <span class="caps">XSL</span> transformation then styled with <span class="caps">CSS</span>.</p>
+
+<p>The glue that holds it together is the extremely useful <a href="http://www.iconophobia.com/wordpress/?page_id=55">inlineRSS</a> plugin for Wordpress. this handled the fetching of the <span class="caps">XML</span> and the <span class="caps">XSL</span> transformation, with a little caching too.</p>
+<h3><span class="caps">XSL</span> Transformation</h3>
+<p>Take a look at the <a href="http://dsingleton.co.uk/code/lastfm-tagcloud/xsl/weeklyartists.xsl">full <span class="caps">XSL</span> file</a>.</p>
+
+<p>The <span class="caps">XSL</span> that converts the last.fm feed into the tag-cloud <span class="caps">HMTL</span> is fairly simple, grabbing a bunch of artists and looping through them to build an ordered list. The tricky bit is defining the differing sizes between artists based on the playcount. There are a couple of other bits might benefit from further explanation:</p>
+<pre class="code xsl">&lt;xsl:variable name="max_artists" select="20"/&gt;
+&lt;xsl:variable name="min_playcount" select="2" /&gt;</pre>
+<p>These specify a maximum number of artists and a minimum number of plays to be included in the cloud. This solves two problems, a large number of artists being played making the tag-cloud huge and playing just one or two tracks for an artist (Like with compilations) which just swamps the tag cloud with lots of low played artists.</p>
+<pre class="code xsl">&lt;xsl:variable name="weight" select="playcount div $max_playcount" /&gt;
+&lt;xsl:variable name="size" select="($weight * $size_range) + $size_min" /&gt;</pre>
+
+<p>To calculate the <em>weighting</em>, how big the font-size should be, it takes the highest played artists playcount as a baseline and treats every other artist as a fraction of that. This fraction, the weight, is then used to the size using the min and max sizes as boundaries.</p>
+<p>The rest of the <span class="caps">XSL</span> just builds the list, link and span tags/content.</p>
+<pre class="code xsl">&lt;xsl:variable name="artists" select="/weeklyartistchart/artist[playcount &gt;= $min_playcount and position() &lt;= $max_artists]" /&gt;</pre>
+<p>This is the <span class="caps">XPATH</span> query used to get the set of valid artists than have the minimum playcount and caped at the maximum number of artists</p>
+
+<h3>Semantics</h3>
+<p>Tag-clouds have a reputation as being pretty unsemantic when it comes to <span class="caps">HTML</span>. Often just being an alphabetised list when viewed without styling. <a href="http://cackhanded.net/">Norm</a> had a go at <a href="http://24ways.org/2006/marking-up-a-tag-cloud">marking up tag-clouds semantically</a>, which i’ve followed with one exception.</p>
+<p>Rather than using a set of class names I opted for inline styles declaring the font-size. Heresy! Well, yes and no. I want the cloud items to be properly scaled and the scale easy to modify, this just isn’t possible using a set combination of classes mapped to sizes.</p>
+<p>This doesn’t really bother me much, especially with the extra semantic information added. So the final markup looks like so:</p>
+<pre class="code xhtml">&lt;li style="font-size: 4.000em;"&gt;     &lt;span&gt;&lt;span class="weighting"&gt;26&lt;/span&gt; listens to&lt;/span&gt;     &lt;a xhref="http://www.last.fm/music/Stars" mce_href="http://www.last.fm/music/Stars" title="Stars (26 listens)"&gt;         Stars     &lt;/a&gt; &lt;/li&gt; &lt;li style="font-size: 3.077em;"&gt;     &lt;span&gt;&lt;span class="weighting"&gt;18&lt;/span&gt; listens to&lt;/span&gt;     &lt;a xhref="http://www.last.fm/music/The+Microphones" mce_href="http://www.last.fm/music/The+Microphones" title="The Microphones (18 listens)"&gt;         The Microphones     &lt;/a&gt; &lt;/li&gt;</pre>
+
+<p>If you’re paying attention you’ll have spotted <em>another</em> span in there, inside the one used to hide the non-artist-name information. Why add it? It gives a semantic hook to get the actual weighting value of the cloud, in this case listens.</p>
+<p>With this you could create a very simple piece of javascript to turn the tag cloud back in to a chart, ordered by listens rather than alphabetically.</p>
+<h3>Styling</h3>
+<p>There’s only some very simple styling on the list itself. Mostly just visual formating, but importantly a rule to hide the span of contextual information leaving just the artist name.</p>
+<pre class="code css">ol {
+width: 700px;
+margin: 0 auto;
+
+list-style: none;
+text-align: center;
+
+font-size: .6em;
+}
+
+li {
+display: inline;
+margin: 0 .2em;
+padding: 0 .3em;
+
+line-height: 1.5;
+vertical-align: middle;
+}
+
+li span {
+position: absolute;
+left: -999px;
+width: 990px;
+}</pre>
+
+<h3>Known Issues</h3>
+<p>There are still a few things I’m unhappy about with this, when using artist names rather than tags you’re far more likely to get spaces and end up with an artist name split across two lines. This can often end up looking like two separate artists if you’re not familiar with the name.</p>
+<p>And, the obvious problem – it’s all reliant on data from another site, last.fm. I can’t be sure it’ll always be up, or that formats wont change. This is the price you pay for relying on external service, in this case it’s nothing critical or even important, but it’s something people seem to forget a lot of the time.</p>
+<h3>Demo</h3>
+<p>I built a little <a href="http://dsingleton.co.uk/code/lastfm-tagcloud/">demo page</a> where you can enter your last.fm username (or a friends) and see a tag cloud of your recently weekly artists. Check out a few examples;</p>
+<ul><li><a href="http://dsingleton.co.uk/code/lastfm-tagcloud/?user=underpangs">Myself</a></li>
+<li><a href="http://dsingleton.co.uk/code/lastfm-tagcloud/?user=knockles">Simon Coltman</a></li>
+
+<li><a href="http://dsingleton.co.uk/code/lastfm-tagcloud/?user=phae">Fraces Berriman</a></li>
+<li><a href="http://dsingleton.co.uk/code/lastfm-tagcloud/?user=daelen">Kriss Watt</a></li>
+</ul><p><a href="http://dsingleton.co.uk/code/lastfm-tagcloud/">Give it a try</a>.
+</p>
+        <p class="post-info">
+            Posted on
+            <abbr class="published" title="2007-05-07T00:00:00+02:00">Monday May 7, 2007</abbr>
+        </p>
+        <p>Tagged:
+        <ul class="tags">
+                    <li rel="tag">xsl</li>
+                    <li rel="tag">xslt</li>
+                    <li rel="tag">xml</li>
+                    <li rel="tag">lastfm</li>
+                    <li rel="tag">tagcloud</li>
+                    <li rel="tag">tags</li>
+                    <li rel="tag">music</li>
+                    <li rel="tag">code</li>
+                    <li rel="tag">css</li>
+                </ul>
+        </p>
+</article>
+
+<aside>
+    <div class="recent posts">
+        <h4>Recent posts</h4>
+        <ul class="posts">
+                    <li><a href="/blog/scrobbling-heatmap-calendar">Scrobbling Heatmap Calendar</a></li>
+                    <li><a href="/blog/last-fm-now-playing-information-radiator">Last.fm Now-Playing information radiator</a></li>
+                    <li><a href="/blog/leaving-last-fm">Leaving Last.fm</a></li>
+                    <li><a href="/blog/facebook-photo-facial-recognition">Facebook photo facial recognition</a></li>
+                    <li><a href="/blog/entitlement-artificial-scarcity-spotify">Artificial Scarcity and Entitlement</a></li>
+                    <li><a href="/blog/migrating-scrobbling-authentication-to-2-0">Migrating scrobbling authentication to 2.0</a></li>
+                    <li><a href="/blog/erlang-beginners-tutorial">Erlang: For an absolute beginner</a></li>
+                    <li><a href="/blog/tech-hub-misrepresents-silicon-roundabout">Tech Hub misrepresents Silicon Roundabout</a></li>
+                    <li><a href="/blog/virtualised-development-environments">The importance of virtualised development environments</a></li>
+                    <li><a href="/blog/new-twitter-favouritism">New Twitter favouritism</a></li>
+                </ul>
+        
+        <p><a href="/blog">More&hellip;</p>
+    </div>
+</aside>
+
+</article>
+
+        <footer id="footer">
+            <ul>
+                <li class="twitter"><a href="http://twitter.com/dsingleton">Follow me on twitter</a></li>
+            </ul> 
+        </footer>
+
+    </div><!-- /#page -->
+
+<!-- Analytics tracking code -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-609105-1"; urchinTracker();</script>  
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	
+	<title>Using xargs like I mean it, a bash example. - David Singleton</title>
+
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    	
+    <meta name="description" content="The blog of David Singleton, Ramblings of a Web Developer" />
+    <meta name="keywords" content="david singleton, dave singleton, web developer, london, css, php, lamp, mysql, unix, programming, web standards, coding, microformats, web sites, angry rants" />
+    <meta name="author" content="David Singleton" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0"/>
+
+    <link rel="openid.server" href="http://www.myopenid.com/server" />
+    <link rel="openid.delegate" href="http://dsingleton.myopenid.com/" />
+    <meta http-equiv="X-XRDS-Location" content="http://dsingleton.myopenid.com/xrds" />
+
+    <link rel="stylesheet" href="/static/css/less.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/typography.css" type="text/css" />
+    
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    
+
+</head>
+
+<body>
+    
+    <div id="page">
+
+        <header>
+            <p>
+                <span class="myname">
+                    <a class="name" href="/" ><span class="firstname">David</span> <span class="lastname">Singleton</span></a>
+                </span>
+                <span class="aboutme">
+                    A <span class="title">web developer</span>
+                    living in <span class="adr"><span class="locality">London</span></span>
+                    and working at <a href="http://last.fm">Last.fm</a>.
+                </span>
+                <span class="tagline">I occasionally write a <a href="/blog">blog</a> and publish some <a href="/code">code</a>, find out <a href="/about">more &raquo;</a></span>
+            </p>
+
+        </header>
+
+        
+<article class="blog-entry">
+        <h1>Using xargs like I mean it, a bash example.</h1>
+        <blockquote>
+  <p>Using xargs like I mean it. svn st * | grep &#8220;^ C&#8221; | cut -c 8- | xargs svn revert</p>
+</blockquote>
+
+<ul><li><a href="http://twitter.com/dsingleton/status/2616994594">http://twitter.com/dsingleton/status/2616994594</a></li>
+</ul><p>A couple of people asked me to explain what this did, so here&#8217;s a quick 2 minute explanation (I&#8217;ll assume you&#8217;re familiar with unix pipes)</p>
+
+<p>First, what was I trying to do? I&#8217;d just merged a large branch back down to trunk and for some reason it had a huge number of SVN property conflicts. I wanted to resolve or revert all of these before committing the reset of my changes.</p>
+
+<p>I could have fixed them individually, but that&#8217;s a lot of repetition and there are more elegant ways to do it programmatically.</p>
+
+<p>So how does this resolve only my property conflicts?</p>
+
+<p>First get a list of all modified files in our SVN respiratory (in my case, this was actually multiple repositories)</p>
+
+<pre><code>svn st *
+</code></pre>
+
+<p>I&#8217;m only interested in the property conflicts though. Property status codes are differentiated from regular status changes by a space prefix. The grep filters our list of SVN changes to just these.</p>
+
+<pre><code>grep "^ C"
+</code></pre>
+
+<p>The output at this stage looks something like &#8221; C     path/to/file&#8221; (for each matched file). I want just the file name and need to strip the preceding information. Luckily the length of this prefixed information is a constant 7 characters. Cut lets you chop lines based on delimiters (like tabs, or commas), or by character, here I use it to get the 8th character and onwards</p>
+
+<pre><code>cut -c 8-
+</code></pre>
+
+<p>At this point we have a list of file paths, one per line. xargs is a command that can take another command (and it&#8217;s options, flags, etc) and run it for a large list of files. The files are passed via standard input, one file per line. So this is telling xargs to run svn revert for each of the files passed from the previous commands.</p>
+
+<pre><code>xargs svn revert
+</code></pre>
+
+<p>The end result is that all my property change conflicted files have been reverted, though I could have equally resolved, or told SVN to use my version.</p>
+
+<p>I hope this is a nice little example of the power of the unix command line philosophy, lots of small commands - that do one thing very well - chained together with pipes.</p>
+        <p class="post-info">
+            Posted on
+            <abbr class="published" title="2009-07-13T21:21:00+02:00">Monday July 13, 2009</abbr>
+        </p>
+        <p>Tagged:
+        <ul class="tags">
+                    <li rel="tag">bash</li>
+                    <li rel="tag">bash-example</li>
+                    <li rel="tag">bashfu</li>
+                    <li rel="tag">commandline</li>
+                    <li rel="tag">grep</li>
+                    <li rel="tag">svn</li>
+                    <li rel="tag">xargs</li>
+                    <li rel="tag">code</li>
+                </ul>
+        </p>
+</article>
+
+<aside>
+    <div class="recent posts">
+        <h4>Recent posts</h4>
+        <ul class="posts">
+                    <li><a href="/blog/scrobbling-heatmap-calendar">Scrobbling Heatmap Calendar</a></li>
+                    <li><a href="/blog/last-fm-now-playing-information-radiator">Last.fm Now-Playing information radiator</a></li>
+                    <li><a href="/blog/leaving-last-fm">Leaving Last.fm</a></li>
+                    <li><a href="/blog/facebook-photo-facial-recognition">Facebook photo facial recognition</a></li>
+                    <li><a href="/blog/entitlement-artificial-scarcity-spotify">Artificial Scarcity and Entitlement</a></li>
+                    <li><a href="/blog/migrating-scrobbling-authentication-to-2-0">Migrating scrobbling authentication to 2.0</a></li>
+                    <li><a href="/blog/erlang-beginners-tutorial">Erlang: For an absolute beginner</a></li>
+                    <li><a href="/blog/tech-hub-misrepresents-silicon-roundabout">Tech Hub misrepresents Silicon Roundabout</a></li>
+                    <li><a href="/blog/virtualised-development-environments">The importance of virtualised development environments</a></li>
+                    <li><a href="/blog/new-twitter-favouritism">New Twitter favouritism</a></li>
+                </ul>
+        
+        <p><a href="/blog">More&hellip;</p>
+    </div>
+</aside>
+
+</article>
+
+        <footer id="footer">
+            <ul>
+                <li class="twitter"><a href="http://twitter.com/dsingleton">Follow me on twitter</a></li>
+            </ul> 
+        </footer>
+
+    </div><!-- /#page -->
+
+<!-- Analytics tracking code -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-609105-1"; urchinTracker();</script>  
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	
+	<title>The importance of virtualised development environments - David Singleton</title>
+
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    	
+    <meta name="description" content="The blog of David Singleton, Ramblings of a Web Developer" />
+    <meta name="keywords" content="david singleton, dave singleton, web developer, london, css, php, lamp, mysql, unix, programming, web standards, coding, microformats, web sites, angry rants" />
+    <meta name="author" content="David Singleton" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0"/>
+
+    <link rel="openid.server" href="http://www.myopenid.com/server" />
+    <link rel="openid.delegate" href="http://dsingleton.myopenid.com/" />
+    <meta http-equiv="X-XRDS-Location" content="http://dsingleton.myopenid.com/xrds" />
+
+    <link rel="stylesheet" href="/static/css/less.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/typography.css" type="text/css" />
+    
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    
+
+</head>
+
+<body>
+    
+    <div id="page">
+
+        <header>
+            <p>
+                <span class="myname">
+                    <a class="name" href="/" ><span class="firstname">David</span> <span class="lastname">Singleton</span></a>
+                </span>
+                <span class="aboutme">
+                    A <span class="title">web developer</span>
+                    living in <span class="adr"><span class="locality">London</span></span>
+                    and working at <a href="http://last.fm">Last.fm</a>.
+                </span>
+                <span class="tagline">I occasionally write a <a href="/blog">blog</a> and publish some <a href="/code">code</a>, find out <a href="/about">more &raquo;</a></span>
+            </p>
+
+        </header>
+
+        
+<article class="blog-entry">
+        <h1>The importance of virtualised development environments</h1>
+        <p><a href="http://morethanseven.net">Gareth Rushgrove</a> just wrote a great blog post entitled <a href="http://morethanseven.net/2010/11/04/Why-you-should-be-using-virtualisation.html">Why You Should Be Using Virtualisation</a>, which puts out a great argument for using virtualised development environments.</p>
+
+<p>The crux of the argument is that you should be testing and running your code in an environment as close as possible to production, and that virtualisation is the easiest way to do that. There are other benefits, but this is the most important by far.</p>
+
+<p>To quote Gareth:</p>
+
+<blockquote>But if you’re running those tests against code executing on different hardware, on a different operating system, with different low level libraries or a different web server version or a different database server then you are not going to catch all the problems. If you take this to an extreme then you can only get rid of all of these problems by giving each developer a full production stack of their very own.</blockquote>
+
+<p>A short example of this: A few months back I spent the better part of a day tracking a bug that was happening in production by utterly unreproducable in our development environment. The cause was a difference in the <a href="http://incubator.apache.org/thrift/">Thrift</a> setup between the two - one was running a C extension while the other was a native PHP extension - and one had a bug.</p>
+
+<p>It&#8217;s not important what the bug was, but that if the two had been in sync then the problem would have been caught much quicker and more easily.</p>
+
+<h3>Current work setup</h3>
+<p>At <a href="http://www.last.fm">Last.fm</a> each web developer has their own hosted and internally routed Virtual Machine, all based on the same VM image, which matches 99% of our production stack. There are still the occasional niggling 1% problems and mismatches, but each time we encounter one it gets fixed in the original VM image, so it&#8217;s a step closer to being fixed forever.</p>
+
+<p>In contrast, there was a period where we were running differing versions of Apache and PHP compared to live (and different again to some non-production, non-development internal servers). Believe me when I say: this causes no end of problems, avoid it at all costs. It will sap developer time and enthusiasm faster than you&#8217;d think. As happy as many developers are playing at sys-admin, the majority would much rather be writing code and making <em>stuff</em>, not fighting workflow.</p>
+
+<h3>Restore and rollback</h3>
+<p>Another benefit of visualisation is that you can get a new version of your VM running very quickly. This saves an awful lot of time for a new hire, but also if you lose your VM for any reason then you can generate a new VM or restore an archived version incredibly easily.</p>
+
+<p>Due to a disk corruption I lost my development VM a few months ago, frustrating as it was I was able to get working again in under an hour. A new production-parity VM was generated and I pulled in code from our source repository, restarted Apache and away I went. All I lost was a (small) amount of uncommited code and a few shell scripts, which did teach me to treat a VM as a throwaway environment, commit or backup anything you would mind losing.</p>
+
+<h3>Downsides</h3>
+<p>I can understand hesitation about setting up a production environments for dev, especially for the awkward medium sized projects (bigger than small, but not a serious endeavour), but it can give you some pretty big wins. The earlier you encounter bugs, the quicker you fix them and if disaster strikes you can resurrect your environment easily. I think it also forces you to be more controlled when adding dependencies in your production environment.</p>
+
+<p>Of course, it&#8217;s not a silver bullet, you&#8217;ll still encounter weird production vs dev bugs, there&#8217;ll always be differences. Not just load/the real world, but it&#8217;s also like you might be missing some configuration or software, routing access or even domain variance than only production has.</p>
+
+<p>To test against production as much as possible we use a few production web servers, pulled from the main pool, which are configured to run candidate releases of our code base. Developers and testers can set a cookie that our load balancer will use to route them to the QA servers. This allows us to test an unreleased version of the site  using the exact hardware/software we use in production, that&#8217;s hosted in the same data centers and addressed by the real domain.</p>
+
+<p>You can&#8217;t get any closer than that without putting the code live.</p>
+        <p class="post-info">
+            Posted on
+            <abbr class="published" title="2010-11-06T01:23:35+01:00">Saturday November 6, 2010</abbr>
+        </p>
+        <p>Tagged:
+        <ul class="tags">
+                    <li rel="tag">development</li>
+                    <li rel="tag">lastfm</li>
+                    <li rel="tag">testing</li>
+                    <li rel="tag">qa</li>
+                    <li rel="tag">servers</li>
+                </ul>
+        </p>
+</article>
+
+<aside>
+    <div class="recent posts">
+        <h4>Recent posts</h4>
+        <ul class="posts">
+                    <li><a href="/blog/scrobbling-heatmap-calendar">Scrobbling Heatmap Calendar</a></li>
+                    <li><a href="/blog/last-fm-now-playing-information-radiator">Last.fm Now-Playing information radiator</a></li>
+                    <li><a href="/blog/leaving-last-fm">Leaving Last.fm</a></li>
+                    <li><a href="/blog/facebook-photo-facial-recognition">Facebook photo facial recognition</a></li>
+                    <li><a href="/blog/entitlement-artificial-scarcity-spotify">Artificial Scarcity and Entitlement</a></li>
+                    <li><a href="/blog/migrating-scrobbling-authentication-to-2-0">Migrating scrobbling authentication to 2.0</a></li>
+                    <li><a href="/blog/erlang-beginners-tutorial">Erlang: For an absolute beginner</a></li>
+                    <li><a href="/blog/tech-hub-misrepresents-silicon-roundabout">Tech Hub misrepresents Silicon Roundabout</a></li>
+                    <li><a href="/blog/virtualised-development-environments">The importance of virtualised development environments</a></li>
+                    <li><a href="/blog/new-twitter-favouritism">New Twitter favouritism</a></li>
+                </ul>
+        
+        <p><a href="/blog">More&hellip;</p>
+    </div>
+</aside>
+
+</article>
+
+        <footer id="footer">
+            <ul>
+                <li class="twitter"><a href="http://twitter.com/dsingleton">Follow me on twitter</a></li>
+            </ul> 
+        </footer>
+
+    </div><!-- /#page -->
+
+<!-- Analytics tracking code -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-609105-1"; urchinTracker();</script>  
+
+</body>
+</html>

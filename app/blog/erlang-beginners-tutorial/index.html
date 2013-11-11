@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	
+	<title>Erlang: For an absolute beginner - David Singleton</title>
+
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    	
+    <meta name="description" content="The blog of David Singleton, Ramblings of a Web Developer" />
+    <meta name="keywords" content="david singleton, dave singleton, web developer, london, css, php, lamp, mysql, unix, programming, web standards, coding, microformats, web sites, angry rants" />
+    <meta name="author" content="David Singleton" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0"/>
+
+    <link rel="openid.server" href="http://www.myopenid.com/server" />
+    <link rel="openid.delegate" href="http://dsingleton.myopenid.com/" />
+    <meta http-equiv="X-XRDS-Location" content="http://dsingleton.myopenid.com/xrds" />
+
+    <link rel="stylesheet" href="/static/css/less.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/typography.css" type="text/css" />
+    
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    
+
+</head>
+
+<body>
+    
+    <div id="page">
+
+        <header>
+            <p>
+                <span class="myname">
+                    <a class="name" href="/" ><span class="firstname">David</span> <span class="lastname">Singleton</span></a>
+                </span>
+                <span class="aboutme">
+                    A <span class="title">web developer</span>
+                    living in <span class="adr"><span class="locality">London</span></span>
+                    and working at <a href="http://last.fm">Last.fm</a>.
+                </span>
+                <span class="tagline">I occasionally write a <a href="/blog">blog</a> and publish some <a href="/code">code</a>, find out <a href="/about">more &raquo;</a></span>
+            </p>
+
+        </header>
+
+        
+<article class="blog-entry">
+        <h1>Erlang: For an absolute beginner</h1>
+        <p>Last night I spent 30 minutes having a play with a new (to me) programming language, <a href="http://en.wikipedia.org/wiki/Erlang_(programming_language)">Erlang</a>.</p>
+
+<p>Its a language that will stretch my brain a bit, teach me to think about programming in a different way, and I know some folks using it (Mostly <a href="http://smarkets.com/">Smarkets</a> and <a href="http://irccloud.com">IRCCloud</a>) who&#8217;s brains I can pick in the pub.</p>
+
+<p>These are my quick notes from an Erlang newbie, hopefully useful to someone else getting started who justs wants to install it, write Hello World and go from there.</p>
+
+<h3>Installing Erlang on OSX</h3>
+
+<p>This is incredibly easy with <a href="https://github.com/mxcl/homebrew">Homebrew</a> (a package manager for OSX). As simple as:</p>
+
+<pre><code>brew install erlang</code></pre>
+
+<p>I expect they&#8217;ll be some cases where I need more than that stock install, but it&#8217;s good enough to get started. I haven&#8217;t tried it on my server, but it looks like a simple apt-get should do the trick, rather than the ball-ache of compiling from source.</p>
+
+<h3>Writing &#8216;Hello World&#8217;</h3>
+
+<p>The <a href="http://www.erlang.org/faq/getting_started.html#id52506">Erlang FAQ</a> has the simplest example:</p>
+
+<code><pre>
+-module(hello).
+-export([hello_world/0]).
+
+hello_world() -&gt; io:fwrite("hello, world\n").
+</pre></code>
+
+<p>Save that as <code>hello.erl</code> (the name of the file needs to match the module name), run the Erlang shell (run <code>erl</code>) and compile it like so:</p>
+
+<code><pre>
+$ erl
+1 &gt; c(hello.erl).
+</pre></code>
+
+<p>This will generate an Erlang bytcode file called <code>hello.beam</code> in your working directory. To run it, switch back to the Erlang shell and call the exported function on your module.</p>
+
+<code><pre>
+2 &gt; hello:hello_world().
+hello, world
+ok
+3 &gt; 
+</pre></code>
+
+<p>Simple. Thought i&#8217;d also recommend looking at a <a href="http://egarson.blogspot.com/2008/03/real-erlang-hello-world.html">more complicated &#8216;Hello World&#8217;</a> that is a more idiomatic and Erlang-y version, </p>
+
+<h3>What next?</h3>
+
+<p>I <a href="http://twitter.com/#!/dsingleton/status/22716268050124801">asked on Twitter</a> for some good Erlang resources, books, blogs, tutorials etc:</p>
+
+<ul><li><a href="http://www.amazon.co.uk/gp/product/193435600X?ie=UTF8&amp;tag=httpdsingleco-21&amp;linkCode=as2&amp;camp=1634&amp;creative=19450&amp;creativeASIN=193435600X">Joe Armstrong - Programming Erlang: Software for a Concurrent World</a>. A lot of very smart people recommend this, the classic book on Erlang by one of it&#8217;s creators. It&#8217;s going on my Kindle as I type.</li>
+<li><a href="http://learnyousomeerlang.com/">learn you some Erlang</a>. A more approachable introduction to Erlang, with a little of <a href="http://en.wikipedia.org/wiki/Why_the_lucky_stiff">_why&#8217;s</a> style about it.</li>
+<li><a href="http://www.delicious.com/dsingleton/erlang">My bookmarks tagged Erlang</a>. I&#8217;ll be adding more links as I collect them.</li>
+</ul><p>I guess my next step is to pick a small project to building in Erlang. It always seems better to have a simple project to help pick up a language.</p>
+
+<p>At the moment I think i&#8217;m going to work through some of the <a href="http://projecteuler.net/">Project Euler&gt;</a> problems and get to grips with the basics. Then perhaps build a toy web server, which has the added bonus of grokking more of the HTTP spec.</p>
+
+<h3>And finally…</h3>
+
+<p>It wouldn&#8217;t be a beginning Erlang blog post without the obligatory &#8220;<em>Hello Joe</em>" from the brilliant Erlang: The Movie</p>
+
+<object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/uKfKtXYLG78?fs=1&amp;hl=en_US"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/uKfKtXYLG78?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object>
+        <p class="post-info">
+            Posted on
+            <abbr class="published" title="2011-01-06T22:42:04+01:00">Thursday January 6, 2011</abbr>
+        </p>
+        <p>Tagged:
+        <ul class="tags">
+                    <li rel="tag">erlang</li>
+                    <li rel="tag">programming</li>
+                    <li rel="tag">hellworld</li>
+                </ul>
+        </p>
+</article>
+
+<aside>
+    <div class="recent posts">
+        <h4>Recent posts</h4>
+        <ul class="posts">
+                    <li><a href="/blog/scrobbling-heatmap-calendar">Scrobbling Heatmap Calendar</a></li>
+                    <li><a href="/blog/last-fm-now-playing-information-radiator">Last.fm Now-Playing information radiator</a></li>
+                    <li><a href="/blog/leaving-last-fm">Leaving Last.fm</a></li>
+                    <li><a href="/blog/facebook-photo-facial-recognition">Facebook photo facial recognition</a></li>
+                    <li><a href="/blog/entitlement-artificial-scarcity-spotify">Artificial Scarcity and Entitlement</a></li>
+                    <li><a href="/blog/migrating-scrobbling-authentication-to-2-0">Migrating scrobbling authentication to 2.0</a></li>
+                    <li><a href="/blog/erlang-beginners-tutorial">Erlang: For an absolute beginner</a></li>
+                    <li><a href="/blog/tech-hub-misrepresents-silicon-roundabout">Tech Hub misrepresents Silicon Roundabout</a></li>
+                    <li><a href="/blog/virtualised-development-environments">The importance of virtualised development environments</a></li>
+                    <li><a href="/blog/new-twitter-favouritism">New Twitter favouritism</a></li>
+                </ul>
+        
+        <p><a href="/blog">More&hellip;</p>
+    </div>
+</aside>
+
+</article>
+
+        <footer id="footer">
+            <ul>
+                <li class="twitter"><a href="http://twitter.com/dsingleton">Follow me on twitter</a></li>
+            </ul> 
+        </footer>
+
+    </div><!-- /#page -->
+
+<!-- Analytics tracking code -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-609105-1"; urchinTracker();</script>  
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	
+	<title>Batch event importing to Last.fm - David Singleton</title>
+
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    	
+    <meta name="description" content="The blog of David Singleton, Ramblings of a Web Developer" />
+    <meta name="keywords" content="david singleton, dave singleton, web developer, london, css, php, lamp, mysql, unix, programming, web standards, coding, microformats, web sites, angry rants" />
+    <meta name="author" content="David Singleton" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0"/>
+
+    <link rel="openid.server" href="http://www.myopenid.com/server" />
+    <link rel="openid.delegate" href="http://dsingleton.myopenid.com/" />
+    <meta http-equiv="X-XRDS-Location" content="http://dsingleton.myopenid.com/xrds" />
+
+    <link rel="stylesheet" href="/static/css/less.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/typography.css" type="text/css" />
+    
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    
+
+</head>
+
+<body>
+    
+    <div id="page">
+
+        <header>
+            <p>
+                <span class="myname">
+                    <a class="name" href="/" ><span class="firstname">David</span> <span class="lastname">Singleton</span></a>
+                </span>
+                <span class="aboutme">
+                    A <span class="title">web developer</span>
+                    living in <span class="adr"><span class="locality">London</span></span>
+                    and working at <a href="http://last.fm">Last.fm</a>.
+                </span>
+                <span class="tagline">I occasionally write a <a href="/blog">blog</a> and publish some <a href="/code">code</a>, find out <a href="/about">more &raquo;</a></span>
+            </p>
+
+        </header>
+
+        
+<article class="blog-entry">
+        <h1>Batch event importing to Last.fm</h1>
+        <p>Over christmas I sorted out some old boxes from University and found all the <a href="http://www.flickr.com/photos/davidsingleton/tags/tickets/">paper ticket stubs</a> for gigs from 2002 to 2005. That&#8217;s some meaty data I didn&#8217;t want to lose, I copied it to a spreadsheet with plans to import it in to the <a href="http://last.fm/user/underpangs/events/">Last.fm events system</a> (where I track all my current gig habbits). </p>
+
+<p>Unfortunately the <a href="http://last.fm/events/add">add events workflow</a> is a real pain for adding more than one event at once, let alone the 50 I had. In the future we hope to add better support for adding multiple events, either with a new tool (aimed at promoters) or creating an <i>event.add</i> <a href="http://last.fm/api">API method</a> (and let someone else build it), but in the meantime I wanted a quick hack solution to speed things up.</p>
+
+<p>Seeing as I had all my data in CSV already, the simplest approach is to generate URLs that pre-fill the &#8220;Add Event&#8221; form data and let you skip to the last step. <strong>Note;</strong> We use one-time form tokens to prevent XSRF attacks, so you can&#8217;t just submit the form a script. All the fields can be passed as GET variables to prefill, here are the query param names you&#8217;ll need to do this:</p>
+
+<dl><dt>type</dt>
+    <dd>"gig" or "festival"</dd>
+    
+    <dt>startday</dt>
+    <dd>2 digit day, eg <em>03</em></dd>
+    
+    <dt>startmonth</dt>
+    <dd>2 digit month, eg <em>11</em></dd>
+    
+    <dt>startyear</dt>
+    <dd>4 digit year, eg <em>2002</em></dd>
+    
+    <dt>starttime</dt>
+    <dd>24 hour time separated by a colon, eg <em>20:00</em></dd>
+    
+    <dt>venueid</dt>
+    <dd>The Last.fm venue id, you can find this in the venue URL</dd>
+    
+    <dt>festivalName</dt>
+    <dd>Confusingly this is just event name/title, not festival specific</dd>
+    
+    <dt>artistNames</dt>
+    <dd>Multiple artist names, specified as an array, eg artistNames[]=Blur&amp;artistNames[]=Radiohead&amp;artistNames[]=Pulp</dd>
+</dl><p>So a complete example looks like:</p>
+<p><code><a href="http://last.fm/events/add?type=gig&amp;artistNames">http://last.fm/events/add?type=gig&amp;artistNames</a>[]=Sparta&amp;startday=04&amp;startmonth=10&amp;startyear=2005&amp;starttime=20:00&amp;venueid=8777858&amp;festivalName=</code></p>
+
+<p>If you have your events in a structured format then it&#8217;s easy to build a quick script to generate these links and really reduce the time needed to add events. Far far from ideal I know (and I&#8217;m a bit embarrassed to post it) but it might save you some time. I promise to build event.add to the API soon.</p>
+        <p class="post-info">
+            Posted on
+            <abbr class="published" title="2010-01-06T22:20:24+01:00">Wednesday January 6, 2010</abbr>
+        </p>
+        <p>Tagged:
+        <ul class="tags">
+                    <li rel="tag">events</li>
+                    <li rel="tag">lastfm</li>
+                    <li rel="tag">batch</li>
+                    <li rel="tag">hack</li>
+                </ul>
+        </p>
+</article>
+
+<aside>
+    <div class="recent posts">
+        <h4>Recent posts</h4>
+        <ul class="posts">
+                    <li><a href="/blog/scrobbling-heatmap-calendar">Scrobbling Heatmap Calendar</a></li>
+                    <li><a href="/blog/last-fm-now-playing-information-radiator">Last.fm Now-Playing information radiator</a></li>
+                    <li><a href="/blog/leaving-last-fm">Leaving Last.fm</a></li>
+                    <li><a href="/blog/facebook-photo-facial-recognition">Facebook photo facial recognition</a></li>
+                    <li><a href="/blog/entitlement-artificial-scarcity-spotify">Artificial Scarcity and Entitlement</a></li>
+                    <li><a href="/blog/migrating-scrobbling-authentication-to-2-0">Migrating scrobbling authentication to 2.0</a></li>
+                    <li><a href="/blog/erlang-beginners-tutorial">Erlang: For an absolute beginner</a></li>
+                    <li><a href="/blog/tech-hub-misrepresents-silicon-roundabout">Tech Hub misrepresents Silicon Roundabout</a></li>
+                    <li><a href="/blog/virtualised-development-environments">The importance of virtualised development environments</a></li>
+                    <li><a href="/blog/new-twitter-favouritism">New Twitter favouritism</a></li>
+                </ul>
+        
+        <p><a href="/blog">More&hellip;</p>
+    </div>
+</aside>
+
+</article>
+
+        <footer id="footer">
+            <ul>
+                <li class="twitter"><a href="http://twitter.com/dsingleton">Follow me on twitter</a></li>
+            </ul> 
+        </footer>
+
+    </div><!-- /#page -->
+
+<!-- Analytics tracking code -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-609105-1"; urchinTracker();</script>  
+
+</body>
+</html>

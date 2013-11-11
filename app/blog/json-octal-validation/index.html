@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	
+	<title>JSON, Octal Numbers &amp; Validation - David Singleton</title>
+
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    	
+    <meta name="description" content="The blog of David Singleton, Ramblings of a Web Developer" />
+    <meta name="keywords" content="david singleton, dave singleton, web developer, london, css, php, lamp, mysql, unix, programming, web standards, coding, microformats, web sites, angry rants" />
+    <meta name="author" content="David Singleton" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0"/>
+
+    <link rel="openid.server" href="http://www.myopenid.com/server" />
+    <link rel="openid.delegate" href="http://dsingleton.myopenid.com/" />
+    <meta http-equiv="X-XRDS-Location" content="http://dsingleton.myopenid.com/xrds" />
+
+    <link rel="stylesheet" href="/static/css/less.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/typography.css" type="text/css" />
+    
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    
+
+</head>
+
+<body>
+    
+    <div id="page">
+
+        <header>
+            <p>
+                <span class="myname">
+                    <a class="name" href="/" ><span class="firstname">David</span> <span class="lastname">Singleton</span></a>
+                </span>
+                <span class="aboutme">
+                    A <span class="title">web developer</span>
+                    living in <span class="adr"><span class="locality">London</span></span>
+                    and working at <a href="http://last.fm">Last.fm</a>.
+                </span>
+                <span class="tagline">I occasionally write a <a href="/blog">blog</a> and publish some <a href="/code">code</a>, find out <a href="/about">more &raquo;</a></span>
+            </p>
+
+        </header>
+
+        
+<article class="blog-entry">
+        <h1>JSON, Octal Numbers &amp; Validation</h1>
+        <p>Now it&#8217;s launched in London I&#8217;ve been playing around with the Foursquare API. While it&#8217;s not the best API i&#8217;ve come across it gives you reasonable access to their data, so i&#8217;ve been pretty happily building some small tools using their data.</p>
+
+<p> hit a rather usual bug with JSON parsing for a Foursquare venue, in this case the <a href="http://foursquare.com/venue/140854">Bricklayers Arms</a> (The home of Pub Standards). The JSON response looks something like this:</p>
+
+<code class="json javascript">
+<pre>
+{
+    "venue": {
+        "id": 145975,
+        "name": "Bricklayers Arms",
+        "address": "31 Gresse St",
+        "city": "Camden Town",
+        "state": "Greater London",
+        "zip": "W1T 1",
+        "phone": 02076365593,
+        "geolat": 51.5176421,
+        "geolong": -0.1334817,
+        "stats": {
+            "checkins": 0 
+        }
+    }
+}
+</pre>
+</code>
+
+<p>Looks pretty reasonable, right? But my JSON parser chocked on this and called it invalid.  Running it through <a href="http://www.jsonlint.com/">JSON Lint</a> gives a bit more information, but is still a bit vague:</p>
+
+<blockquote>syntax error, unexpected TNUMBER, expecting &#8216;}&#8217; at line 9</blockquote>
+
+<p>Let&#8217;s see, line 9 is the phone number key/val, that seems like it should be valid, I mean the leading zero is odd but&#8230; oh. You may, or may not, remember that standard notation for <a href="http://en.wikipedia.org/wiki/Octal">octal numbers</a> is a leading 0, it&#8217;s not something you run in to very often.</p>
+
+<p>So why is an octal number invalid? Because the JSON spec doesn&#8217;t explicitly support octal numbers as native types and parsers aren&#8217;t compelled to either. Some may do, but this is probably more luck than judgement - a side effect of loose typing.</p>
+
+<p>I&#8217;ve reported the bug to the Foursquare team and it sounds like it&#8217;ll be fixed shortly (as part of an API rewrite), in the mean time i&#8217;ll be using a dirty regex to quote the offending number before parsing.</p>
+
+<p>If there&#8217;s one thing to take from this it&#8217;s how important validation is, even if it does nothing more than prove it&#8217;s not your bug. Looking at the original response and trying to work our why it didn&#8217;t parse with validation would have been very painful, it&#8217;s not a bug easily caught by a human, you need rigorous machine testing. </p>
+        <p class="post-info">
+            Posted on
+            <abbr class="published" title="2009-10-14T16:14:00+02:00">Wednesday October 14, 2009</abbr>
+        </p>
+        <p>Tagged:
+        <ul class="tags">
+                    <li rel="tag">json</li>
+                    <li rel="tag">javascript</li>
+                    <li rel="tag">octal</li>
+                    <li rel="tag">bug</li>
+                    <li rel="tag">testing</li>
+                    <li rel="tag">validation</li>
+                </ul>
+        </p>
+</article>
+
+<aside>
+    <div class="recent posts">
+        <h4>Recent posts</h4>
+        <ul class="posts">
+                    <li><a href="/blog/scrobbling-heatmap-calendar">Scrobbling Heatmap Calendar</a></li>
+                    <li><a href="/blog/last-fm-now-playing-information-radiator">Last.fm Now-Playing information radiator</a></li>
+                    <li><a href="/blog/leaving-last-fm">Leaving Last.fm</a></li>
+                    <li><a href="/blog/facebook-photo-facial-recognition">Facebook photo facial recognition</a></li>
+                    <li><a href="/blog/entitlement-artificial-scarcity-spotify">Artificial Scarcity and Entitlement</a></li>
+                    <li><a href="/blog/migrating-scrobbling-authentication-to-2-0">Migrating scrobbling authentication to 2.0</a></li>
+                    <li><a href="/blog/erlang-beginners-tutorial">Erlang: For an absolute beginner</a></li>
+                    <li><a href="/blog/tech-hub-misrepresents-silicon-roundabout">Tech Hub misrepresents Silicon Roundabout</a></li>
+                    <li><a href="/blog/virtualised-development-environments">The importance of virtualised development environments</a></li>
+                    <li><a href="/blog/new-twitter-favouritism">New Twitter favouritism</a></li>
+                </ul>
+        
+        <p><a href="/blog">More&hellip;</p>
+    </div>
+</aside>
+
+</article>
+
+        <footer id="footer">
+            <ul>
+                <li class="twitter"><a href="http://twitter.com/dsingleton">Follow me on twitter</a></li>
+            </ul> 
+        </footer>
+
+    </div><!-- /#page -->
+
+<!-- Analytics tracking code -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-609105-1"; urchinTracker();</script>  
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	
+	<title>1Bit player update - David Singleton</title>
+
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    	
+    <meta name="description" content="The blog of David Singleton, Ramblings of a Web Developer" />
+    <meta name="keywords" content="david singleton, dave singleton, web developer, london, css, php, lamp, mysql, unix, programming, web standards, coding, microformats, web sites, angry rants" />
+    <meta name="author" content="David Singleton" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0"/>
+
+    <link rel="openid.server" href="http://www.myopenid.com/server" />
+    <link rel="openid.delegate" href="http://dsingleton.myopenid.com/" />
+    <meta http-equiv="X-XRDS-Location" content="http://dsingleton.myopenid.com/xrds" />
+
+    <link rel="stylesheet" href="/static/css/less.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/typography.css" type="text/css" />
+    
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    
+
+</head>
+
+<body>
+    
+    <div id="page">
+
+        <header>
+            <p>
+                <span class="myname">
+                    <a class="name" href="/" ><span class="firstname">David</span> <span class="lastname">Singleton</span></a>
+                </span>
+                <span class="aboutme">
+                    A <span class="title">web developer</span>
+                    living in <span class="adr"><span class="locality">London</span></span>
+                    and working at <a href="http://last.fm">Last.fm</a>.
+                </span>
+                <span class="tagline">I occasionally write a <a href="/blog">blog</a> and publish some <a href="/code">code</a>, find out <a href="/about">more &raquo;</a></span>
+            </p>
+
+        </header>
+
+        
+<article class="blog-entry">
+        <h1>1Bit player update</h1>
+        <p>1Bit is a simple way to let you preview MP3s linked in a web page. It&#8217;s a combination of Javascript and (a tiny bit) of flash to automatically pre-pend links to MP3s with a little play icon, allowing you to listen to the track inline. It&#8217;s been quite popular, mostly with music blogs. It was built by <a href="http://1bit.markwheeler.net/docs.php" mark wheeler> and myself a year or two ago. </a></p>
+
+<p>Towards the end of last year <a href="http://www.unicorncreative.com">James Weiner</a> got in touch about 1bit, he&#8217;s an Oxford-based web developer/designer who i&#8217;ve had the pleasure to meet a few times at Pub Standards. He&#8217;d been using it on some client sites and wanted to add some new functionality.</p>
+
+<p>Mark and I were too busy with work to add the features ourselves, but were happy for James (with some help from his brother <a href="http://www.readingtype.org.uk/">Ben Weiner</a>. The source for 1Bit is public and open (including the flash), so anyone can work on it if they like. Ben and James did just that and added the feature they wanted. Even better than that, they were happy to share the changes and for us to integrate them with the current version of 1Bit.</p>
+
+<h2>1Bit on Github</h2>
+
+<p>As a starting point for integrating these changes I&#8217;ve put the <a href="http://github.com/dsingleton/1bit-audio-player">source for 1Bit on GitHub</a>. I&#8217;ve been using Git for personal projects for a while and GitHub itself makes it easy for anyone to get involved, add code, fix bugs or fork a project entirely. It&#8217;s the natural choice for a project like this.</p>
+
+<p>For now I&#8217;ve create a branch to start adding James and Ben&#8217;s new feature (modal playback) and you can <a href="http://github.com/dsingleton/1bit-audio-player/tree/modal-playback">follow the progress</a> if you like. I&#8217;ve also start adding some basic Javascript testing with <a href="http://docs.jquery.com/QUnit">QUunit</a> to ensure I don&#8217;t break anything while making changes. There&#8217;s only simple, high level tests at the moment but I plan to refactor the internals a bit so 1Bit can be tested in smaller cleaner chunks.</p>
+
+<h2>The future of 1Bit</h2>
+<p>It&#8217;s exciting to be working on the project again, getting development completely public and incorporating changes from other people. Expect a new version with modal support  in the future and possibly even some experimental HTML5 features. I&#8217;d also like to make 1Bit easier to use with major Javascript libraries, as that&#8217;s been bugging me for a while - particularly being able to use their selector functionality, which is vastly superior to the limited selector rules 1Bit supports. Keep an eye on the GitHub page for changes.</p>
+        <p class="post-info">
+            Posted on
+            <abbr class="published" title="2010-02-06T21:17:00+01:00">Saturday February 6, 2010</abbr>
+        </p>
+        <p>Tagged:
+        <ul class="tags">
+                    <li rel="tag">1bit</li>
+                    <li rel="tag">javascript</li>
+                    <li rel="tag">audio</li>
+                    <li rel="tag">opensource</li>
+                    <li rel="tag">github</li>
+                </ul>
+        </p>
+</article>
+
+<aside>
+    <div class="recent posts">
+        <h4>Recent posts</h4>
+        <ul class="posts">
+                    <li><a href="/blog/scrobbling-heatmap-calendar">Scrobbling Heatmap Calendar</a></li>
+                    <li><a href="/blog/last-fm-now-playing-information-radiator">Last.fm Now-Playing information radiator</a></li>
+                    <li><a href="/blog/leaving-last-fm">Leaving Last.fm</a></li>
+                    <li><a href="/blog/facebook-photo-facial-recognition">Facebook photo facial recognition</a></li>
+                    <li><a href="/blog/entitlement-artificial-scarcity-spotify">Artificial Scarcity and Entitlement</a></li>
+                    <li><a href="/blog/migrating-scrobbling-authentication-to-2-0">Migrating scrobbling authentication to 2.0</a></li>
+                    <li><a href="/blog/erlang-beginners-tutorial">Erlang: For an absolute beginner</a></li>
+                    <li><a href="/blog/tech-hub-misrepresents-silicon-roundabout">Tech Hub misrepresents Silicon Roundabout</a></li>
+                    <li><a href="/blog/virtualised-development-environments">The importance of virtualised development environments</a></li>
+                    <li><a href="/blog/new-twitter-favouritism">New Twitter favouritism</a></li>
+                </ul>
+        
+        <p><a href="/blog">More&hellip;</p>
+    </div>
+</aside>
+
+</article>
+
+        <footer id="footer">
+            <ul>
+                <li class="twitter"><a href="http://twitter.com/dsingleton">Follow me on twitter</a></li>
+            </ul> 
+        </footer>
+
+    </div><!-- /#page -->
+
+<!-- Analytics tracking code -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-609105-1"; urchinTracker();</script>  
+
+</body>
+</html>

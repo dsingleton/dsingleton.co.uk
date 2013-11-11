@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	
+	<title>Migrating scrobbling authentication to 2.0 - David Singleton</title>
+
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    	
+    <meta name="description" content="The blog of David Singleton, Ramblings of a Web Developer" />
+    <meta name="keywords" content="david singleton, dave singleton, web developer, london, css, php, lamp, mysql, unix, programming, web standards, coding, microformats, web sites, angry rants" />
+    <meta name="author" content="David Singleton" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0"/>
+
+    <link rel="openid.server" href="http://www.myopenid.com/server" />
+    <link rel="openid.delegate" href="http://dsingleton.myopenid.com/" />
+    <meta http-equiv="X-XRDS-Location" content="http://dsingleton.myopenid.com/xrds" />
+
+    <link rel="stylesheet" href="/static/css/less.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/typography.css" type="text/css" />
+    
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    
+
+</head>
+
+<body>
+    
+    <div id="page">
+
+        <header>
+            <p>
+                <span class="myname">
+                    <a class="name" href="/" ><span class="firstname">David</span> <span class="lastname">Singleton</span></a>
+                </span>
+                <span class="aboutme">
+                    A <span class="title">web developer</span>
+                    living in <span class="adr"><span class="locality">London</span></span>
+                    and working at <a href="http://last.fm">Last.fm</a>.
+                </span>
+                <span class="tagline">I occasionally write a <a href="/blog">blog</a> and publish some <a href="/code">code</a>, find out <a href="/about">more &raquo;</a></span>
+            </p>
+
+        </header>
+
+        
+<article class="blog-entry">
+        <h1>Migrating scrobbling authentication to 2.0</h1>
+        <p>I received this email a few months ago, and it made me smile.</p>
+<blockquote>Anthony from The Hype Machine here. (<a href="http://hypem.com">http://hypem.com</a>)
+
+Good news!
+
+We&#8217;ve just connected your Hype Machine account to Last.fm using a new
+secure method recommended by their team (it&#8217;s similar to OAuth,
+if you want to get technical)!
+
+To do this, we used the Last.fm username and a scrambled version of
+the password you&#8217;ve given us before.
+
+We&#8217;ve now deleted the scrambled version of your password from
+our database for extra security - with this new authentication method,
+we no longer need it!
+
+Have a great week!</blockquote>
+
+<p>Hype Machine is one of the many music sites that allow you to scrobble your listening there to Last.fm. This is done through our Scrobbling protocol, a part of our API, in fact the same way the official Last.fm clients (and even the website) record what you listen to. We&#8217;re proud to eat our own dogfood.
+</p>
+<p>Scrobbling is core to Last.fm, each track is a chunk of attention data. It tells us more about what you like, building better recommendations of music, events, etc. The more you scrobble the better it gets, so the more 3rd parties scrobbling the better. &#8220;If it doesn&#8217;t scrobble it doesn&#8217;t count&#8221;, as Stefan says.
+</p>
+<p>Having slowly evolved over 8 years the original scrobbling protocol was always a little complex and not very developer friendly. That&#8217;s something we&#8217;ve tried to improve with Scrobbling 2.0, which is a revolution, rather than evolution of the protocol.
+</p>
+<p>Short history of scrobbling aside, I&#8217;m going to talk about how a 3rd party developer can migrate user authentication from the old scrobbling protocol to the new. The two systems use different authentication mechanisms, Submissions 1.3 requires a username + password, while Scrobbling 2.0 uses the same OAuth mechanism as our <a href="http://www.last.fm/api">API</a>.
+</p>
+<p>Having a 3rd party store your Last.fm credentials is not great. Despite the protocol requiring the passport to be hashed (rather plaintext) it still increases the risk of your account being compromised, by a malicious 3rd party or just a careless one that accidentally exposes data (which happens more than anyone would like).
+</p>
+<p>An advantage of OAuth style authentication is that it&#8217;s token based, meaning that a 3rd party will never need to ask for a users&#8217; password. To get a token they direct the user to our OAuth endpoint on Last.fm where the user chooses to allow or deny the 3rd party. If allowed then a token is sent back to the 3rd party giving them access+write data for that user. Another advantage is that the user (or Last.fm) can easily revoke access for the 3rd party by deleting that token.
+</p>
+<p>So, all in all OAuth is more secure and offers more control, a &#8220;Good Thing&#8221;. However, for there is a problem for users of the old srobbling protocol. In order to use Scrobbling 2.0 you need an OAuth token for a user, which is not something they&#8217;ll already have. One option would be to send all of their users through the OAuth authentication process and collect each token, but this sucks for everyone. It&#8217;s a big pain for the 3d party developers (writing new auth flow, maintaining to scrobbling protocols), the users (getting asked to allow something they&#8217;d already allowed) and for Last.fm (probably result in fewer people scrobbling as a result of the fuss). Not ideal.
+</p>
+<p>A few months back one of our partners asked about this problem and we were able to come up with a novel solution that sidestepped that complexity. It relies on two things, 1/ Old-school scrobblers already store usernames and (hashed) passwords, 2/ We offer a second kind of API authentication, which exchanges a hashed username and password for an OAuth token, without direct user interaction.</p>
+
+<p>So, having just said how much better OAuth based authentication is, why do we have offer an auth flow that circumvents it? Basically, user experience. The OAuth flow on mobile generally sucks, often a user won&#8217;t be logged in on a mobile device, or a mobile app 3rd party will have difficulty capturing the auth token. Sometimes a level of security has to be sarcraficed to make something more usable. It&#8217;s also not all bad, unlike the old scrobbling procotol it doesn&#8217;t need to store username and password, only use them once to get an auth token, which is still revokable by the user. It&#8217;s not ideal, but it&#8217;s an improvement.</p>
+
+<p>Anyway, that authentication method requires the 3rd party to provide the username and password (in a hashed form), which older scrobbling clients already have - no need to ask the user. They can use the existing user credidentials to get an OAuth token via mobile authentication. After that they can store the new token and purge the old and insecure credentials, which is exactly what Anthony described in the opening quote. No fuss for the user, some work for the 3rd party developer, but all of it automatable (and extractable in to a publishable, resuable library).
+</p>
+<p>I&#8217;m not going to go in to any actual code, in part because the post is already very long, but also because with the <a href="http://www.last.fm/api/mobileauth">mobile authentication documentation</a> it&#8217;s quite straight forward. But here&#8217;s the gist of it:
+</p>
+<code>
+<pre>
+// This is the token format mobile auth expects:
+md5(username + md5(password))
+
+// How to generate it from Submissions 1.x auth details
+username = scrob1_username
+password_hash = scrob1_password_hash
+
+// Generate the token and hit up the mobile auth API method
+mobile_auth_token = md5(username + password_hash)
+</pre>
+</code>
+
+<p>Bosh.</p>
+        <p class="post-info">
+            Posted on
+            <abbr class="published" title="2011-04-28T20:53:00+02:00">Thursday April 28, 2011</abbr>
+        </p>
+        <p>Tagged:
+        <ul class="tags">
+                    <li rel="tag">last.</li>
+                    <li rel="tag">scrobbling</li>
+                    <li rel="tag">api</li>
+                    <li rel="tag">authentication</li>
+                    <li rel="tag">oauth</li>
+                </ul>
+        </p>
+</article>
+
+<aside>
+    <div class="recent posts">
+        <h4>Recent posts</h4>
+        <ul class="posts">
+                    <li><a href="/blog/scrobbling-heatmap-calendar">Scrobbling Heatmap Calendar</a></li>
+                    <li><a href="/blog/last-fm-now-playing-information-radiator">Last.fm Now-Playing information radiator</a></li>
+                    <li><a href="/blog/leaving-last-fm">Leaving Last.fm</a></li>
+                    <li><a href="/blog/facebook-photo-facial-recognition">Facebook photo facial recognition</a></li>
+                    <li><a href="/blog/entitlement-artificial-scarcity-spotify">Artificial Scarcity and Entitlement</a></li>
+                    <li><a href="/blog/migrating-scrobbling-authentication-to-2-0">Migrating scrobbling authentication to 2.0</a></li>
+                    <li><a href="/blog/erlang-beginners-tutorial">Erlang: For an absolute beginner</a></li>
+                    <li><a href="/blog/tech-hub-misrepresents-silicon-roundabout">Tech Hub misrepresents Silicon Roundabout</a></li>
+                    <li><a href="/blog/virtualised-development-environments">The importance of virtualised development environments</a></li>
+                    <li><a href="/blog/new-twitter-favouritism">New Twitter favouritism</a></li>
+                </ul>
+        
+        <p><a href="/blog">More&hellip;</p>
+    </div>
+</aside>
+
+</article>
+
+        <footer id="footer">
+            <ul>
+                <li class="twitter"><a href="http://twitter.com/dsingleton">Follow me on twitter</a></li>
+            </ul> 
+        </footer>
+
+    </div><!-- /#page -->
+
+<!-- Analytics tracking code -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-609105-1"; urchinTracker();</script>  
+
+</body>
+</html>
