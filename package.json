@@ -1,0 +1,21 @@
+{
+  "name": "dsingleton.co.uk",
+  "version": "0.0.1",
+  "description": "My personal website",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "~0.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dsingleton/dsingleton.co.uk.git"
+  },
+  "author": "David Singleton",
+  "bugs": {
+    "url": "https://github.com/dsingleton/dsingleton.co.uk/issues"
+  }
+}

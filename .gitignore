@@ -1,6 +1,1 @@
-# vhost is specific to this machine
-
-vhost.conf
-www/code/lastfm-tagcloud/cache/
-www/api
-lib/external
+node_modules
