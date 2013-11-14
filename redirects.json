@@ -1,0 +1,11 @@
+{
+    "/archive": "/blog",
+
+    "/archive/sxsw-day-1-in-an-aeroplane-over-the-sea": "/blog/sxsw-day-one",
+    "/archive/post-dconstruct-a-review": "/blog/dconstruct-2006",
+    "/archive/28/{0,1}": "/blog/xfn-icons-css",
+
+    "/code/icon-selector": "http://dsingleton.github.com/icon-selector",
+    "/code/1bit": "https://github.com/dsingleton/1bit-audio-player",
+    "/code/lifestream": "https://github.com/dsingleton/php-lifestream"
+}
