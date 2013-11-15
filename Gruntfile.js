@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
   grunt.initConfig({
-		copy: {
+    copy: {
       dist: {
         files: [{
           expand: true,
@@ -49,8 +49,16 @@ module.exports = function(grunt) {
     'connect:dist'
   ]);
 
-  grunt.registerTask('deploy', [
-    'build',
-    'gh-pages'
-  ]);
+  grunt.registerTask('deploy', function() {
+
+    // Proxy a message argument on to gh-pages, from command line args
+    grunt.config.set('gh-pages.options.message', grunt.option('message'));
+    console.log(grunt.option('message'));
+
+    grunt.task.run([
+      'build',
+      'gh-pages'
+    ]);
+
+  });
 };
