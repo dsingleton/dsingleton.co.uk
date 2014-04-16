@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<h2>{{ page.title }}</h2>
+
+<div class="post">
+{{ content }}
+</div>
+
+<p class="post-info">
+    Posted on
+    <abbr class="published" title="{{ page.date }}">{{ page.date | date_to_string }}</abbr>
+</p>

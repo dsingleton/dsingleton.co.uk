@@ -1,3 +1,8 @@
 node_modules
-dist/
 .grunt
+
+# `dist/` is from Grunt build, `_dist` is from Jekyll
+# @TODO: Refactor and recombine when i've finished converting the rest of the site
+dist/
+_dist/
+
