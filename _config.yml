@@ -2,6 +2,6 @@ name: David Singleton's website
 markdown: redcarpet
 pygments: true
 
-destination: _dist
+destination: .dist
 exclude: [Gruntfile.js, node_modules, package.json, README]
 permalink: /blog/:title

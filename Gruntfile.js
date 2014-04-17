@@ -1,14 +1,8 @@
 module.exports = function(grunt) {
   grunt.initConfig({
-    copy: {
-      dist: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: 'app',
-          dest: 'dist',
-          src: ['**/*']
-        }]
+    shell: {
+      jekyll: {
+        command: 'jekyll build'
       }
     },
 
@@ -21,14 +15,14 @@ module.exports = function(grunt) {
         options: {
           open: true,
           keepalive: true,
-          base: 'dist'
+          base: '.dist'
         }
       }
     },
 
     'gh-pages': {
       options: {
-        base: 'dist',
+        base: '.dist',
         message:'Automatically generated gh-pages update',
         silent: true
       },
@@ -36,12 +30,12 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-gh-pages');
 
   grunt.registerTask('build', [
-    'copy:dist',
+    'shell:jekyll',
   ]);
 
   grunt.registerTask('server', [
