@@ -16,45 +16,18 @@ title: David Singleton
     <br>
     
     <h2>Recent blog posts</h2>
-    <div class="hfeed">
-                    <div class="hentry">
-            <h3 class="entry-title">
-                <a href="/blog/scrobbling-heatmap-calendar" rel="bookmark">
-                    Scrobbling Heatmap Calendar                    </a>
-            </h3>
+    <ol>
+    {% for post in site.posts limit:5 %}
+        <li>
+            <a href="{{ post.url }}">
+                {{ post.title }}
+            </a>
+        </li>
+    {% endfor %}
+    </ol>
 
-            <p class="entry-content">
-
-Created by Martin D., one of my ex-colleagues from Last.fm, this is an amazing visualisation of scrobbling activity by year, month, day of the week and even time of day. 
-
-They&#8217;re manually generated at the moment, with a set for Last.fm staff past and present. The slideshow version is partic&hellip; <a href="/blog/scrobbling-heatmap-calendar">more &raquo;</a></p>
-        </div>
-                    <div class="hentry">
-            <h3 class="entry-title">
-                <a href="/blog/last-fm-now-playing-information-radiator" rel="bookmark">
-                    Last.fm Now-Playing information radiator                    </a>
-            </h3>
-
-            <p class="entry-content">This is a litte project I started a while back but only finished/cleaned up recently. It&#8217;s a simple information radiator that shows you what a Last.fm user is listening to right now.
-
-
-
-It was designed to let one (or many people) know what&#8217;s playing at a glance. I&#8217;ve been using it &hellip; <a href="/blog/last-fm-now-playing-information-radiator">more &raquo;</a></p>
-        </div>
-                    <div class="hentry">
-            <h3 class="entry-title">
-                <a href="/blog/leaving-last-fm" rel="bookmark">
-                    Leaving Last.fm                    </a>
-            </h3>
-
-            <p class="entry-content">
-
-8 years of scrobbling, 55,000 tracks and 4 years with the incredible Last.fm team, it&#8217;s been a blast, but it&#8217;s time to move on and do something new.
-
-It&#8217;s been a really difficult decision to leave. Last.fm was quite literally a dream job for me and at times a family. I&#8217;m pr&hellip; <a href="/blog/leaving-last-fm">more &raquo;</a></p>
-        </div>
-                    <p><a href="/blog">Older Posts &raquo;</a></p>
-    </div>
+    <p><a href="/blog">Older Posts &raquo;</a></p>
+    
 </article>
 
 <aside>

@@ -1,0 +1,22 @@
+---
+layout: default
+title:  "Blog"
+---
+<article>
+    <h1>Blog</h1>
+    <div class="hfeed">
+    {% for post in site.posts %}
+        <div class="hentry">
+            <h2 class="entry-title">
+                <a href="{{ post.url }}" rel="bookmark">
+                    {{ post.title }}
+                </a>
+            </h2>
+
+            <div class="entry-content">
+                {{ post.excerpt }}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</article>
