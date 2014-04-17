@@ -62,16 +62,3 @@ body {
 #footer li a {
     padding: 5px;
 }
-
-#footer li.twitter {
-    background-image: url(/static/icons/twitter_50x50.jpg);
-    padding-left: 55px;
-}
-
-#footer li.twitter a {
-}
-
-#footer li.feed {
-    background-image: url(/static/icons/feed_28x28.png);
-    padding-left: 35px;
-}

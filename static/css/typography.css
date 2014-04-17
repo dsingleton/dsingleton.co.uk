@@ -143,38 +143,6 @@ article.blog-entry a[href*=flickr] img {
     float: none;
 }
 
-/** Tags */
-
-ul.tags {
-    margin: 0.5em 0 1.5em;
-    padding: 0 0 0 24px;
-    clear: left;
-    
-    background: url("/_assets/img/icons/famfamfam/tag_blue.png") no-repeat 0px 10px ;
-}
-
-ul.tags li {
-    display: inline;
-}
-
-ul.tags li a[rel=tag] {
-    display: inline-block;
-    padding: 2px 5px;
-    margin: 4px 4px 4px 0;
-    
-    background: #eee;
-    -moz-border-radius: 3px;
-    border: 1px solid #ddd;
-    text-decoration: none;
-}
-
-#page ul.tags li a[rel=tag]:hover {
-    background: DodgerBlue;
-    color: #fff;
-    border-color: #444;
-    text-decoration: underline;
-}
-
 code {
     background: #eee;
     font-family: monospace;
