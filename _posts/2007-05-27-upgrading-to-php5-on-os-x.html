@@ -1,0 +1,19 @@
+---
+layout: post
+title: Upgrading to PHP5 on OS X
+date: 2007-05-27 00:00:00
+categories: osx apache php
+---
+<p>I’ve been meaning to upgrade <span class="caps">PHP</span> on my macbook for a while now, today I finally got around to it with a little help from <a href="http://www.entropy.ch/software/macosx/php/">Marc Liyanage <span class="caps">PHP</span> Package</a>.</p>
+<p>Download the installer (~50MB), un-tar and run it. You should not have <span class="caps">PHP5</span> installed on your system. However, you might have to do a bit of fiddling to get it working properly.</p>
+
+<p>These are just the tweaks I needed, you might need to do more or less, but this might be useful in some fashion.</p>
+<p>In <em>httpd.conf</em> the <span class="caps">PHP4</span> module was still being loaded, so comment that out and add an entry to load the <span class="caps">PHP5</span> module instead.</p>
+<pre class="code">#LoadModule php4_module libexec/httpd/libphp4.so
+LoadModule php5_module local/php5/libphp5.so</pre>
+<p>For some reason the PHP5 module was installed at a different path to the oldPHP4 module and all other Apache modules. Rather than move it (and risk other problems) I left it where it was and just used the different path.</p>
+
+<p>Further down <em>httpd.conf</em> there’s another reference to <span class="caps">PHP4</span>, just update the number.</p>
+<pre class="code">AddModule mod_php5.c</pre>
+<p>Restart Apache so the changes take effect, with <em>sudo apachectl graceful</em></p>
+<p>That should do it.</p>

@@ -1,0 +1,56 @@
+---
+layout: post
+title: JSON, Octal Numbers &amp; Validation
+date: 2009-10-14 16:14:00
+categories: json javascript bug
+---
+<p>Now it&#8217;s launched in London I&#8217;ve been playing around with the Foursquare API. While it&#8217;s not the best API i&#8217;ve come across it gives you reasonable access to their data, so i&#8217;ve been pretty happily building some small tools using their data.</p>
+
+<p> hit a rather usual bug with JSON parsing for a Foursquare venue, in this case the <a href="http://foursquare.com/venue/140854">Bricklayers Arms</a> (The home of Pub Standards). The JSON response looks something like this:</p>
+
+<code class="json javascript">
+<pre>
+{
+    "venue": {
+        "id": 145975,
+        "name": "Bricklayers Arms",
+        "address": "31 Gresse St",
+        "city": "Camden Town",
+        "state": "Greater London",
+        "zip": "W1T 1",
+        "phone": 02076365593,
+        "geolat": 51.5176421,
+        "geolong": -0.1334817,
+        "stats": {
+            "checkins": 0 
+        }
+    }
+}
+</pre>
+</code>
+
+<p>Looks pretty reasonable, right? But my JSON parser chocked on this and called it invalid.  Running it through <a href="http://www.jsonlint.com/">JSON Lint</a> gives a bit more information, but is still a bit vague:</p>
+
+<blockquote>syntax error, unexpected TNUMBER, expecting &#8216;}&#8217; at line 9</blockquote>
+
+<p>Let&#8217;s see, line 9 is the phone number key/val, that seems like it should be valid, I mean the leading zero is odd but&#8230; oh. You may, or may not, remember that standard notation for <a href="http://en.wikipedia.org/wiki/Octal">octal numbers</a> is a leading 0, it&#8217;s not something you run in to very often.</p>
+
+<p>So why is an octal number invalid? Because the JSON spec doesn&#8217;t explicitly support octal numbers as native types and parsers aren&#8217;t compelled to either. Some may do, but this is probably more luck than judgement - a side effect of loose typing.</p>
+
+<p>I&#8217;ve reported the bug to the Foursquare team and it sounds like it&#8217;ll be fixed shortly (as part of an API rewrite), in the mean time i&#8217;ll be using a dirty regex to quote the offending number before parsing.</p>
+
+<p>If there&#8217;s one thing to take from this it&#8217;s how important validation is, even if it does nothing more than prove it&#8217;s not your bug. Looking at the original response and trying to work our why it didn&#8217;t parse with validation would have been very painful, it&#8217;s not a bug easily caught by a human, you need rigorous machine testing. </p>
+        <p class="post-info">
+            Posted on
+            <abbr class="published" title="+02:00">Wednesday October 14, 2009</abbr>
+        </p>
+        <p>Tagged:
+        <ul class="tags">
+                    <li rel="tag">json</li>
+                    <li rel="tag">javascript</li>
+                    <li rel="tag">octal</li>
+                    <li rel="tag">bug</li>
+                    <li rel="tag">testing</li>
+                    <li rel="tag">validation</li>
+                </ul>
+        </p>

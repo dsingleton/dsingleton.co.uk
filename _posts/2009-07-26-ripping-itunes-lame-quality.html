@@ -1,0 +1,78 @@
+---
+layout: post
+title: Using iTunes Mac to rip CDs at good quality
+date: 2009-07-26 23:23:33
+categories: music itunes tutorial
+---
+<p>I haven&#8217;t had to rip any CDs on my current laptop till now. I didn&#8217;t have a decent ripper and I wouldn&#8217;t be using the one built in to iTunes (it&#8217;s rubbish). It&#8217;s such a rare task to setup a good ripper that I have to go searching for all the details again.</p>
+
+<p>This is a bit of a post self-reference in the future, hopefully it&#8217;s helpful to you too</p>
+
+<p>My tool of preference is <a href="http://www.blacktree.com/projects/itunes-lame.html">iTunes LAME</a>. The quality is a vast improvement over the default iTunes encoder. There are some tricky parts to the installation and setup process, here&#8217;s a bit of a guide.</p>
+
+<h2>Installation and preferences</h2>
+
+<p>First download the app, install and run. Ignore the encoding quality drop-down for now and edit your preferences.</p>
+
+<a href="http://www.flickr.com/photos/davidsingleton/3758857643/" title="iTunes LAME preferences by David Singleton, on Flickr"><img src="http://farm4.static.flickr.com/3443/3758857643_873b62bce9.jpg" width="411" height="424" alt="iTunes LAME preferences"/></a>
+
+<p>You&#8217;ll probably want to change your default destination (where the ripped files get put). You&#8217;ll also want to change the naming scheme as the default is <em>Artist\Album\Track</em></p>
+
+<p>The naming scheme looks a bit esoteric. The <code>:</code> is treated as a directory separator, as I assume backslash is reserved as an escape character. The full set of possible value and their equivalent value.</p>
+
+<dl><dt>%a</dt>
+    <dd>Artist Name</dd>
+    
+    <dt>%A</dt>
+    <dd>Sort Artist</dd>
+    
+    <dt>%b</dt>
+    <dd>Album Artist</dd>
+
+    <dt>%B</dt>
+    <dd>Sort Album Artist</dd>
+    
+    <dt>%c</dt>
+    <dd>Composer</dd>
+    
+    <dt>%C</dt>
+    <dd>Sort Composer</dd>
+    
+    <dt>%l</dt>
+    <dd>Album Name</dd>
+    
+    <dt>%L</dt>
+    <dd>Sort Album Name</dd>
+    
+    <dt>%t</dt>
+    <dd>Track Name</dd>
+    
+    <dt>%T</dt>
+    <dd>Sort Track Name</dd>
+    
+    <dt>%n</dt>
+    <dd>Track Number</dd>
+    
+    <dt>%y</dt>
+    <dd>Year</dd>
+    
+    <dt>%g</dt>
+    <dd>Genre</dd>
+    
+    <dt>%G</dt>
+    <dd>Grouping</dd>
+</dl><p>These are taken from <a href="http://code.google.com/p/blacktree-itunes-lame/source/browse/trunk/English.lproj/EncodingHelp.rtf?r=35">iTunes-LAME Encoding FAQ</a>.</p>
+
+<p>My preference is <em>Artist - Year - Album\Track Number - Track Name</em>, which is <code>%a - %y - %l:%n - %t</code>.</p>
+
+<h2>Encoding quality</h2>
+
+<a href="http://www.flickr.com/photos/davidsingleton/3758844105/" title="iTunes LAME setup by David Singleton, on Flickr"><img src="http://farm3.static.flickr.com/2631/3758844105_cbec1a7ae6.jpg" width="418" height="239" alt="iTunes LAME setup"/></a>
+
+<p>It&#8217;s been a good couple of years since I&#8217;ve last setup LAME and most of the ripping flags seem to have changed, or moved on. Back in the day <code>--alt-preset standard</code> (&#8212;aps)was the best &#8220;every day&#8221; setting. That whole alt-preset range seems to have been replaced with a much more sensible <code>-V [0-9]</code> scale, where &#8212;aps is equivalent to <code>-V 2</code></p>
+
+<p>I&#8217;m not going to get involved in quality wars, but given I have more HDD space than I did a few years ago, I&#8217;m happy to rip at <code>-V 0</code> - equivilent of the old <code>--alt-preset extreme</code>. Not loss-less, but certainly good quality for headphones and my Hi-Fi.</p>
+
+<h2>Ripping</h2>
+
+<p>With everything setup, I just popped a CD in, hit export and 10 minutes later had some lovely MP3s. Easy.</p>

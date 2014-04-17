@@ -1,0 +1,45 @@
+---
+layout: post
+title: Giving XFN more visibility through CSS2.1 Attribute Selectors
+date: 2007-09-12 00:00:00
+categories: css xfn microformats
+---
+<p>As I was redesigning a bit lately and making use of <a href="http://www.famfamfam.com/">FamFamFam’s</a> very nice <a href="http://www.famfamfam.com/lab/icons/silk/">Silk icon set</a> (used under the <abbr title="Creative Commons">CC</abbr> Attribution License) and    it occurred to me I could use CSS2.1&#160;<a href="http://www.w3.org/TR/CSS21/selector.html#attribute-selectors">Attribute Selectors</a> to show the relationships the XFN defines.</p>
+<p>
+If you’re not familiar with XFN this <a href="http://en.wikipedia.org/wiki/XHTML_Friends_Network">wikipedia article</a> gives a good introduction.</p>
+
+<p>In the WordPress blogroll you get the option to add <abbr title="XHTML Friends Network">XFN</abbr> relationships to the people/links, as I’ve been on a bit of a microformats kick i’ve been thinking how I can make better use</p>
+<h3>The XHTML</h3>
+<pre class="code xhtml">&lt;ul&gt;
+&lt;li&gt;&lt;a rel="<strong>friend met neighbor</strong>" xhref="http://www.simoncoltman.net/"&gt;Simon Coltman&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a rel="<strong>friend met</strong>" xhref="http://fberriman.com/"&gt;Frances Berriman&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a rel="<strong>acquaintance</strong>" xhref="http://moglenstar.net/"&gt;Max Glenister&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a rel="<strong>friend met co-worker</strong>" xhref="http://www.ricardocabello.com"&gt;Ricardo Cabello&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a rel="<strong>friend met</strong>" xhref="http://www.krisswatt.co.uk"&gt;Kriss Watt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+<h3>The CSS</h3>
+<pre class="code css">ul.xfn_example a {
+background-image: url(/images/icons/user_gray.gif);
+}
+
+ul.xfn_example a[rel*="<strong>acquaintance</strong>“] {
+background-image: url(/images/icons/user_blue.gif);
+}
+
+ul.xfn_example a[rel*="<strong>friend</strong>“] {
+background-image: url(/images/icons/user_green.gif);
+}
+
+ul.xfn_example a[rel*="<strong>co-worker</strong>“] {
+background-image: url(/images/icons/user_suit.gif);
+}</pre>
+<h3>Browser Difficulties</h3>
+<p>Attribute selectors are not supported in IE6 so the first rule sets the background <strong>all</strong> links, if the other more complicated rules aren’t understood then the icon stays a default grey. For the browser that do understand the more complex rules, assigning icons for some of the different relationship types.</p>
+
+<p>They’re ordered so that, for example co-worker will override friend, should the XFN define both of these relationships. I’ve not done it here but if you wanted to you could chain the selectors and create a specific rule (and image) for someone who is a friend and a co-worker <code>a[rel*="<strong>friend</strong>“][rel*="<strong>co-worker</strong>“]</code></p>
+<p>With the announcement that IE7 will be supporting, amongst other things, attribute selectors I can imagine them being used a lot more as IE7 adoption increases and progressive enhancements like this becoming more common.</p>
+<h3>Design Flaws</h3>
+<p>The different icons don’t do a great job of communicating the different relationships, but maybe more specific icons would help, or on a larger list maybe a key might help?</p>
+<h3>Conclusions</h3>
+<p>This isn’t a particularly complicated idea but i’ve had a couple of people ask me about it, so I thought I’d give a brief explanation and maybe encourage people to take the idea further and make something cooler.
+</p>

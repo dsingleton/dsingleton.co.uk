@@ -1,0 +1,27 @@
+---
+layout: post
+title:  Last.fm Now-Playing information radiator
+date: 2011-08-28 13:55:00
+categories: lastfm music javascript
+---
+<p>This is a litte project I started a while back but only finished/cleaned up recently. It&#8217;s a simple information radiator that shows you what a Last.fm user is listening to right now.</p>
+
+<a href="http://www.flickr.com/photos/davidsingleton/6086155862/" title="Now playing screen by David Singleton, on Flickr"><img src="http://farm7.static.flickr.com/6198/6086155862_ed082dee0f.jpg" width="500" height="339" alt="Now playing screen"/></a>
+
+<p>It was designed to let one (or many people) know what&#8217;s playing at a glance. I&#8217;ve been using it while listening to Last.fm radio while getting ready for work, <a href="https://twitter.com/#!/clientroomradio">shared office playback</a> (it works really well here) and even on top of Spotify playlists at parties. You can stalk along to someone else&#8217;s listening too, for the curious.</p>
+
+<p>Dev/ops have made <a href="http://www.flickr.com/photos/jwheare/3271781474/">heavy</a> <a href="http://www.flickr.com/photos/davidsingleton/4112671768/">use</a> of radiators/glanceables for a while (that&#8217;s a whole &#8216;nothing post), but it&#8217;s nice to see more <a href="http://www.flickr.com/photos/jwheare/5071607356/">social</a> and <a href="http://booktwo.org/notebook/thamestide/">experimental</a> uses being applied. With <a href="http://russelldavies.typepad.com/planning/2011/02/experimenting-with-a-second-screen.html">"second screens"</a> getting more popular I&#8217;m excited to see what else will get made soon.</p><p>Try the <a href="http://dsingleton.github.com/now-playing-radiator/">hosted demo version</a> or <a href="https://github.com/dsingleton/now-playing-radiator">fork the project on Github</a>.</p>
+
+<h3>Responsiveness</h3>
+
+<a href="http://www.flickr.com/photos/davidsingleton/6088909992/" title="DSCF0009 by David Singleton, on Flickr"><img src="http://farm7.static.flickr.com/6208/6088909992_73d26bf323.jpg" width="500" height="375" alt="DSCF0009"/></a>
+
+<p>It&#8217;s not strictly a responsive-design (no media queries in sight) but it does work really well across multiple devices. Only needing some font size adjustments on larger screens. <a href="http://matthewsheret.com/">Matthew Sheret</a> has been running this on an old iPod touch sat on his desk for a few weeks, quite happily.</p>
+
+<h3>How it works</h3>
+
+<p>There&#8217;s no server-side requirement, everything is HTML/CSS/JS, no PHP or Python dependency, which means it&#8217;s super easy to use locally. You can clone it from Github and use it immediately, no configuration. It includes a tiny Last.fm API client written in Javascript </p>
+
+<p>Now-playing is part Last.fm <a href="http://www.last.fm/api/scrobbling">scrobbling API</a>, supported by most clients it&#8217;s sent at the begining of a track rather than at the end (like scrobbling). Becuase there&#8217;s no realtime API i&#8217;m polling on a with a tiny Javascript API client. By default it polls on a 5 second interval, which feels pretty snappy and sit well within the TOS (~1 req/sec max).</p>
+
+<p>Checkout the source, on <a href="https://github.com/dsingleton/now-playing-radiator">Github</a> and have a play.</p>

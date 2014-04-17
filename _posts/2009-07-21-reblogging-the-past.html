@@ -1,0 +1,121 @@
+---
+layout: post
+title: Reblogging the past
+date: 2009-07-21 09:37:00
+categories: archive blog
+---
+<p>Thanks to the beauty of the <a href="http://archive.org">Internet Archive</a> I was able to find copies of all my old posts. An earlier  version of this site was powered by a Wordpress install and apparently I didn&#8217;t make backups of the database. It&#8217;s quite sad losing content, some of it was quite good and it&#8217;s left lots of dead links.</p>
+    
+<p>I&#8217;m now using <a href="http://tumblr.com">Tumblr</a> to power the blog part of my site. It allows you to post an entry with _any_ date, which means I can reenter all my old content with it&#8217;s original date. An <a href="http://web.archive.org/web/20070911174542/dsingleton.co.uk/">archived version of my site</a> gave me access to all my old blog posts and I&#8217;ve now added to Tumblr with it&#8217;s original publishing date.</p>
+
+<h3>Unbreaking links</h3>
+
+<p>The old Wordpress URL scheme is <code>/archive/*slug*/YYYY/MM/DD/</code>, vs current blog URLs being <code>/blog/*slug*</code>. To keep the old links working I&#8217;ve added a <code>htaccess</code> rule to <a href="http://en.wikipedia.org/wiki/HTTP_301">301 permanent redirect</a> those old URLs to the new using mod_rewrite</p>
+
+<pre class="code apache"><code>
+    RewriteEngine On
+    
+    # Special cases where the slug has changed
+    RewriteRule ^archive/sxsw-day-1-in-an-aeroplane-over-the-sea/{0,1}.*$ /blog/sxsw-day-1 [R=permanent,L,NC] 
+    RewriteRule ^archive/post-dconstruct-a-review/{0,1}.*$ /blog/dconstruct-2006 [R=permanent,L,NC] 
+    RewriteRule ^archive/28/{0,1}.*$ /blog/xfn-icons-css [R=permanent,L,NC] 
+    
+    # Default case, redirect with slug
+    RewriteRule ^archive?/(.[^/.]*)/{0,1}.*$ /blog/$1 [R=permanent,L,NC]
+</code></pre>
+
+<p>The more I use mod_rewrite the less it confuses me. The 3 special cases here are for articles where I changed the slug (because it was overly long, or just bad) and the rest is handled by the bottom, more generic, redirect rule. They also silently drop any extra information from the Wordpress URL. So it will work with or without the date info that follows the slug.</p>
+
+<h3>Resurrected posts</h3>
+<ul><li>
+<a href="http://dsingleton.co.uk/blog/fun-with-famfamfam-icons-and-jquery">
+Fun with FamFamFam icons and jQuery</a>
+</li>
+
+<li>
+<a href="http://dsingleton.co.uk/blog/xfn-icons-css">
+Giving XFN more visibility through CSS2.1 Attribute Selectors</a>
+</li>
+<li>
+<a href="http://dsingleton.co.uk/blog/official-truck-festival-lineup">
+Truck Festival 2007 Lineup</a>
+</li>
+<li>
+
+<a href="http://dsingleton.co.uk/blog/panels-gender-confusion-and-a-rant">
+Panels, gender, confusion and a rant</a>
+
+</li>
+<li>
+
+<a href="http://dsingleton.co.uk/blog/media-london-2007">
+@media London 2007</a>
+</li>
+<li>
+
+<a href="http://dsingleton.co.uk/blog/upgrading-to-php5-on-os-x">
+
+Upgrading to PHP5 on OS X</a>
+</li>
+<li>
+
+<a href="http://dsingleton.co.uk/blog/1-bit-audio-player">
+1 Bit Audio Player</a>
+</li>
+<li>
+
+<a href="http://dsingleton.co.uk/blog/lastfm-xsl-tag-cloud">
+A last.fm tag-cloud generated from XSL</a>
+</li>
+<li>
+
+<a href="http://dsingleton.co.uk/blog/pixel-art-space-invaders">
+Pixel Art Space Invaders</a>
+</li>
+
+<li>
+
+<a href="http://dsingleton.co.uk/blog/ala-ruining-user-experience">
+ALA “Ruining User Experience”</a>
+</li>
+<li>
+
+<a href="http://dsingleton.co.uk/blog/sxsw-round-up">
+SXSW Day Three (and onwards)</a>
+
+</li>
+<li>
+
+<a href="http://dsingleton.co.uk/blog/sxsw-day-two">
+SXSW Day Two</a>
+</li>
+<li>
+
+<a href="http://dsingleton.co.uk/blog/sxsw-day-one">
+
+SXSW Day One</a>
+</li>
+<li>
+
+<a href="http://dsingleton.co.uk/blog/recent-downtime-upcoming-events">
+Recent downtime &amp; upcoming events</a>
+</li>
+
+<li>
+
+<a href="http://dsingleton.co.uk/blog/teaching-bad-practice">
+Teaching Bad Practice</a>
+</li>
+<li>
+
+<a href="http://dsingleton.co.uk/blog/code-golf-whats-your-handicap">
+Code Golf: Whats your handicap?</a></li>
+
+<li>
+    <a href="http://dsingleton.co.uk/blog/dconstruct-2006">Dconstruct 2006</a>
+</li>
+
+<li>
+    <a href="http://dsingleton.co.uk/blog/google-code-search">Google Code Search</a>
+</li>
+</ul>
