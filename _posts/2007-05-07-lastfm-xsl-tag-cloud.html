@@ -20,51 +20,66 @@ categories: xsl xslt lastfm tagcloud code
 <p>Take a look at the <a href="http://dsingleton.co.uk/code/lastfm-tagcloud/xsl/weeklyartists.xsl">full <span class="caps">XSL</span> file</a>.</p>
 
 <p>The <span class="caps">XSL</span> that converts the last.fm feed into the tag-cloud <span class="caps">HMTL</span> is fairly simple, grabbing a bunch of artists and looping through them to build an ordered list. The tricky bit is defining the differing sizes between artists based on the playcount. There are a couple of other bits might benefit from further explanation:</p>
-<pre class="code xsl">&lt;xsl:variable name="max_artists" select="20"/&gt;
-&lt;xsl:variable name="min_playcount" select="2" /&gt;</pre>
+<pre><code>&lt;xsl:variable name="max_artists" select="20"/&gt;
+&lt;xsl:variable name="min_playcount" select="2" /&gt;</code></pre>
 <p>These specify a maximum number of artists and a minimum number of plays to be included in the cloud. This solves two problems, a large number of artists being played making the tag-cloud huge and playing just one or two tracks for an artist (Like with compilations) which just swamps the tag cloud with lots of low played artists.</p>
-<pre class="code xsl">&lt;xsl:variable name="weight" select="playcount div $max_playcount" /&gt;
-&lt;xsl:variable name="size" select="($weight * $size_range) + $size_min" /&gt;</pre>
+<pre><code>&lt;xsl:variable name="weight" select="playcount div $max_playcount" /&gt;
+&lt;xsl:variable name="size" select="($weight * $size_range) + $size_min" /&gt;</code></pre>
 
 <p>To calculate the <em>weighting</em>, how big the font-size should be, it takes the highest played artists playcount as a baseline and treats every other artist as a fraction of that. This fraction, the weight, is then used to the size using the min and max sizes as boundaries.</p>
 <p>The rest of the <span class="caps">XSL</span> just builds the list, link and span tags/content.</p>
-<pre class="code xsl">&lt;xsl:variable name="artists" select="/weeklyartistchart/artist[playcount &gt;= $min_playcount and position() &lt;= $max_artists]" /&gt;</pre>
+<pre><code>&lt;xsl:variable name="artists" select="/weeklyartistchart/artist[playcount &gt;= $min_playcount and position() &lt;= $max_artists]" /&gt;</code></pre>
 <p>This is the <span class="caps">XPATH</span> query used to get the set of valid artists than have the minimum playcount and caped at the maximum number of artists</p>
 
 <h3>Semantics</h3>
 <p>Tag-clouds have a reputation as being pretty unsemantic when it comes to <span class="caps">HTML</span>. Often just being an alphabetised list when viewed without styling. <a href="http://cackhanded.net/">Norm</a> had a go at <a href="http://24ways.org/2006/marking-up-a-tag-cloud">marking up tag-clouds semantically</a>, which i’ve followed with one exception.</p>
 <p>Rather than using a set of class names I opted for inline styles declaring the font-size. Heresy! Well, yes and no. I want the cloud items to be properly scaled and the scale easy to modify, this just isn’t possible using a set combination of classes mapped to sizes.</p>
 <p>This doesn’t really bother me much, especially with the extra semantic information added. So the final markup looks like so:</p>
-<pre class="code xhtml">&lt;li style="font-size: 4.000em;"&gt;     &lt;span&gt;&lt;span class="weighting"&gt;26&lt;/span&gt; listens to&lt;/span&gt;     &lt;a xhref="http://www.last.fm/music/Stars" mce_href="http://www.last.fm/music/Stars" title="Stars (26 listens)"&gt;         Stars     &lt;/a&gt; &lt;/li&gt; &lt;li style="font-size: 3.077em;"&gt;     &lt;span&gt;&lt;span class="weighting"&gt;18&lt;/span&gt; listens to&lt;/span&gt;     &lt;a xhref="http://www.last.fm/music/The+Microphones" mce_href="http://www.last.fm/music/The+Microphones" title="The Microphones (18 listens)"&gt;         The Microphones     &lt;/a&gt; &lt;/li&gt;</pre>
+<pre><code>&lt;li style="font-size: 4.000em;"&gt;
+  &lt;span&gt;&lt;span class="weighting"&gt;26&lt;/span&gt; listens to&lt;/span&gt;
+    &lt;a xhref="http://www.last.fm/music/Stars" mce_href="http://www.last.fm/music/Stars" title="Stars (26 listens)"&gt;
+      Stars
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li style="font-size: 3.077em;"&gt;
+    &lt;span&gt;
+      &lt;span class="weighting"&gt;18&lt;/span&gt;
+      listens to
+    &lt;/span&gt;
+    &lt;a xhref="http://www.last.fm/music/The+Microphones" mce_href="http://www.last.fm/music/The+Microphones" title="The Microphones (18 listens)"&gt;
+      The Microphones
+    &lt;/a&gt;
+  &lt;/li&gt;
+</code></pre>
 
 <p>If you’re paying attention you’ll have spotted <em>another</em> span in there, inside the one used to hide the non-artist-name information. Why add it? It gives a semantic hook to get the actual weighting value of the cloud, in this case listens.</p>
 <p>With this you could create a very simple piece of javascript to turn the tag cloud back in to a chart, ordered by listens rather than alphabetically.</p>
 <h3>Styling</h3>
 <p>There’s only some very simple styling on the list itself. Mostly just visual formating, but importantly a rule to hide the span of contextual information leaving just the artist name.</p>
-<pre class="code css">ol {
-width: 700px;
-margin: 0 auto;
+<pre><code>ol {
+  width: 700px;
+  margin: 0 auto;
 
-list-style: none;
-text-align: center;
+  list-style: none;
+  text-align: center;
 
-font-size: .6em;
+  font-size: .6em;
 }
 
 li {
-display: inline;
-margin: 0 .2em;
-padding: 0 .3em;
+  display: inline;
+  margin: 0 .2em;
+  padding: 0 .3em;
 
-line-height: 1.5;
-vertical-align: middle;
+  line-height: 1.5;
+  vertical-align: middle;
 }
 
 li span {
-position: absolute;
-left: -999px;
-width: 990px;
-}</pre>
+  position: absolute;
+  left: -999px;
+  width: 990px;
+}</code></pre>
 
 <h3>Known Issues</h3>
 <p>There are still a few things I’m unhappy about with this, when using artist names rather than tags you’re far more likely to get spaces and end up with an artist name split across two lines. This can often end up looking like two separate artists if you’re not familiar with the name.</p>

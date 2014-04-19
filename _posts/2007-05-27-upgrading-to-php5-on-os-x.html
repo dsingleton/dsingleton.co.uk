@@ -9,11 +9,11 @@ categories: osx apache php
 
 <p>These are just the tweaks I needed, you might need to do more or less, but this might be useful in some fashion.</p>
 <p>In <em>httpd.conf</em> the <span class="caps">PHP4</span> module was still being loaded, so comment that out and add an entry to load the <span class="caps">PHP5</span> module instead.</p>
-<pre class="code">#LoadModule php4_module libexec/httpd/libphp4.so
-LoadModule php5_module local/php5/libphp5.so</pre>
+<pre><code>#LoadModule php4_module libexec/httpd/libphp4.so
+LoadModule php5_module local/php5/libphp5.so</code></pre>
 <p>For some reason the PHP5 module was installed at a different path to the oldPHP4 module and all other Apache modules. Rather than move it (and risk other problems) I left it where it was and just used the different path.</p>
 
 <p>Further down <em>httpd.conf</em> there’s another reference to <span class="caps">PHP4</span>, just update the number.</p>
-<pre class="code">AddModule mod_php5.c</pre>
+<pre><code>AddModule mod_php5.c</code></pre>
 <p>Restart Apache so the changes take effect, with <em>sudo apachectl graceful</em></p>
 <p>That should do it.</p>

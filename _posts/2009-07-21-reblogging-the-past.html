@@ -12,7 +12,7 @@ categories: archive blog
 
 <p>The old Wordpress URL scheme is <code>/archive/*slug*/YYYY/MM/DD/</code>, vs current blog URLs being <code>/blog/*slug*</code>. To keep the old links working I&#8217;ve added a <code>htaccess</code> rule to <a href="http://en.wikipedia.org/wiki/HTTP_301">301 permanent redirect</a> those old URLs to the new using mod_rewrite</p>
 
-<pre class="code apache"><code>
+<pre><code>
     RewriteEngine On
     
     # Special cases where the slug has changed
