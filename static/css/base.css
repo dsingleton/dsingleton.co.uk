@@ -1,109 +1,165 @@
-/** Body */
+/** * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) * http://cssreset.com */
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {    margin: 0;  padding: 0; border: 0;  font-size: 100%;    font: inherit;  vertical-align: baseline;}/* HTML5 display-role reset for older browsers */article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {    display: block;}body {  line-height: 1;}ol, ul {    list-style: none;}blockquote, q {   quotes: none;}blockquote:before, blockquote:after,q:before, q:after {   content: '';    content: none;}table {  border-collapse: collapse;  border-spacing: 0;}
+
+/* apply a natural box layout model to all elements (http://www.paulirish.com/2012/box-sizing-border-box-ftw/) */
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
 body {
-    margin: 0;
-    padding: 2.5em 0 0;
-    
-    color: #333;
-    border-top: 3px solid DodgerBlue;
-}
+    max-width: 40em;
 
-
-/** Header */
-
-#page header span.myname {
-    float: left;
-    
-    margin: -5px 25px 15px 0;
-    padding: 5px 10px;
-    
-    color: #fff;
-    background-color: DodgerBlue;
-    font-size: 40px;
-
-    text-shadow: 2px 2px 3px #666666;
-    text-decoration:  none;
-    
-    -moz-border-radius: 3px 3px 3px 3px;
-    -moz-box-shadow: 2px 2px 8px #666666;
-    -moz-transform: rotate(-2deg);
-    
-    -webkit-border-radius: 3px 3px 3px 3px;
-    -webkit-box-shadow: 2px 2px 8px #666666;
-    -webkit-transform: rotate(-2deg);
-}
-
-#page header span.myname a {
-    color: #fff;
-    text-decoration:  none;
-}
-
-header {
-    margin: 0 0 24px;
-    width: 552px;
-}
-
-
-/** Page */
-
-#page {
     margin: 0 auto;
-    width: 840px;
-    padding-top: 0;
-    padding-bottom: 72px;
-    background: auto;
+    padding: 2em 1em 6em;
+
+    font: large/1.5 "Gentium Book Basic", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+
+    color: #555;
+    background: #fcfcfc;
 }
 
 
-/** Article */
-
-article {
-    margin: 24px 0;
-    float: left;
-    width: 552px;
+h1 {
+    margin: 0 0 .5em 0;
+    font-size: 2.6em;
+    text-align: center;
+    color: #000;
 }
 
-/** Aside */
-
-aside {
-    float: right;
-    max-width: 200px;
-    
-    margin: 2em 0;
-    padding: 0 20px 20px;
-    
-    color: #666;
-    background: #f6f6f6;
-    
-    border: 1px solid #eee;
-    -moz-border-radius: 5px;
+h2 {
+    margin: 0 0 .5em 0;
+    font-size: 2em;
+    color: #111;
 }
 
-/** Footer */
+h3 {
+    margin: 0 0 .5em 0;
+    font-size: 1.6em;
+    color: #222;
+}
 
-footer {
-    clear: both;
+p {
+    margin: 0.5em 0 1.5em 0;
+    text-align: justify;
+}
+
+code {
+    /* @TODO: Look at the Jekyll code highlighting */
+
+    display: block;
+    margin: 0 0 1.5em;
+    padding: .5em;
+
+    font-family: monospace;
+    background: #eee;
+    font-size: 90%;
+    overflow: scroll;
+}
+
+p code {
+    display: inline-block;
+}
+
+ol {
+    margin: 0 0 1em 0;
+    list-style: lower-alpha;
+}
+
+ol li {
+    margin: 0 2em 1em 2em;
+}
+
+ul {
+    list-style: disc;
+}
+
+ul li {
+    margin: 0 0 1em 0;
+    margin: 0 2em 1em 2em;
+}
+
+a {
+    color: dodgerBlue;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+
+dl {
+
+}
+
+dl dt {
+    font-size: 1.3em;
+    color: #222;
+}
+
+dl dd {
+    margin: 0 0 1.5em 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+blockquote {
+    margin: 0 2em 1.5em;
+    padding: 1.5em 0;
+    font-size: 90%;
     border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
-footer ul li {
-    float: left;
-    margin: 0 15px 0 0;
-    padding: 0;
-
-    list-style: none;
-    font-size: 11px;
+blockquote p:last-child {
+    margin-bottom: 0;
 }
 
-footer ul li a[href$=rss] {
-    display: inline-block;
-    background: url(http://img.thisismoney.co.uk/i/std/tim_skin_0309/rss.gif) center left no-repeat;
-    padding: 5px 15px 5px 20px;
+article header {
+    text-align: center;
 }
 
-footer ul li a[href*=twitter] {
-    background: url(http://twitter.com/favicon.ico) center left no-repeat;
-    display: inline-block;
-    
-    padding: 5px 15px 5px 20px;
+article header h1 {
+    margin-bottom: 0;
+}
+
+article .post-info {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
+
+article img {
+    display: block;
+    margin: 0 auto 1.5em auto;
+    border: 1px solid #ccc;
+}
+
+
+/* Site UI */
+
+#header {
+    margin: -2em 0 1.5em 0;
+    padding: 1.5em 0;
+    border-bottom: 2px solid dodgerBlue;
+}
+
+#header p {
+    margin: 0;
+}
+
+#header a.name {
+    font-size: 1.6em;
+    text-decoration: none;
+}
+
+body.home #header p {
+    font-size: 1.9em;
 }

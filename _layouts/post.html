@@ -2,13 +2,16 @@
 layout: default
 ---
 <article class="post">
-  <h2>{{ page.title }}</h2>
   
+  <header>
+    <h1>{{ page.title }}</h1>
+    <p class="post-info">
+      <abbr class="published" title="{{ page.date }}">{{ page.date | date_to_string }}</abbr>
+    </p>
+  </header>
+
   {{ content }}
 
-  <p class="post-info">
-      Posted on
-      <abbr class="published" title="{{ page.date }}">{{ page.date | date_to_string }}</abbr>
-  </p>
+  
 
 </article>
