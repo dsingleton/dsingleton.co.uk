@@ -10,7 +10,7 @@ body_class: home
     <p>I also like to write about my passions; <a href="/blog">technology</a>, <a href="http://last.fm/user/underpangs">music</a>, and <a href="http://munchmun.ch">food</a>, that sort of thing.</p>
     
     <p>
-    Recent i've written about&hellip;
+    Recently i've written about&hellip;
     {% for post in site.posts limit:5 %}
         {% if forloop.last == true %} &amp; {% endif %}
         <a href="{{ post.url }}">
