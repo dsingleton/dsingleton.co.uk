@@ -44,8 +44,8 @@ Have a great week!</blockquote>
 </p>
 <p>I&#8217;m not going to go in to any actual code, in part because the post is already very long, but also because with the <a href="http://www.last.fm/api/mobileauth">mobile authentication documentation</a> it&#8217;s quite straight forward. But here&#8217;s the gist of it:
 </p>
-<code>
 <pre>
+<code>
 // This is the token format mobile auth expects:
 md5(username + md5(password))
 
@@ -55,7 +55,7 @@ password_hash = scrob1_password_hash
 
 // Generate the token and hit up the mobile auth API method
 mobile_auth_token = md5(username + password_hash)
-</pre>
 </code>
+</pre>
 
 <p>Bosh.</p>

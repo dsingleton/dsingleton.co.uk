@@ -8,8 +8,8 @@ categories: json javascript bug
 
 <p> hit a rather usual bug with JSON parsing for a Foursquare venue, in this case the <a href="http://foursquare.com/venue/140854">Bricklayers Arms</a> (The home of Pub Standards). The JSON response looks something like this:</p>
 
-<code class="json javascript">
 <pre>
+<code class="json javascript">
 {
     "venue": {
         "id": 145975,
@@ -26,8 +26,8 @@ categories: json javascript bug
         }
     }
 }
-</pre>
 </code>
+</pre>
 
 <p>Looks pretty reasonable, right? But my JSON parser chocked on this and called it invalid.  Running it through <a href="http://www.jsonlint.com/">JSON Lint</a> gives a bit more information, but is still a bit vague:</p>
 

@@ -22,28 +22,28 @@ categories: erlang code
 
 <p>The <a href="http://www.erlang.org/faq/getting_started.html#id52506">Erlang FAQ</a> has the simplest example:</p>
 
-<code><pre>
+<pre><code>
 -module(hello).
 -export([hello_world/0]).
 
 hello_world() -&gt; io:fwrite("hello, world\n").
-</pre></code>
+</code></pre>
 
 <p>Save that as <code>hello.erl</code> (the name of the file needs to match the module name), run the Erlang shell (run <code>erl</code>) and compile it like so:</p>
 
-<code><pre>
+<pre><code>
 $ erl
 1 &gt; c(hello).
-</pre></code>
+</code></pre>
 
 <p>This will generate an Erlang bytcode file called <code>hello.beam</code> in your working directory. To run it, switch back to the Erlang shell and call the exported function on your module.</p>
 
-<code><pre>
+<pre><code>
 2 &gt; hello:hello_world().
 hello, world
 ok
 3 &gt; 
-</pre></code>
+</code></pre>
 
 <p>Simple. Thought i&#8217;d also recommend looking at a <a href="http://egarson.blogspot.com/2008/03/real-erlang-hello-world.html">more complicated &#8216;Hello World&#8217;</a> that is a more idiomatic and Erlang-y version, </p>
 
@@ -62,4 +62,4 @@ ok
 
 <p>It wouldn&#8217;t be a beginning Erlang blog post without the obligatory &#8220;<em>Hello Joe</em>" from the brilliant Erlang: The Movie</p>
 
-<object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/uKfKtXYLG78?fs=1&amp;hl=en_US"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/uKfKtXYLG78?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object>
+<object width="480" height="385" data type><param name="movie" value="http://www.youtube.com/v/uKfKtXYLG78?fs=1&amp;hl=en_US"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/uKfKtXYLG78?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385" /></object>
