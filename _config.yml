@@ -5,3 +5,4 @@ pygments: true
 destination: .dist
 exclude: [Gruntfile.js, node_modules, package.json, README]
 permalink: /blog/:title
+url: http://dsingleton.co.uk/
