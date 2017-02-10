@@ -6,6 +6,9 @@ permalink: /blog/:title
 markdown: kramdown
 highlighter: rouge
 
+# Enforce github-pages compatability: https://jekyllrb.com/docs/plugins/
+safe: true
+
 exclude:
   - README
   - Gemfile
