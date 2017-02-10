@@ -9,6 +9,9 @@ highlighter: rouge
 # Enforce github-pages compatability: https://jekyllrb.com/docs/plugins/
 safe: true
 
+# GA tracking ID
+analytics_id: UA-609105-1
+
 exclude:
   - README
   - Gemfile
