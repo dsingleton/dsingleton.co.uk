@@ -1,8 +1,8 @@
-name: David Singleton's website
 markdown: redcarpet
-pygments: true
-
-destination: .dist
-exclude: [Gruntfile.js, node_modules, package.json, README]
+highlighter: true
+exclude:
+  - README
+  - Gemfile
+  - Gemfile.lock
 permalink: /blog/:title
 url: http://dsingleton.co.uk/
