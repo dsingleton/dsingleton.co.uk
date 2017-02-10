@@ -1,4 +1,6 @@
-markdown: redcarpet
+markdown: kramdown
+title: David Singleton
+author: David Singleton
 highlighter: true
 exclude:
   - README
@@ -6,3 +8,9 @@ exclude:
   - Gemfile.lock
 permalink: /blog/:title
 url: http://dsingleton.co.uk/
+
+gems:
+  - jekyll-feed
+
+feed:
+  path: atom.xml
