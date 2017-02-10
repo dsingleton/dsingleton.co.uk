@@ -1,13 +1,16 @@
-markdown: kramdown
 title: David Singleton
+url: http://dsingleton.co.uk/
 author: David Singleton
-highlighter: true
+
+permalink: /blog/:title
+markdown: kramdown
+highlighter: rouge
+
 exclude:
   - README
   - Gemfile
   - Gemfile.lock
-permalink: /blog/:title
-url: http://dsingleton.co.uk/
+  - .ruby-version
 
 gems:
   - jekyll-feed
