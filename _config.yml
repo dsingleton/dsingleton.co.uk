@@ -20,6 +20,7 @@ exclude:
 
 gems:
   - jekyll-feed
+  - jekyll-sitemap
 
 feed:
   path: atom.xml
