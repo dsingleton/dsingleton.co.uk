@@ -13,3 +13,10 @@ Run the dev server:
 ```sh
 bundle exec jerkyll serve
 ```
+
+
+## Github pages
+
+This site is deployed to [github pages](https://jekyllrb.com/docs/github-pages/) and uses the [`pages-gem`](https://github.com/github/pages-gem) to restrict itself to plugins that work in that environment.
+
+Deployment is automatic when pushing to master.
