@@ -21,6 +21,7 @@ exclude:
 gems:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 feed:
   path: atom.xml
