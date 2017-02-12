@@ -2,7 +2,7 @@ title: David Singleton
 url: http://dsingleton.co.uk/
 author: David Singleton
 
-permalink: /blog/:title
+permalink: /blog/:title/
 markdown: kramdown
 highlighter: rouge
 
