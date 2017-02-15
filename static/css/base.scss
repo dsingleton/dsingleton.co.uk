@@ -49,6 +49,7 @@ p {
     text-align: justify;
 }
 
+/* @TODO: Refactor how pre/code is styled, block vs inline code */
 code {
     /* @TODO: Look at the Jekyll code highlighting */
 
@@ -64,6 +65,8 @@ code {
 
 p code {
     display: inline-block;
+    margin-bottom: 0;
+    overflow: initial;
 }
 
 ol {
