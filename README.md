@@ -11,7 +11,7 @@ bundle
 
 Run the dev server:
 ```sh
-bundle exec jerkyll serve
+bundle exec jekyll serve
 ```
 
 
