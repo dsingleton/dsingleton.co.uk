@@ -1,0 +1,103 @@
+h1 {
+    margin: 0 0 .5em 0;
+    font-size: 2.6em;
+    text-align: center;
+    color: #000;
+}
+
+h2 {
+    margin: 0 0 .5em 0;
+    font-size: 2em;
+    color: #111;
+}
+
+h3 {
+    margin: 0 0 .5em 0;
+    font-size: 1.6em;
+    color: #222;
+}
+
+p {
+    margin: 0.5em 0 1.5em 0;
+    text-align: justify;
+}
+
+/* @TODO: Refactor how pre/code is styled, block vs inline code */
+code {
+    /* @TODO: Look at the Jekyll code highlighting */
+
+    display: block;
+    margin: 0 0 1.5em;
+    padding: .5em;
+
+    font-family: monospace;
+    background: #eee;
+    font-size: 90%;
+    overflow: scroll;
+}
+
+p code {
+    display: inline-block;
+    margin-bottom: 0;
+    overflow: initial;
+}
+
+ol {
+    margin: 0 0 1em 0;
+    list-style: lower-alpha;
+}
+
+ol li {
+    margin: 0 2em 1em 2em;
+}
+
+ul {
+    list-style: disc;
+}
+
+ul li {
+    margin: 0 0 1em 0;
+    margin: 0 2em 1em 2em;
+}
+
+a {
+    color: $link-color;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+
+dl {
+
+}
+
+dl dt {
+    font-size: 1.3em;
+    color: #222;
+}
+
+dl dd {
+    margin: 0 0 1.5em 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+blockquote {
+    margin: 0 2em 1.5em;
+    padding: 1.5em 0;
+    font-size: 90%;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}

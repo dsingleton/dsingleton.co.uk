@@ -1,0 +1,26 @@
+body {
+    max-width: 40em;
+
+    margin: 0 auto;
+    padding: 2em 1em 6em;
+
+    font: large/1.5 $font-face;
+
+    color: #555;
+    background: #fcfcfc;
+}
+
+#header {
+    margin: -2em 0 1.5em 0;
+    padding: 1.5em 0;
+    border-bottom: 2px solid $link-color;
+}
+
+#header p {
+    margin: 0;
+}
+
+#header a.name {
+    font-size: 1.6em;
+    text-decoration: none;
+}

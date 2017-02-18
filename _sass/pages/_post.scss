@@ -1,0 +1,22 @@
+// Not super specific, but only used on blog posts right now.
+// @TODO: Add class names to make this more explicit
+
+article header {
+    text-align: center;
+}
+
+article header h1 {
+    margin-bottom: 0;
+}
+
+article .post-info {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
+
+article img {
+    display: block;
+    margin: 0 auto 1.5em auto;
+    border: 1px solid #ccc;
+}
