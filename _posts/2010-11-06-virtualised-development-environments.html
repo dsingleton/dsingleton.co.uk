@@ -4,33 +4,37 @@ title: The importance of virtualised development environments
 date: 2010-11-06 01:23:35
 categories: development
 ---
-<p><a href="http://morethanseven.net">Gareth Rushgrove</a> just wrote a great blog post entitled <a href="http://morethanseven.net/2010/11/04/Why-you-should-be-using-virtualisation.html">Why You Should Be Using Virtualisation</a>, which puts out a great argument for using virtualised development environments.</p>
 
-<p>The crux of the argument is that you should be testing and running your code in an environment as close as possible to production, and that virtualisation is the easiest way to do that. There are other benefits, but this is the most important by far.</p>
+[Gareth Rushgrove](http://morethanseven.net) just wrote a great blog post entitled [Why You Should Be Using Virtualisation](http://morethanseven.net/2010/11/04/Why-you-should-be-using-virtualisation.html), which puts out a great argument for using virtualised development environments.
 
-<p>To quote Gareth:</p>
+The crux of the argument is that you should be testing and running your code in an environment as close as possible to production, and that virtualisation is the easiest way to do that. There are other benefits, but this is the most important by far.
 
-<blockquote>But if you’re running those tests against code executing on different hardware, on a different operating system, with different low level libraries or a different web server version or a different database server then you are not going to catch all the problems. If you take this to an extreme then you can only get rid of all of these problems by giving each developer a full production stack of their very own.</blockquote>
+To quote Gareth:
 
-<p>A short example of this: A few months back I spent the better part of a day tracking a bug that was happening in production by utterly unreproducable in our development environment. The cause was a difference in the <a href="http://incubator.apache.org/thrift/">Thrift</a> setup between the two - one was running a C extension while the other was a native PHP extension - and one had a bug.</p>
+> But if you’re running those tests against code executing on different hardware, on a different operating system, with different low level libraries or a different web server version or a different database server then you are not going to catch all the problems. If you take this to an extreme then you can only get rid of all of these problems by giving each developer a full production stack of their very own.
 
-<p>It&#8217;s not important what the bug was, but that if the two had been in sync then the problem would have been caught much quicker and more easily.</p>
+A short example of this: A few months back I spent the better part of a day tracking a bug that was happening in production by utterly unreproducable in our development environment. The cause was a difference in the [Thrift](http://incubator.apache.org/thrift/) setup between the two - one was running a C extension while the other was a native PHP extension - and one had a bug.
 
-<h3>Current work setup</h3>
-<p>At <a href="http://www.last.fm">Last.fm</a> each web developer has their own hosted and internally routed Virtual Machine, all based on the same VM image, which matches 99% of our production stack. There are still the occasional niggling 1% problems and mismatches, but each time we encounter one it gets fixed in the original VM image, so it&#8217;s a step closer to being fixed forever.</p>
+It’s not important what the bug was, but that if the two had been in sync then the problem would have been caught much quicker and more easily.
 
-<p>In contrast, there was a period where we were running differing versions of Apache and PHP compared to live (and different again to some non-production, non-development internal servers). Believe me when I say: this causes no end of problems, avoid it at all costs. It will sap developer time and enthusiasm faster than you&#8217;d think. As happy as many developers are playing at sys-admin, the majority would much rather be writing code and making <em>stuff</em>, not fighting workflow.</p>
+### Current work setup
 
-<h3>Restore and rollback</h3>
-<p>Another benefit of visualisation is that you can get a new version of your VM running very quickly. This saves an awful lot of time for a new hire, but also if you lose your VM for any reason then you can generate a new VM or restore an archived version incredibly easily.</p>
+At [Last.fm](http://www.last.fm) each web developer has their own hosted and internally routed Virtual Machine, all based on the same VM image, which matches 99% of our production stack. There are still the occasional niggling 1% problems and mismatches, but each time we encounter one it gets fixed in the original VM image, so it’s a step closer to being fixed forever.
 
-<p>Due to a disk corruption I lost my development VM a few months ago, frustrating as it was I was able to get working again in under an hour. A new production-parity VM was generated and I pulled in code from our source repository, restarted Apache and away I went. All I lost was a (small) amount of uncommited code and a few shell scripts, which did teach me to treat a VM as a throwaway environment, commit or backup anything you would mind losing.</p>
+In contrast, there was a period where we were running differing versions of Apache and PHP compared to live (and different again to some non-production, non-development internal servers). Believe me when I say: this causes no end of problems, avoid it at all costs. It will sap developer time and enthusiasm faster than you’d think. As happy as many developers are playing at sys-admin, the majority would much rather be writing code and making _stuff_, not fighting workflow.
 
-<h3>Downsides</h3>
-<p>I can understand hesitation about setting up a production environments for dev, especially for the awkward medium sized projects (bigger than small, but not a serious endeavour), but it can give you some pretty big wins. The earlier you encounter bugs, the quicker you fix them and if disaster strikes you can resurrect your environment easily. I think it also forces you to be more controlled when adding dependencies in your production environment.</p>
+### Restore and rollback
 
-<p>Of course, it&#8217;s not a silver bullet, you&#8217;ll still encounter weird production vs dev bugs, there&#8217;ll always be differences. Not just load/the real world, but it&#8217;s also like you might be missing some configuration or software, routing access or even domain variance than only production has.</p>
+Another benefit of visualisation is that you can get a new version of your VM running very quickly. This saves an awful lot of time for a new hire, but also if you lose your VM for any reason then you can generate a new VM or restore an archived version incredibly easily.
 
-<p>To test against production as much as possible we use a few production web servers, pulled from the main pool, which are configured to run candidate releases of our code base. Developers and testers can set a cookie that our load balancer will use to route them to the QA servers. This allows us to test an unreleased version of the site  using the exact hardware/software we use in production, that&#8217;s hosted in the same data centers and addressed by the real domain.</p>
+Due to a disk corruption I lost my development VM a few months ago, frustrating as it was I was able to get working again in under an hour. A new production-parity VM was generated and I pulled in code from our source repository, restarted Apache and away I went. All I lost was a (small) amount of uncommited code and a few shell scripts, which did teach me to treat a VM as a throwaway environment, commit or backup anything you would mind losing.
 
-<p>You can&#8217;t get any closer than that without putting the code live.</p>
+### Downsides
+
+I can understand hesitation about setting up a production environments for dev, especially for the awkward medium sized projects (bigger than small, but not a serious endeavour), but it can give you some pretty big wins. The earlier you encounter bugs, the quicker you fix them and if disaster strikes you can resurrect your environment easily. I think it also forces you to be more controlled when adding dependencies in your production environment.
+
+Of course, it’s not a silver bullet, you’ll still encounter weird production vs dev bugs, there’ll always be differences. Not just load/the real world, but it’s also like you might be missing some configuration or software, routing access or even domain variance than only production has.
+
+To test against production as much as possible we use a few production web servers, pulled from the main pool, which are configured to run candidate releases of our code base. Developers and testers can set a cookie that our load balancer will use to route them to the QA servers. This allows us to test an unreleased version of the site using the exact hardware/software we use in production, that’s hosted in the same data centers and addressed by the real domain.
+
+You can’t get any closer than that without putting the code live.

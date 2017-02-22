@@ -4,12 +4,12 @@ title: JSON, Octal Numbers &amp; Validation
 date: 2009-10-14 16:14:00
 categories: json javascript bug
 ---
-<p>Now it&#8217;s launched in London I&#8217;ve been playing around with the Foursquare API. While it&#8217;s not the best API i&#8217;ve come across it gives you reasonable access to their data, so i&#8217;ve been pretty happily building some small tools using their data.</p>
 
-<p> hit a rather usual bug with JSON parsing for a Foursquare venue, in this case the <a href="http://foursquare.com/venue/140854">Bricklayers Arms</a> (The home of Pub Standards). The JSON response looks something like this:</p>
+Now it’s launched in London I’ve been playing around with the Foursquare API. While it’s not the best API i’ve come across it gives you reasonable access to their data, so i’ve been pretty happily building some small tools using their data.
 
-<pre>
-<code class="json javascript">
+hit a rather usual bug with JSON parsing for a Foursquare venue, in this case the [Bricklayers Arms](http://foursquare.com/venue/140854) (The home of Pub Standards). The JSON response looks something like this:
+
+```
 {
     "venue": {
         "id": 145975,
@@ -26,17 +26,16 @@ categories: json javascript bug
         }
     }
 }
-</code>
-</pre>
+```
 
-<p>Looks pretty reasonable, right? But my JSON parser chocked on this and called it invalid.  Running it through <a href="http://www.jsonlint.com/">JSON Lint</a> gives a bit more information, but is still a bit vague:</p>
+Looks pretty reasonable, right? But my JSON parser chocked on this and called it invalid. Running it through [JSON Lint](http://www.jsonlint.com/) gives a bit more information, but is still a bit vague:
 
-<blockquote>syntax error, unexpected TNUMBER, expecting &#8216;}&#8217; at line 9</blockquote>
+> syntax error, unexpected TNUMBER, expecting ‘}’ at line 9
 
-<p>Let&#8217;s see, line 9 is the phone number key/val, that seems like it should be valid, I mean the leading zero is odd but&#8230; oh. You may, or may not, remember that standard notation for <a href="http://en.wikipedia.org/wiki/Octal">octal numbers</a> is a leading 0, it&#8217;s not something you run in to very often.</p>
+Let’s see, line 9 is the phone number key/val, that seems like it should be valid, I mean the leading zero is odd but… oh. You may, or may not, remember that standard notation for [octal numbers](http://en.wikipedia.org/wiki/Octal) is a leading 0, it’s not something you run in to very often.
 
-<p>So why is an octal number invalid? Because the JSON spec doesn&#8217;t explicitly support octal numbers as native types and parsers aren&#8217;t compelled to either. Some may do, but this is probably more luck than judgement - a side effect of loose typing.</p>
+So why is an octal number invalid? Because the JSON spec doesn’t explicitly support octal numbers as native types and parsers aren’t compelled to either. Some may do, but this is probably more luck than judgement - a side effect of loose typing.
 
-<p>I&#8217;ve reported the bug to the Foursquare team and it sounds like it&#8217;ll be fixed shortly (as part of an API rewrite), in the mean time i&#8217;ll be using a dirty regex to quote the offending number before parsing.</p>
+I’ve reported the bug to the Foursquare team and it sounds like it’ll be fixed shortly (as part of an API rewrite), in the mean time i’ll be using a dirty regex to quote the offending number before parsing.
 
-<p>If there&#8217;s one thing to take from this it&#8217;s how important validation is, even if it does nothing more than prove it&#8217;s not your bug. Looking at the original response and trying to work our why it didn&#8217;t parse with validation would have been very painful, it&#8217;s not a bug easily caught by a human, you need rigorous machine testing. </p>
+If there’s one thing to take from this it’s how important validation is, even if it does nothing more than prove it’s not your bug. Looking at the original response and trying to work our why it didn’t parse with validation would have been very painful, it’s not a bug easily caught by a human, you need rigorous machine testing.
