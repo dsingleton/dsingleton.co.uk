@@ -5,11 +5,11 @@ date: 2007-09-12 00:00:00
 categories: css xfn microformats
 ---
 
-As I was redesigning a bit lately and making use of [FamFamFam’s](http://www.famfamfam.com/) very nice [Silk icon set](http://www.famfamfam.com/lab/icons/silk/) (used under the <abbr title="Creative Commons">CC</abbr> Attribution License) and it occurred to me I could use CSS2.1&nbsp;[Attribute Selectors](http://www.w3.org/TR/CSS21/selector.html#attribute-selectors) to show the relationships the XFN defines.
+As I was redesigning a bit lately and making use of [FamFamFam’s](http://www.famfamfam.com/) very nice [Silk icon set](http://www.famfamfam.com/lab/icons/silk/) (used under the Creative Commons Attribution License) and it occurred to me I could use CSS2.1 [Attribute Selectors](http://www.w3.org/TR/CSS21/selector.html#attribute-selectors) to show the relationships the XFN defines.
 
-If you’re not familiar with XFN this [wikipedia article](http://en.wikipedia.org/wiki/XHTML_Friends_Network) gives a good introduction.
+If you’re not familiar with XHTML Friends Network (XFN) this [wikipedia article](http://en.wikipedia.org/wiki/XHTML_Friends_Network) gives a good introduction.
 
-In the WordPress blogroll you get the option to add <abbr title="XHTML Friends Network">XFN</abbr> relationships to the people/links, as I’ve been on a bit of a microformats kick i’ve been thinking how I can make better use
+In the WordPress blogroll you get the option to add XFN relationships to the people/links, as I’ve been on a bit of a microformats kick i’ve been thinking how I can make better use
 
 ### The XHTML
 

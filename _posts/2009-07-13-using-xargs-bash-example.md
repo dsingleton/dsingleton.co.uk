@@ -5,6 +5,8 @@ date: 2009-07-13 21:21:00
 categories: bash xargs code
 ---
 
+I tweeted some bash-fu using xargs:
+
 > Using xargs like I mean it. svn st \* | grep “^ C” | cut -c 8- | xargs svn revert
 - [http://twitter.com/dsingleton/status/2616994594](http://twitter.com/dsingleton/status/2616994594)
 

@@ -7,7 +7,7 @@ categories: sanfrancisco foursquare america holiday
 
 A week later I still haven’t written up my SF trip and as a friend asked for tips here’s a micro version!
 
-> <cite> - <a href="http://twitter.com/carlgaywood/status/3425639734">@carlgaywood</a></cite> @dsingleton any tips for San Francisco?
+> <cite>[@carlgaywood](http://twitter.com/carlgaywood/status/3425639734)</cite> @dsingleton any tips for San Francisco?
 
 **Disclaimer** ;These are mostly based in/around mission as that’s where I stayed.
 

@@ -9,11 +9,11 @@ Last night I spent 30 minutes having a play with a new (to me) programming langu
 
 Its a language that will stretch my brain a bit, teach me to think about programming in a different way, and I know some folks using it (Mostly [Smarkets](http://smarkets.com/) and [IRCCloud](http://irccloud.com)) who’s brains I can pick in the pub.
 
-These are my quick notes from an Erlang newbie, hopefully useful to someone else getting started who justs wants to install it, write Hello World and go from there.
+These are my quick notes from an Erlang newbie, hopefully useful to someone else getting started who just wants to install it, write Hello World and go from there.
 
-### Installing Erlang on OSX
+### Installing Erlang on OS X
 
-This is incredibly easy with [Homebrew](https://github.com/mxcl/homebrew) (a package manager for OSX). As simple as:
+This is incredibly easy with [Homebrew](https://github.com/mxcl/homebrew) (a package manager for OS X). As simple as:
 
 ```
 brew install erlang
@@ -23,7 +23,7 @@ I expect they’ll be some cases where I need more than that stock install, but 
 
 ### Writing ‘Hello World’
 
-The [Erlang FAQ](http://www.erlang.org/faq/getting_started.html#id52506) has the simplest example:
+The [Erlang FAQ](http://www.erlang.org/faq/getting_started.html#id52506) has the simplest ex&le:
 
 ```
 -module(hello).
@@ -39,7 +39,7 @@ $ erl
 1 > c(hello).
 ```
 
-This will generate an Erlang bytcode file called `hello.beam` in your working directory. To run it, switch back to the Erlang shell and call the exported function on your module.
+This will generate an Erlang byetcode file called `hello.beam` in your working directory. To run it, switch back to the Erlang shell and call the exported function on your module.
 
 ```
 2 > hello:hello_world().
@@ -54,7 +54,7 @@ Simple. Thought i’d also recommend looking at a [more complicated ‘Hello Wor
 
 I [asked on Twitter](http://twitter.com/#!/dsingleton/status/22716268050124801) for some good Erlang resources, books, blogs, tutorials etc:
 
-- [Joe Armstrong - Programming Erlang: Software for a Concurrent World](http://www.amazon.co.uk/gp/product/193435600X?ie=UTF8&tag=httpdsingleco-21&linkCode=as2&camp=1634&creative=19450&creativeASIN=193435600X). A lot of very smart people recommend this, the classic book on Erlang by one of it’s creators. It’s going on my Kindle as I type.
+- [Joe Armstrong - Programming Erlang: Software for a Concurrent World](http://www.amazon.co.uk/gp/product/193435600X?ie=UTF8&tag=httpdsingleco-21&linkCode=as2&c&=1634&creative=19450&creativeASIN=193435600X). A lot of very smart people recommend this, the classic book on Erlang by one of it’s creators. It’s going on my Kindle as I type.
 - [learn you some Erlang](http://learnyousomeerlang.com/). A more approachable introduction to Erlang, with a little of [\_why’s](http://en.wikipedia.org/wiki/Why_the_lucky_stiff) style about it.
 - [My bookmarks tagged Erlang](http://www.delicious.com/dsingleton/erlang). I’ll be adding more links as I collect them.
 
@@ -66,7 +66,7 @@ At the moment I think i’m going to work through some of the [Project Euler\>](
 
 It wouldn’t be a beginning Erlang blog post without the obligatory “_Hello Joe_" from the brilliant Erlang: The Movie
 
-<object width="480" height="385" data type><param name="movie" value="http://www.youtube.com/v/uKfKtXYLG78?fs=1&amp;hl=en_US">
+<object width="480" height="385" data type><param name="movie" value="http://www.youtube.com/v/uKfKtXYLG78?fs=1&&;hl=en_US">
 <param name="allowFullScreen" value="true">
 <param name="allowscriptaccess" value="always">
-<embed src="http://www.youtube.com/v/uKfKtXYLG78?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object>
+<embed src="http://www.youtube.com/v/uKfKtXYLG78?fs=1&&;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object>

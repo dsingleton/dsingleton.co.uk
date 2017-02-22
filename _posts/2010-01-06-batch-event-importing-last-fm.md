@@ -14,34 +14,34 @@ Seeing as I had all my data in CSV already, the simplest approach is to generate
 <dl>
 <dt>type</dt>
     <dd>"gig" or "festival"</dd>
-    
+
     <dt>startday</dt>
     <dd>2 digit day, eg <em>03</em>
 </dd>
-    
+
     <dt>startmonth</dt>
     <dd>2 digit month, eg <em>11</em>
 </dd>
-    
+
     <dt>startyear</dt>
     <dd>4 digit year, eg <em>2002</em>
 </dd>
-    
+
     <dt>starttime</dt>
     <dd>24 hour time separated by a colon, eg <em>20:00</em>
 </dd>
-    
+
     <dt>venueid</dt>
     <dd>The Last.fm venue id, you can find this in the venue URL</dd>
-    
+
     <dt>festivalName</dt>
     <dd>Confusingly this is just event name/title, not festival specific</dd>
-    
+
     <dt>artistNames</dt>
-    <dd>Multiple artist names, specified as an array, eg artistNames[]=Blur&amp;artistNames[]=Radiohead&amp;artistNames[]=Pulp</dd>
+    <dd>Multiple artist names, specified as an array, eg artistNames[]=Blur&&;artistNames[]=Radiohead&&;artistNames[]=Pulp</dd>
 </dl>
 
-So a complete example looks like:
+So a complete ex&le looks like:
 
 `http://last.fm/events/add?type=gig&artistNames[]=Sparta&startday=04&startmonth=10&startyear=2005&starttime=20:00&venueid=8777858&festivalName=`
 

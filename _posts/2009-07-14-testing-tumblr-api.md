@@ -5,13 +5,13 @@ date: 2009-07-14 22:50:53
 categories: tumblr api
 ---
 
-Just testing the Tumblr API. I’ve been pulling content in to my personal site ([http://dsingleton.co.uk](http://dsingleton.co.uk)) via the JSON API using the _search_ parameter.
+Just testing the Tumblr API. I’ve been pulling content in to [my personal site](http://dsingleton.co.uk)) via the JSON API using the _search_ parameter.
 
 Looking up by slug for each article works for all except Open Tech 2009. For some reason it doesn’t seem to be in the search index, as it’s not even picked up when searching for the term “open”.
 
 Possibly explanations
 
-1. Large articles aren’t indexed for the search API - My open tech post was ~3,500 words. 
+1. Large articles aren’t indexed for the search API - My open tech post was ~3,500 words.
 2. That article is missing from the index due to a bug, possibly a caching error.
 
 The former sounds a little unlikely. While Tumblr is intended for short snappy posts I’m sure there are much longer posts, and ~3,500 is not _that_ big.

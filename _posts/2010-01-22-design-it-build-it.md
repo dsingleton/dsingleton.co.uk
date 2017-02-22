@@ -5,9 +5,9 @@ date: 2010-01-22 15:19:00
 categories: conference social event speaking last.fm
 ---
 
-[![Design it, Build it.](http://farm5.static.flickr.com/4026/4295458898_db1b0e4934.jpg)](http://www.flickr.com/photos/davidsingleton/4295458898/ "Design it, Build it. by David Singleton, on Flickr")
+I’ll be speaking at [Design it, Build it](http://www.dibiconference.com/) - A one day web conference on April 28th in Newcastle. It’s aimed at both designs & developers with a separate track of talks for each
 
-I’m pleased to announce i’ll be speaking at [Design it, Build it](http://www.dibiconference.com/) - A one day web conference on April 28th in Newcastle. It’s aimed at both designs & developers with a separate track of talks for each
+[![Design it, Build it.](http://farm5.static.flickr.com/4026/4295458898_db1b0e4934.jpg)](http://www.flickr.com/photos/davidsingleton/4295458898/ "Design it, Build it. by David Singleton, on Flickr")
 
 I consider myself a jack-of-all-trades most of the time, with my time (and passion) split evenly between frontend and backend. So it’s great to see a conference with such a great mix of topics, definately the kind of thing i’d be attending anyway if I wasn’t speaking.
 

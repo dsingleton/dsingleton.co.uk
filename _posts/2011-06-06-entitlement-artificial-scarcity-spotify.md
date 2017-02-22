@@ -5,16 +5,16 @@ date: 2011-06-06 12:34:09
 categories: music business spotify streaming
 ---
 
-[kapowaz](http://stumble.kapowaz.net/post/6245425449/artificialscarcity):
+A response to [a post by kapowaz](http://stumble.kapowaz.net/post/6245425449/artificialscarcity).
 
 > The dawn of ubiquitous computing and communications has had a disruptive effect on numerous previously-stable business models. Those affected most are usually those which relied upon the scarcity of a resource, be that news, music or television programs.
-> 
+>
 > Each one in turn has found itself confronted with a paradigm shift leading away from scarcity, and typically has failed to adapt to the new order that develops. What began with Napster in the late ‘90s has led to everything from news pay-walls to Digital Rights Management on movies and music. When these measures inevitably fail new legislation is lobbied for to plug the gaps, but by that point it’s too late to change perceptions: the resource is manifestly no longer scarce.
-> 
+>
 > Once this becomes apparent to the general populace, the value of that resource tends to drop rapidly. Music once had an intrinsic value, but clearly it was tied to the scarcity of the medium — you could lend a CD to a friend and until they returned it you didn’t have that CD to play yourself.
-> 
+>
 > Once the physical medium no longer played a part in that transaction and one could make a perfect copy at no cost it was only natural that people would share these copies with one another. Big media like to portray this as theft, but in reality, just as with the Replicators in science fiction, the scarcity has been replaced with abundance and with it the business models that rely upon it have become obsolete.
-> 
+>
 > This sentiment isn’t the same as entitlement: it’s a natural reaction to artificial scarcity, and [those that attack this reaction](http://www.guardian.co.uk/commentisfree/2011/jun/06/spotify-problem-getting-people-to-pay) are simply struggling to rationalise what is in effect a significant transitionary point in civilisation. As [Clay Shirky](http://www.shirky.com/) wrote in _Cognitive Surplus_, “When a resource is scarce, the people who manage it often regard it as valuable in itself, without stopping to consider how much of its value is tied to its scarcity.” There is no law written that states that every business model is entitled to exist in perpetuity.
 
 In part, I disagree. The intrinsic value of music is in flux and is trying to find a steady state. It’s safe to say that value will be greater than 0, but what that value will be and how we get there I don’t know.

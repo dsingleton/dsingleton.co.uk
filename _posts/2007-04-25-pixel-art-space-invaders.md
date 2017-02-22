@@ -52,4 +52,4 @@ There’s been loads of other great pixel/paper art, most of which blows what we
 
 - Mosaic-tiled Space Invaders [all over the world](http://www.space-invaders.com/sominv.html) – I love this one in [Covent Garden](http://www.flickr.com/photos/true2death/17895715/).
 - Donkey Kong over [4 floors](http://www.soe.ucsc.edu/%7Einio/dk/) at the University of California.
-- Celebrating the 10th anniversary of Mac Office with 1300&nbsp;[Post-it notes](http://blogs.msdn.com/macmojo/archive/2007/02/07/birthday-gift-for-macbu.aspx).
+- Celebrating the 10th anniversary of Mac Office with 1300[Post-it notes](http://blogs.msdn.com/macmojo/archive/2007/02/07/birthday-gift-for-macbu.aspx).

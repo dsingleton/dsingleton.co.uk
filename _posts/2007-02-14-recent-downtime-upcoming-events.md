@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Recent downtime &amp; upcoming events
+title: Recent downtime & upcoming events
 date: 2007-02-14 00:00:00
 categories: events social barcamp sxsw futureofwebapps
 ---

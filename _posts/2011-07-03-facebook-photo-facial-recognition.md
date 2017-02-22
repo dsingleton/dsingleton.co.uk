@@ -5,8 +5,6 @@ date: 2011-07-03 11:37:22
 categories: facebook privacy
 ---
 
-_[These are old, but I’m clearing my drafts queue]_
-
 Last Autumn a group of us visited Berlin, renting a bit apartment, exploring the city and taking lots of photos. I don’t upload photos to Facebook, I’m more of a [Flickr](http://flickr.com/photos/davidsingleton/) guy, but it was interesting to watch Becky upload hers and compare the process.
 
 The most striking, impressive and creepy difference was that Facebook seem to do facial detection identify faces then try to match them to your friends. I can see why they do it, more tagging = more engagement, but the unintended matching of drawn faces (and more so to real people) is pretty weird.

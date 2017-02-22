@@ -22,45 +22,45 @@ You’ll probably want to change your default destination (where the ripped file
 The naming scheme looks a bit esoteric. The `:` is treated as a directory separator, as I assume backslash is reserved as an escape character. The full set of possible value and their equivalent value.
 
 <dl>
-<dt>%a</dt>
+  <dt>%a</dt>
     <dd>Artist Name</dd>
-    
+
     <dt>%A</dt>
     <dd>Sort Artist</dd>
-    
+
     <dt>%b</dt>
     <dd>Album Artist</dd>
 
     <dt>%B</dt>
     <dd>Sort Album Artist</dd>
-    
+
     <dt>%c</dt>
     <dd>Composer</dd>
-    
+
     <dt>%C</dt>
     <dd>Sort Composer</dd>
-    
+
     <dt>%l</dt>
     <dd>Album Name</dd>
-    
+
     <dt>%L</dt>
     <dd>Sort Album Name</dd>
-    
+
     <dt>%t</dt>
     <dd>Track Name</dd>
-    
+
     <dt>%T</dt>
     <dd>Sort Track Name</dd>
-    
+
     <dt>%n</dt>
     <dd>Track Number</dd>
-    
+
     <dt>%y</dt>
     <dd>Year</dd>
-    
+
     <dt>%g</dt>
     <dd>Genre</dd>
-    
+
     <dt>%G</dt>
     <dd>Grouping</dd>
 </dl>

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JSON, Octal Numbers &amp; Validation
+title: JSON, Octal Numbers & Validation
 date: 2009-10-14 16:14:00
 categories: json javascript bug
 ---
@@ -22,7 +22,7 @@ hit a rather usual bug with JSON parsing for a Foursquare venue, in this case th
         "geolat": 51.5176421,
         "geolong": -0.1334817,
         "stats": {
-            "checkins": 0 
+            "checkins": 0
         }
     }
 }
