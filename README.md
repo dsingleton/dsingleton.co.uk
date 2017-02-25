@@ -13,7 +13,14 @@ Run the dev server:
 ```sh
 bundle exec jekyll serve
 ```
+### Link checking
 
+Check internal links with:
+
+```sh
+bundle exec jekyll build
+bundle exec htmlproofer _site/ --disable-external
+```
 
 ## Github pages
 
