@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>http://dsingleton.co.uk/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/code/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/about/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/leaving-lumi-joining-GDS/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/scrobbling-heatmap-calendar/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/last-fm-now-playing-information-radiator/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/leaving-last-fm/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/facebook-photo-facial-recognition/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/entitlement-artificial-scarcity-spotify/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/migrating-scrobbling-authentication-to-2-0/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/erlang-beginners-tutorial/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/tech-hub-misrepresents-silicon-roundabout/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/virtualised-development-environments/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/new-twitter-favouritism/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/lastfm-vs-xbox-dibi-conference/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/1-bit-audio-update/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/design-it-build-it/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/batch-event-importing-last-fm/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/music-hackday-boston/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/skydive/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/json-octal-validation/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/music-taste-tube-lines/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/san-francisco-tips/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/ripping-itunes-lame-quality/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/reblogging-the-past/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/trinity-atomic-anniversary/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/testing-tumblr-api/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/open-tech-2009/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/using-xargs-bash-example/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/playdar-os-x-10-4/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/twitter-going-public-again/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/xfn-icons-css/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/official-truck-festival-lineup/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/panels-gender-confusion-and-a-rant/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/media-london-2007/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/upgrading-to-php5-on-os-x/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/1-bit-audio-player/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/fun-with-famfamfam-icons-and-jquery/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/lastfm-xsl-tag-cloud/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/pixel-art-space-invaders/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/ala-ruining-user-experience/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/sxsw-round-up/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/sxsw-day-two/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/sxsw-day-one/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/recent-downtime-upcoming-events/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/teaching-bad-practice/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/code-golf-whats-your-handicap/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/dconstruct-2006/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/google-code-search/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/blog/programming-quotes/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/about/cv/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/code/1bit/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://dsingleton.co.uk/code/icon-selector/</loc>
+  <lastmod>2015-01-06T19:51:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+</urlset>
