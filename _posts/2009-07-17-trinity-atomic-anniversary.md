@@ -7,7 +7,7 @@ categories: atomic science
 
 64 years ago, on July 16, 1945 Trinity was the first test of an atomic weapon.
 
-[![](http://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Trinity_explosion2.jpeg/400px-Trinity_explosion2.jpeg)](http://en.wikipedia.org/wiki/Trinity_site)
+[![Trinity mushroom cloud](http://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Trinity_explosion2.jpeg/400px-Trinity_explosion2.jpeg)](http://en.wikipedia.org/wiki/Trinity_site)
 
 It changed the world we live in forever. This isn’t the kind of thing i’d usually write about, but it’s an interesting subject, and the quote from Oppenheimer is very moving (particularly the video).
 
