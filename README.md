@@ -1,5 +1,7 @@
 # [dsingleton.co.uk](http://dsingleton.co.uk)
 
+[![Build Status](https://travis-ci.org/dsingleton/dsingleton.co.uk.svg?branch=master)](https://travis-ci.org/dsingleton/dsingleton.co.uk)
+
 A straight forward static personal website, powered by [Jekyll](http://jekyllrb.com/).
 
 ## Setup

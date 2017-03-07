@@ -17,6 +17,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - .ruby-version
+  - vendor # https://jekyllrb.com/docs/continuous-integration/travis-ci/
 
 gems:
   - jekyll-feed
