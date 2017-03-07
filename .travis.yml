@@ -3,3 +3,9 @@ sudo: false
 
 script:
   - bundle exec jekyll build
+  - bundle exec htmlproofer ./_site --disable-external
+
+env:
+  global:
+     # speeds up installation of html-proofer
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
