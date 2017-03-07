@@ -1,12 +1,14 @@
 body {
-    max-width: 40em;
+    max-width: 42em;
     margin: 0 auto;
     padding: 1em 1em 4em 1em;
 
-    font: large/1.5 $font-face;
+    font: 19px/1.5 $text-font-stack;
 
-    color: #555;
-    background: #fcfcfc;
+    color: $text-color;
+    background: $page-color;
+
+    text-rendering: optimizeLegibility;
 }
 
 #header {
