@@ -13,6 +13,6 @@ It’s prety neat, you can preview mp3s in page, we’ve been using it at [Headh
 
 The first version used [jQuery](http://jquery.com/) which caused a few problems, but it’s been re-written from scratch for the latest version. The main aims are to make it unobtrusive, easy to use and to play nicely with other JS libraries. So far, it’s pretty good.
 
-The main version is available from the [official 1Bit site](http://1bit.markwheeler.net/), which has the downloads, documentation. Everything you need to use it on your own site or blog. There’s also the [in-development version](http://dsingleton.co.uk/code/1bit/) on my site where i’ve been playing around and trying to improve it, it also has some more demo’s.
+The main version is available from the [official 1Bit site](http://1bit.markwheeler.net/), which has the downloads, documentation. Everything you need to use it on your own site or blog. There’s also the [in-development version](/code/1bit/) on my site where i’ve been playing around and trying to improve it, it also has some more demo’s.
 
 So go check out [1 Bit](http://1bit.markwheeler.net/), its nifty.

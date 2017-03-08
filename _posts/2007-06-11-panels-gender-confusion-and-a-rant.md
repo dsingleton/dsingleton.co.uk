@@ -5,7 +5,7 @@ date: 2007-06-11 00:00:00
 categories: conference
 ---
 
-I was going to include this little rant in my [@media round-up post](http://dsingleton.co.uk/archive/media-london-2007/2007/06/11/), but thought better of it, lest I get _too_ ranty. So yes, this will be a fairly quickly written up little rant, please treat it as such.
+I was going to include this little rant in my [@media round-up post](/blog/media-london-2007), but thought better of it, lest I get _too_ ranty. So yes, this will be a fairly quickly written up little rant, please treat it as such.
 
 As I mentioned before the only negative I came away from the conference with was the Hot topics panel. This was mainly for two reasons, with only vague relation to each other.
 
