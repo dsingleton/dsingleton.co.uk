@@ -5,7 +5,7 @@ date: 2010-11-06 01:23:35
 categories: development
 ---
 
-[Gareth Rushgrove](http://morethanseven.net) just wrote a great blog post entitled [Why You Should Be Using Virtualisation](http://morethanseven.net/2010/11/04/Why-you-should-be-using-virtualisation.html), which puts out a great argument for using virtualised development environments.
+[Gareth Rushgrove](http://morethanseven.net) just wrote a great blog post entitled [Why You Should Be Using Virtualisation](http://morethanseven.net/2010/11/04/Why-you-should-be-using-virtualisation), which puts out a great argument for using virtualised development environments.
 
 The crux of the argument is that you should be testing and running your code in an environment as close as possible to production, and that virtualisation is the easiest way to do that. There are other benefits, but this is the most important by far.
 

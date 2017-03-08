@@ -5,9 +5,9 @@ date: 2010-02-06 21:17:00
 categories: 1bit javascript audio opensource github
 ---
 
-1Bit is a simple way to let you preview MP3s linked in a web page. It’s a combination of Javascript and (a tiny bit) of flash to automatically pre-pend links to MP3s with a little play icon, allowing you to listen to the track inline. It’s been quite popular, mostly with music blogs. It was built by [and myself a year or two ago.](http://1bit.markwheeler.net/docs.php)
+1Bit is a simple way to let you preview MP3s linked in a web page. It’s a combination of Javascript and (a tiny bit) of flash to automatically pre-pend links to MP3s with a little play icon, allowing you to listen to the track inline. It’s been quite popular, mostly with music blogs. It was built by [Mark Wheeler](http://1bit.markwheeler.net/) and myself a year or two ago.
 
-Towards the end of last year [James Weiner](http://www.unicorncreative.com) got in touch about 1bit, he’s an Oxford-based web developer/designer who i’ve had the pleasure to meet a few times at Pub Standards. He’d been using it on some client sites and wanted to add some new functionality.
+Towards the end of last year [James Weiner](https://twitter.com/jamesweiner) got in touch about 1bit, he’s an Oxford-based web developer/designer who i’ve had the pleasure to meet a few times at Pub Standards. He’d been using it on some client sites and wanted to add some new functionality.
 
 Mark and I were too busy with work to add the features ourselves, but were happy for James (with some help from his brother [Ben Weiner](http://www.readingtype.org.uk/). The source for 1Bit is public and open (including the flash), so anyone can work on it if they like. Ben and James did just that and added the feature they wanted. Even better than that, they were happy to share the changes and for us to integrate them with the current version of 1Bit.
 

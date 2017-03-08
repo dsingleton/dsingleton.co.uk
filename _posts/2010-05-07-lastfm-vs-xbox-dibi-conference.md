@@ -17,7 +17,7 @@ I promised some people I that I’d write more about how to find out about and g
 
 ### Build It
 
-The rest of the build line-up was excellent. [Michael Brunton-Spall](http://www.brunton-spall.co.uk) gave an overview of [The Guardian’s](http://mps-guardian.co.uk/) scaling challenges and how they approach rapid application building, such as the [MPs expenses](http://mps-expenses.guardian.co.uk/) crowd-sourcing effort
+The rest of the build line-up was excellent. [Michael Brunton-Spall](http://www.brunton-spall.co.uk) gave an overview of [The Guardian’s](https://www.theguardian.com/uk) scaling challenges and how they approach rapid application building, such as the [MPs expenses](http://mps-expenses.guardian.co.uk/) crowd-sourcing effort
 
 I [Gareth Rushgrove’s](http://morethanseven.net/) “You’re going to need a bigger toolbox” a perfect topic for a conference to tackle. There are hundreds of languages & tools available but Gareth gave a great overview of some interesting ones you should learn more about on your own, getting you rather excited in the process. There’s a collection of all the [built-it presentation slides](http://delicious.com/coldclimate/dibi) which are well worth reading.
 

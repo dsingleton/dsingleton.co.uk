@@ -21,7 +21,7 @@ I’ve had a rough version of this for a while, but it had quite a few issues, w
 
 First of it all it uses my last.fm [Weekly Artists](http://ws.audioscrobbler.com/1.0/user/underpangs/weeklyalbumchart.xml) XML, which gets turned in to HTML through a simple XSL transformation then styled with CSS.
 
-The glue that holds it together is the extremely useful [inlineRSS](http://www.iconophobia.com/wordpress/?page_id=55) plugin for Wordpress. this handled the fetching of the XML and the XSL transformation, with a little caching too.
+The glue that holds it together is the extremely useful [inlineRSS](https://wordpress.org/plugins/tags/inline-rss) plugin for Wordpress. this handled the fetching of the XML and the XSL transformation, with a little caching too.
 
 ### XSL Transformation
 

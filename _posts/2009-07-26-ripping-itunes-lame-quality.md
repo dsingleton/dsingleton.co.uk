@@ -9,7 +9,7 @@ I haven’t had to rip any CDs on my current laptop till now. I didn’t have a 
 
 This is a bit of a post self-reference in the future, hopefully it’s helpful to you too
 
-My tool of preference is [iTunes LAME](http://www.blacktree.com/projects/itunes-lame.html). The quality is a vast improvement over the default iTunes encoder. There are some tricky parts to the installation and setup process, here’s a bit of a guide.
+My tool of preference is [iTunes LAME](https://code.google.com/archive/p/blacktree-itunes-lame/downloads). The quality is a vast improvement over the default iTunes encoder. There are some tricky parts to the installation and setup process, here’s a bit of a guide.
 
 ## Installation and preferences
 

@@ -50,6 +50,6 @@ The final result. Not bad considering it was all done rather spontaneously over 
 
 There’s been loads of other great pixel/paper art, most of which blows what we did out of the water, but these ones are absolutely amazing and definately deserve a look if you haven’t seen them before.
 
-- Mosaic-tiled Space Invaders [all over the world](http://www.space-invaders.com/sominv.html) – I love this one in [Covent Garden](http://www.flickr.com/photos/true2death/17895715/).
+- Mosaic-tiled Space Invaders [all over the world](http://www.space-invaders.com/world/) – I love this one in [Covent Garden](http://www.flickr.com/photos/true2death/17895715/).
 - Donkey Kong over [4 floors](http://www.soe.ucsc.edu/%7Einio/dk/) at the University of California.
 - Celebrating the 10th anniversary of Mac Office with 1300[Post-it notes](http://blogs.msdn.com/macmojo/archive/2007/02/07/birthday-gift-for-macbu.aspx).
