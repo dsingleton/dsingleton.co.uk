@@ -3,21 +3,31 @@ layout: default
 title:  "Blog"
 redirect_from: /archive
 ---
-<article>
     <h1>Blog</h1>
-    <div class="hfeed">
-    {% for post in site.posts %}
-        <div class="hentry">
-            <h2 class="entry-title">
-                <a href="{{ post.url }}" rel="bookmark">
-                    {{ post.title }}
-                </a>
-            </h2>
+      {% for post in site.posts limit:5 %}
+          <h3>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+          </h3>
+          <p><time date="{{ post.date }}">{{ post.date | date_to_string }}</time> &mdash; {{ post.excerpt | strip_html }}</p>
+      {% endfor %}
 
-            <div class="entry-content">
-              {{ post.excerpt }}
-            </div>
-        </div>
-    {% endfor %}
+      <h2>Archives</h2>
+      <ul>
+      {% for post in site.posts offset:10 %}
+      {% assign currentdate = post.date | date: "%Y" %}
+      {% if currentdate != date %}
+        {% unless forloop.first %}</ul>{% endunless %}
+        <h3 id="archives-{{currentdate}}">{{ currentdate }}</h3>
+        <ul>
+        {% assign date = currentdate %}
+      {% endif %}
+        <li>
+          <a href="{{ post.url }}" rel="bookmark">
+              {{ post.title }}
+          </a>
+        </li>
+      {% endfor %}
+      </ul>
+
     </div>
 </article>
