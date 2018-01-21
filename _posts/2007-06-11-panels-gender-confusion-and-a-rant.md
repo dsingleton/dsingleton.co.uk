@@ -5,6 +5,14 @@ date: 2007-06-11 00:00:00
 categories: conference
 ---
 
+**Update**: My views have changed significantly since I wrote this post, over 10 years ago. I'm leaving it as is, with this caveat, to acknowledge how I disagree with much of what I wrote.
+
+I might have recognised a complex issue, but had no appreciation of the actual complexities. I'm struck by my thinking of a "problem out of nowhere", "blown out of all proportion". I wish I could explain to younger self that there are problems that have always been there, which I didn't see because they didn't affect me personally.
+
+It's taken time, and a willingness to listen to people who _are_ affected, to understand how issues like this. This wouldn't have happened if we hadn't talked about the problems. I'm pleased to have worked for organizations [take gender diversity seriously](https://gds.blog.gov.uk/2016/03/08/gds-and-gender-diversity-at-conferences-and-events/).
+
+---
+
 I was going to include this little rant in my [@media round-up post](/blog/media-london-2007), but thought better of it, lest I get _too_ ranty. So yes, this will be a fairly quickly written up little rant, please treat it as such.
 
 As I mentioned before the only negative I came away from the conference with was the Hot topics panel. This was mainly for two reasons, with only vague relation to each other.
