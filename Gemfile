@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'github-pages', group: :jekyll_plugins
+gem 'github-pages', '>= 130', group: :jekyll_plugins
 
-gem 'html-proofer'
+gem 'html-proofer', '>= 3.4.0'
